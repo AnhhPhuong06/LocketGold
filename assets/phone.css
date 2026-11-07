@@ -1,0 +1,52 @@
+/* Clip the photo layers without clipping the floating reactions. */
+.phone-widget {
+  --widget-radius: 25px;
+  border-radius: var(--widget-radius);
+  isolation: isolate;
+}
+
+.phone-widget > img.widget-photo,
+.phone-widget > img.widget-photo.is-active {
+  border-radius: var(--widget-radius);
+  clip-path: inset(0 round var(--widget-radius));
+  scale: 1;
+}
+
+.phone-widget > img.phone-caption-art {
+  /* Override the generic widget image rule from landing.css. */
+  inset: auto 9% 6%;
+  width: 82%;
+  height: auto;
+  max-height: 22%;
+  object-fit: contain;
+}
+
+.phone-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.phone-status-art,
+.phone-app {
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 760px) {
+  .phone {
+    /* Equal margins keep the tilted phone inside narrow screens. */
+    left: 50%;
+    margin-left: -132.5px;
+    transform-origin: center;
+  }
+
+  .phone-widget {
+    --widget-radius: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .phone {
+    width: 235px;
+    margin-left: -117.5px;
+  }
+}
