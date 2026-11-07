@@ -1,6 +1,6 @@
 # Locket Gold · by AnhhPhuongg
 
-Trang tải hồ sơ cấu hình với giao diện kem–vàng, bố cục thích ứng trên điện thoại và máy tính.
+Trang tải hồ sơ cấu hình của AnhhPhuongg với giao diện kem–vàng lấy cảm hứng từ Uplocket: điện thoại minh họa, ảnh và sticker nổi, ba thẻ tải xuống, xem thử khung viền và hướng dẫn cài đặt. Bố cục thích ứng trên điện thoại và máy tính.
 
 **Website:** https://AnhhPhuong06.github.io/LocketGold/
 
@@ -22,10 +22,12 @@ node --test tests/referral-core.test.cjs
 
 ## Nội dung
 
-- Khung iPhone minh họa; nhấn ảnh để đổi giữa hai khoảnh khắc.
+- Điện thoại và ảnh nổi minh họa trên đầu trang; không phải ảnh chụp ứng dụng thực tế.
+- Xem thử ba màu khung và nhấn ảnh để đổi khoảnh khắc; không thay đổi ứng dụng Locket.
 - Hướng dẫn cài đặt với ba bước tương tác.
 - Câu hỏi thường gặp dùng `details` của trình duyệt.
-- Tải trực tiếp `AnhhPhuongg.mobileconfig`, sao chép link và nút tải cố định trên điện thoại.
+- Tải trực tiếp hồ sơ chính, hồ sơ IPv4 và chứng chỉ công khai `LocketGold-CA.cer`; sao chép link và nút tải cố định trên điện thoại.
+- Xem dấu vân tay SHA-256, thời hạn chứng chỉ, URL DNS và phạm vi tên miền từ `assets/profile-info.json`.
 - Phông chữ và ảnh lưu cục bộ; không có trình theo dõi hoặc thư viện JavaScript bên ngoài.
 - Hỗ trợ bàn phím, thông báo sao chép cho trình đọc màn hình và chế độ giảm chuyển động.
 
@@ -46,11 +48,15 @@ GitHub Pages dùng nhánh `main`, thư mục gốc `/`. Tệp `.nojekyll` giữ 
 ## Chỉnh sửa
 
 - `index.html`: nội dung và các phần của trang.
-- `assets/styles.css`: giao diện, kích thước màn hình và chuyển động.
-- `assets/app.js`: menu, đổi ảnh, chọn bước, sao chép link và nút tải trên điện thoại.
+- `assets/landing.css`: giao diện trang chủ, kích thước màn hình và chuyển động.
+- `assets/landing.js`: menu, xem thử khung, đổi ảnh, chọn bước và sao chép link.
+- `assets/styles.css`: giao diện chung của tool lời mời; trang chủ dùng CSS riêng.
+- `assets/app.js`: mã trang chủ cũ, hiện không được tải.
 - `AnhhPhuongg.mobileconfig`: hồ sơ đang cung cấp để tải.
 
 Khi thay hồ sơ, cập nhật kích thước, ngày và mô tả trong `index.html` cho khớp. Không đặt khóa riêng, mật khẩu hay token trong repo công khai.
+
+Chứng chỉ `.cer` được xuất nguyên vẹn từ payload CA trong hồ sơ chính, không tạo CA mới và không chứa khóa riêng. Hai hồ sơ DNS đã có CA này; không cần cài thêm bản riêng. Để xuất lại chứng chỉ và metadata sau khi cập nhật hồ sơ, dùng Python với thư viện `cryptography` rồi chạy `python scripts/export-certificate.py`. Chứng chỉ CA và hồ sơ được giữ nguyên nội dung trong lần thiết kế lại giao diện này.
 
 ## Về hồ sơ
 
@@ -71,7 +77,7 @@ python scripts/create-ipv4-profile.py
 
 Nếu nhà cung cấp đổi IP, xác nhận địa chỉ mới trước khi dùng `--ip`. Giữ nguyên chứng chỉ gốc nếu máy chủ vẫn dùng CA đó; không tự tạo CA mới và không đưa khóa riêng lên GitHub.
 
-Website có bổ sung xử lý khoảng cách flex và tỷ lệ ảnh cho Safari 14, cùng xử lý thay đổi kích thước màn hình qua `MediaQueryList.addListener` khi API mới chưa có. Đây là sửa tương thích giao diện, không mở rộng hỗ trợ DNS của hệ điều hành.
+Hỗ trợ payload DNS của hệ điều hành không phải cam kết tương thích giao diện hoặc ứng dụng trên mọi phiên bản Safari/iOS. Chưa có kiểm thử cài hồ sơ trên iPhone thật trong lần cập nhật giao diện này.
 
 Nguồn: [định nghĩa payload do Apple công bố](https://github.com/apple/device-management/blob/release/mdm/profiles/com.apple.dnsSettings.managed.yaml), [cấu hình địa chỉ máy chủ DNS](https://developer.apple.com/documentation/devicemanagement/dnssettings/dnssettings-data.dictionary).
 

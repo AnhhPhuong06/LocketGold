@@ -10,5 +10,10 @@
   Cache-Control: no-store
   X-Content-Type-Options: nosniff
 
+/LocketGold-CA.cer
+  Content-Type: application/pkix-cert
+  Content-Disposition: attachment; filename="LocketGold-CA.cer"
+  X-Content-Type-Options: nosniff
+
 /*
   X-Robots-Tag: noindex, nofollow
