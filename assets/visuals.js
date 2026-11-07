@@ -4,17 +4,51 @@
   const motionButton = document.getElementById('motion-toggle');
   const heroWidget = document.getElementById('hero-widget');
   const heroPhoto = document.getElementById('hero-widget-photo');
+  const nextHeroPhoto = document.getElementById('hero-widget-photo-next');
+  const collage = document.querySelector('.collage');
+  const desktopPointer = window.matchMedia('(hover: hover) and (pointer: fine)');
   let photoIndex = 1;
   let paused = reduced.matches;
-  function nextPhoto() {
-    photoIndex = photoIndex % 8 + 1;
-    heroPhoto.src = './assets/uplocket/index/bubbles/widget-' + photoIndex + '.webp';
+  let visiblePhoto = heroPhoto;
+  let hiddenPhoto = nextHeroPhoto;
+  let photoSwapInProgress = false;
+  async function nextPhoto() {
+    if (photoSwapInProgress || !visiblePhoto || !hiddenPhoto) return;
+    photoSwapInProgress = true;
+    const nextIndex = photoIndex % 8 + 1;
+    hiddenPhoto.src = './assets/uplocket/index/bubbles/widget-' + nextIndex + '.webp';
+    try { if (hiddenPhoto.decode) await hiddenPhoto.decode(); } catch (_) { /* Keep the current image if a preview fails to decode. */ }
+    hiddenPhoto.classList.add('is-active');
+    visiblePhoto.classList.remove('is-active');
+    const previousPhoto = visiblePhoto;
+    visiblePhoto = hiddenPhoto;
+    hiddenPhoto = previousPhoto;
+    photoIndex = nextIndex;
+    photoSwapInProgress = false;
   }
   heroWidget.addEventListener('click', nextPhoto);
+  function resetCollageTilt() {
+    if (!collage) return;
+    collage.style.setProperty('--tilt-x', '0deg');
+    collage.style.setProperty('--tilt-y', '0deg');
+  }
+  function moveCollage(event) {
+    if (!collage || paused) return;
+    const rect = collage.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    collage.style.setProperty('--tilt-x', (x * 2.4).toFixed(2) + 'deg');
+    collage.style.setProperty('--tilt-y', (y * -2.0).toFixed(2) + 'deg');
+  }
+  if (collage && desktopPointer.matches && !reduced.matches) {
+    collage.addEventListener('pointermove', moveCollage, { passive: true });
+    collage.addEventListener('pointerleave', resetCollageTilt, { passive: true });
+  }
   function updateMotion() {
     document.body.classList.toggle('motion-paused', paused);
     motionButton.setAttribute('aria-pressed', String(paused));
     motionButton.textContent = paused ? 'Bật chuyển động' : 'Tạm dừng chuyển động';
+    if (paused) resetCollageTilt();
   }
   motionButton.hidden = false;
   motionButton.addEventListener('click', function () { paused = !paused; updateMotion(); });
@@ -24,6 +58,22 @@
   function motionPreferenceChanged(event) { paused = event.matches; updateMotion(); }
   if (reduced.addEventListener) reduced.addEventListener('change', motionPreferenceChanged);
   else reduced.addListener(motionPreferenceChanged);
+
+  if (!reduced.matches && 'IntersectionObserver' in window) {
+    const revealTargets = document.querySelectorAll('.section-heading, .price-card, .guide-step');
+    const revealObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -28px 0px' });
+    revealTargets.forEach(function (target, index) {
+      target.classList.add('motion-reveal');
+      target.style.setProperty('--reveal-delay', (index % 3 * 90) + 'ms');
+      revealObserver.observe(target);
+    });
+  }
 
   if (window.Lenis && !reduced.matches && window.matchMedia('(hover: hover)').matches) {
     const lenis = new window.Lenis({ smoothWheel: true, lerp: 0.1, prevent: function (node) { return !!node.closest('.account-modal'); } });
