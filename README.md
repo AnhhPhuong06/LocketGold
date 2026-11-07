@@ -25,6 +25,9 @@ node --test tests/referral-core.test.cjs
 - Bảng giá tham khảo từ Uplocket: dùng thử miễn phí, 1 năm 15.000đ, trọn đời 25.000đ. Nút chọn mở cửa sổ nhập link, hiển thị gói đã chọn và kiểm tra định dạng HTTPS của link `locket.cam`. Sau khi kiểm tra, người dùng có thể sao chép link, mở trang cá nhân hoặc tiếp tục tại Uplocket. Không xác minh tài khoản tồn tại, trạng thái thuê bao, thu tiền, nhận đơn hoặc cấp Gold trên trang này. Link nhập không được gửi qua mạng hoặc lưu bền vững; chỉ được mở ở trang cá nhân nếu người dùng bấm nút tương ứng. Giá và điều kiện cần xác nhận tại bên cung cấp; tên gói trọn đời không phải cam kết từ Locket.
 - Điện thoại và ảnh nổi minh họa trên đầu trang; không phải ảnh chụp ứng dụng thực tế.
 - Xem thử ba màu khung và nhấn ảnh để đổi khoảnh khắc; không thay đổi ứng dụng Locket.
+- Đã tích hợp ảnh, sticker, app icon và logo đã tải từ Uplocket; điện thoại có thể đổi ảnh bằng nút và tự chuyển khi bật chuyển động. Có nút tạm dừng và hỗ trợ giảm chuyển động.
+- Thư viện 78 khung PNG cục bộ, không trùng nội dung: tìm theo tên, xem thêm từng nhóm 8 khung, xem thử trên ảnh minh họa và tải đúng tệp PNG đã chọn. Chọn khung không đổi ứng dụng Locket.
+- Cuộn mượt bằng bản Lenis độc lập đã tải; tạm dừng cuộn nền khi mở cửa sổ nhập link. Không chạy các chunk Next.js, beacon theo dõi hoặc API của website nguồn.
 - Hướng dẫn cài đặt với ba bước tương tác.
 - Câu hỏi thường gặp dùng `details` của trình duyệt.
 - Tải trực tiếp hồ sơ chính, hồ sơ IPv4 và chứng chỉ công khai `LocketGold-CA.cer`; sao chép link và nút tải cố định trên điện thoại.
@@ -51,6 +54,9 @@ GitHub Pages dùng nhánh `main`, thư mục gốc `/`. Tệp `.nojekyll` giữ 
 - `index.html`: nội dung và các phần của trang.
 - `assets/landing.css`: giao diện trang chủ, kích thước màn hình và chuyển động.
 - `assets/checkout.css`: bảng giá và cửa sổ nhập link, tỷ lệ 420px trên máy tính, nền mờ, các trạng thái nút và bố cục điện thoại theo ảnh tham khảo. Chỉ giao diện và kiểm tra định dạng tại máy; không kết nối API cấp Gold.
+- `assets/visuals.css`, `assets/visuals.js`: bố trí tài nguyên gốc, chuyển động và thư viện khung.
+- `assets/uplocket/`: ảnh và khung, Lenis, phông Fredoka, danh mục và bản kê URL nguồn/SHA-256. Xem README và giấy phép trong thư mục này.
+- `scripts/import-uplocket-assets.py`: nhập lại tài nguyên từ bản tải cục bộ `D:\Locket_Gold\uplocket-public`; giữ nguyên tệp và loại khung trùng SHA-256.
 - `assets/landing.js`: menu, xem thử khung, đổi ảnh, chọn bước và sao chép link.
 - `assets/locket-link.js`: kiểm tra định dạng link trong cửa sổ chọn gói; kiểm thử bằng `node --test tests/locket-link.test.cjs`.
 - `assets/styles.css`: giao diện chung của tool lời mời; trang chủ dùng CSS riêng.
@@ -96,3 +102,5 @@ Nguồn: [định nghĩa payload do Apple công bố](https://github.com/apple/d
 - Ảnh biển: [Joel Vodell / Unsplash](https://unsplash.com/photos/8Ogfqvw15Rg), dùng theo Unsplash License.
 - Phông Manrope: [Google Fonts](https://fonts.google.com/specimen/Manrope), SIL Open Font License; bản giấy phép nằm tại `assets/Manrope-OFL.txt`.
 - Phông Nunito cho bảng giá và cửa sổ: [Google Fonts](https://fonts.google.com/specimen/Nunito), SIL Open Font License; bản giấy phép tại `assets/Nunito-OFL.txt`. Không phân phối phông SF Pro của Apple; dùng `ui-rounded` trên hệ thống hỗ trợ và Nunito dự phòng.
+- Ảnh/sticker/khung tham khảo: [Uplocket](https://uplocket.io.vn/); URL từng tệp trong `assets/uplocket/asset-manifest.json`.
+- Fredoka dùng SIL Open Font License; Lenis dùng MIT. Bản giấy phép nằm trong `assets/uplocket/`.

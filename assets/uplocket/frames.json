@@ -1,0 +1,470 @@
+[
+  {
+    "id": "fd99ec66431578b7",
+    "name": "Bear Bunny Boba Good Day",
+    "src": "./assets/uplocket/frames/frame_bear_bunny_boba_good_day-fd99ec66.png",
+    "group": "main"
+  },
+  {
+    "id": "d4797c54edfa9cd0",
+    "name": "Celebration Balloons",
+    "src": "./assets/uplocket/frames/frame_celebration_balloons-d4797c54.png",
+    "group": "main"
+  },
+  {
+    "id": "ecb6cdba2ca8dad7",
+    "name": "Chiikawa Starlight Party",
+    "src": "./assets/uplocket/frames/frame_chiikawa_starlight_party-ecb6cdba.png",
+    "group": "main"
+  },
+  {
+    "id": "a5f7a8a9219c1678",
+    "name": "Chiikawa White Friends",
+    "src": "./assets/uplocket/frames/frame_chiikawa_white_friends-a5f7a8a9.png",
+    "group": "main"
+  },
+  {
+    "id": "db068e6604da1719",
+    "name": "Cinnamoroll Blue Ribbon",
+    "src": "./assets/uplocket/frames/frame_cinnamoroll_blue_ribbon-db068e66.png",
+    "group": "main"
+  },
+  {
+    "id": "dde5fd53f16ed409",
+    "name": "Cinnamoroll Pastel Clouds",
+    "src": "./assets/uplocket/frames/frame_cinnamoroll_pastel_clouds-dde5fd53.png",
+    "group": "main"
+  },
+  {
+    "id": "62c87f0f38b9bb91",
+    "name": "Conan Detective",
+    "src": "./assets/uplocket/frames/frame_conan_detective-62c87f0f.png",
+    "group": "main"
+  },
+  {
+    "id": "49fa41febf82dc4c",
+    "name": "Conan Kaito Kid Night",
+    "src": "./assets/uplocket/frames/frame_conan_kaito_kid_night-49fa41fe.png",
+    "group": "main"
+  },
+  {
+    "id": "7a4c1ec6908b6704",
+    "name": "Cr7 Ronaldo",
+    "src": "./assets/uplocket/frames/frame_cr7_ronaldo-7a4c1ec6.png",
+    "group": "main"
+  },
+  {
+    "id": "63da9023b4b1880e",
+    "name": "Cute Teddy Bear",
+    "src": "./assets/uplocket/frames/frame_cute_teddy_bear-63da9023.png",
+    "group": "main"
+  },
+  {
+    "id": "3152c8b683674b38",
+    "name": "Demon Slayer Tanjiro Nezuko",
+    "src": "./assets/uplocket/frames/frame_demon_slayer_tanjiro_nezuko-3152c8b6.png",
+    "group": "main"
+  },
+  {
+    "id": "f95867547f376f4d",
+    "name": "Doraemon Golden Bell",
+    "src": "./assets/uplocket/frames/frame_doraemon_golden_bell-f9586754.png",
+    "group": "main"
+  },
+  {
+    "id": "7951cab492620b62",
+    "name": "Doraemon Nobita Friends",
+    "src": "./assets/uplocket/frames/frame_doraemon_nobita_friends-7951cab4.png",
+    "group": "main"
+  },
+  {
+    "id": "92e1c799517bd172",
+    "name": "Easter Egg Sweets",
+    "src": "./assets/uplocket/frames/frame_easter_egg_sweets-92e1c799.png",
+    "group": "main"
+  },
+  {
+    "id": "c54f580d80999d77",
+    "name": "Galaxy Night Sky",
+    "src": "./assets/uplocket/frames/frame_galaxy_night_sky-c54f580d.png",
+    "group": "main"
+  },
+  {
+    "id": "d6b9b2494b63b80d",
+    "name": "Gojo Satoru Limitless",
+    "src": "./assets/uplocket/frames/frame_gojo_satoru_limitless-d6b9b249.png",
+    "group": "main"
+  },
+  {
+    "id": "c84b8053f5a681a9",
+    "name": "Grizzy And The Lemmings",
+    "src": "./assets/uplocket/frames/frame_grizzy_and_the_lemmings-c84b8053.png",
+    "group": "main"
+  },
+  {
+    "id": "79415c4b39fd4e15",
+    "name": "Hachiware Blue Cat",
+    "src": "./assets/uplocket/frames/frame_hachiware_blue_cat-79415c4b.png",
+    "group": "main"
+  },
+  {
+    "id": "2779e38f35b54e88",
+    "name": "Halloween Pumpkin Night",
+    "src": "./assets/uplocket/frames/frame_halloween_pumpkin_night-2779e38f.png",
+    "group": "main"
+  },
+  {
+    "id": "18b92f8aeeb08531",
+    "name": "Inferno Flame",
+    "src": "./assets/uplocket/frames/frame_inferno_flame-18b92f8a.png",
+    "group": "main"
+  },
+  {
+    "id": "be61e088a7088a81",
+    "name": "Keroppi Green Lily",
+    "src": "./assets/uplocket/frames/frame_keroppi_green_lily-be61e088.png",
+    "group": "main"
+  },
+  {
+    "id": "41cb0fdfb450ba78",
+    "name": "Keroppi Lotus Pond",
+    "src": "./assets/uplocket/frames/frame_keroppi_lotus_pond-41cb0fdf.png",
+    "group": "main"
+  },
+  {
+    "id": "758eed70f7e3d3a1",
+    "name": "Killua Zoldyck",
+    "src": "./assets/uplocket/frames/frame_killua_zoldyck-758eed70.png",
+    "group": "main"
+  },
+  {
+    "id": "42a2247c4cf545de",
+    "name": "Kitty Kuromi Strawberry Pink",
+    "src": "./assets/uplocket/frames/frame_kitty_kuromi_strawberry_pink-42a2247c.png",
+    "group": "main"
+  },
+  {
+    "id": "91f0691b53b8bf4c",
+    "name": "Kuromi Halloween Witch",
+    "src": "./assets/uplocket/frames/frame_kuromi_halloween_witch-91f0691b.png",
+    "group": "main"
+  },
+  {
+    "id": "f794876ee8fcb789",
+    "name": "Kuromi Purple Star",
+    "src": "./assets/uplocket/frames/frame_kuromi_purple_star-f794876e.png",
+    "group": "main"
+  },
+  {
+    "id": "dc5d1904c6310f39",
+    "name": "Lotso Bear",
+    "src": "./assets/uplocket/frames/frame_lotso_bear-dc5d1904.png",
+    "group": "main"
+  },
+  {
+    "id": "852af0703d27e960",
+    "name": "Love Yourself",
+    "src": "./assets/uplocket/frames/frame_love_yourself-852af070.png",
+    "group": "main"
+  },
+  {
+    "id": "7f827d64de9c73c6",
+    "name": "Manga Lightning Power",
+    "src": "./assets/uplocket/frames/frame_manga_lightning_power-7f827d64.png",
+    "group": "main"
+  },
+  {
+    "id": "28c5985b72a48081",
+    "name": "Merry Christmas Santa Bells",
+    "src": "./assets/uplocket/frames/frame_merry_christmas_santa_bells-28c5985b.png",
+    "group": "main"
+  },
+  {
+    "id": "f8a8e18022ddb6b2",
+    "name": "One Piece Luffy Gear5",
+    "src": "./assets/uplocket/frames/frame_one_piece_luffy_gear5-f8a8e180.png",
+    "group": "main"
+  },
+  {
+    "id": "a4aacd83da04a4fc",
+    "name": "One Piece Straw Hat Crew",
+    "src": "./assets/uplocket/frames/frame_one_piece_straw_hat_crew-a4aacd83.png",
+    "group": "main"
+  },
+  {
+    "id": "df6a11c4d4c960a7",
+    "name": "Pastel Kitten",
+    "src": "./assets/uplocket/frames/frame_pastel_kitten-df6a11c4.png",
+    "group": "main"
+  },
+  {
+    "id": "25c15d2734aa0f0d",
+    "name": "Pink Polka Dots",
+    "src": "./assets/uplocket/frames/frame_pink_polka_dots-25c15d27.png",
+    "group": "main"
+  },
+  {
+    "id": "d6c39c155f1d5294",
+    "name": "Pochacco Blue Sky",
+    "src": "./assets/uplocket/frames/frame_pochacco_blue_sky-d6c39c15.png",
+    "group": "main"
+  },
+  {
+    "id": "b61463fc2b372f13",
+    "name": "Pompompurin Golden",
+    "src": "./assets/uplocket/frames/frame_pompompurin_golden-b61463fc.png",
+    "group": "main"
+  },
+  {
+    "id": "e3e7656455b2f9f1",
+    "name": "Pompompurin Joyful Yellow",
+    "src": "./assets/uplocket/frames/frame_pompompurin_joyful_yellow-e3e76564.png",
+    "group": "main"
+  },
+  {
+    "id": "fb548ff9bad44431",
+    "name": "Pororo Penguin Friends",
+    "src": "./assets/uplocket/frames/frame_pororo_penguin_friends-fb548ff9.png",
+    "group": "main"
+  },
+  {
+    "id": "d9cf0729ce92bd76",
+    "name": "Sanrio All Stars Wreath",
+    "src": "./assets/uplocket/frames/frame_sanrio_all_stars_wreath-d9cf0729.png",
+    "group": "main"
+  },
+  {
+    "id": "148339afffa056bf",
+    "name": "Sanrio Pastel Candy Ribbon",
+    "src": "./assets/uplocket/frames/frame_sanrio_pastel_candy_ribbon-148339af.png",
+    "group": "main"
+  },
+  {
+    "id": "6a53c6f83cd3657b",
+    "name": "Sao Kirito Asuna Duel",
+    "src": "./assets/uplocket/frames/frame_sao_kirito_asuna_duel-6a53c6f8.png",
+    "group": "main"
+  },
+  {
+    "id": "c2cf2df43418078c",
+    "name": "Sao Kirito Asuna Pastel",
+    "src": "./assets/uplocket/frames/frame_sao_kirito_asuna_pastel-c2cf2df4.png",
+    "group": "main"
+  },
+  {
+    "id": "b8737606820cfae1",
+    "name": "Shin Chan Chocobi",
+    "src": "./assets/uplocket/frames/frame_shin_chan_chocobi-b8737606.png",
+    "group": "main"
+  },
+  {
+    "id": "d09fb94909814a35",
+    "name": "Shin Chan Expressions",
+    "src": "./assets/uplocket/frames/frame_shin_chan_expressions-d09fb949.png",
+    "group": "main"
+  },
+  {
+    "id": "203ab9bff64bd2a9",
+    "name": "Shin Chan Sunny Yellow",
+    "src": "./assets/uplocket/frames/frame_shin_chan_sunny_yellow-203ab9bf.png",
+    "group": "main"
+  },
+  {
+    "id": "4537e7c802faab5e",
+    "name": "Smurfs Mushroom Village",
+    "src": "./assets/uplocket/frames/frame_smurfs_mushroom_village-4537e7c8.png",
+    "group": "main"
+  },
+  {
+    "id": "30fbd6b0e5ff60d6",
+    "name": "Sweet Bunny Rabbit",
+    "src": "./assets/uplocket/frames/frame_sweet_bunny_rabbit-30fbd6b0.png",
+    "group": "main"
+  },
+  {
+    "id": "70fff39800c5002c",
+    "name": "Twilight Stars",
+    "src": "./assets/uplocket/frames/frame_twilight_stars-70fff398.png",
+    "group": "main"
+  },
+  {
+    "id": "827dff8908696b01",
+    "name": "Usagi Carrot Crown",
+    "src": "./assets/uplocket/frames/frame_usagi_carrot_crown-827dff89.png",
+    "group": "main"
+  },
+  {
+    "id": "abec7fd2b2ca818d",
+    "name": "Usagi Chiikawa Yaha",
+    "src": "./assets/uplocket/frames/frame_usagi_chiikawa_yaha-abec7fd2.png",
+    "group": "main"
+  },
+  {
+    "id": "57d2b73bb0ffa1af",
+    "name": "Vietnam Women Day 2010",
+    "src": "./assets/uplocket/frames/frame_vietnam_women_day_2010-57d2b73b.png",
+    "group": "main"
+  },
+  {
+    "id": "15c8d13b1ea2ed33",
+    "name": "Winter Bear Puppy Snow",
+    "src": "./assets/uplocket/frames/frame_winter_bear_puppy_snow-15c8d13b.png",
+    "group": "main"
+  },
+  {
+    "id": "e57ba4172d67a081",
+    "name": "Zenitsu Thunder Clap",
+    "src": "./assets/uplocket/frames/frame_zenitsu_thunder_clap-e57ba417.png",
+    "group": "main"
+  },
+  {
+    "id": "ca46c6eb3827b2db",
+    "name": "Bear Bunny Boba Good Day",
+    "src": "./assets/uplocket/frames/baked_frame_bear_bunny_boba_good_day_s104_sx100_sy100_ox0_oy0-ca46c6eb.png",
+    "group": "ctv"
+  },
+  {
+    "id": "fa72f504effd9e6a",
+    "name": "Chiikawa Starlight Party",
+    "src": "./assets/uplocket/frames/baked_frame_chiikawa_starlight_party_s105_sx100_sy100_ox0_oy0-fa72f504.png",
+    "group": "ctv"
+  },
+  {
+    "id": "8a0653806efc1e5b",
+    "name": "Cinnamoroll Blue Ribbon",
+    "src": "./assets/uplocket/frames/baked_frame_cinnamoroll_blue_ribbon_s104_sx100_sy100_ox0_oy0-8a065380.png",
+    "group": "ctv"
+  },
+  {
+    "id": "5576adbd8660869b",
+    "name": "Conan Detective",
+    "src": "./assets/uplocket/frames/baked_frame_conan_detective_s104_sx100_sy100_ox0_oy0-5576adbd.png",
+    "group": "ctv"
+  },
+  {
+    "id": "5df35db69b51a1fa",
+    "name": "Cute Teddy Bear",
+    "src": "./assets/uplocket/frames/baked_frame_cute_teddy_bear_s101_sx100_sy100_ox0_oy0-5df35db6.png",
+    "group": "ctv"
+  },
+  {
+    "id": "46e2ed462793753b",
+    "name": "Doraemon Golden Bell",
+    "src": "./assets/uplocket/frames/baked_frame_doraemon_golden_bell_s106_sx100_sy100_ox0_oy0-46e2ed46.png",
+    "group": "ctv"
+  },
+  {
+    "id": "78290bd393487ed2",
+    "name": "Grizzy And The Lemmings",
+    "src": "./assets/uplocket/frames/baked_frame_grizzy_and_the_lemmings_s101_sx100_sy100_ox0_oy0-78290bd3.png",
+    "group": "ctv"
+  },
+  {
+    "id": "95dae9c538f71915",
+    "name": "Killua Zoldyck",
+    "src": "./assets/uplocket/frames/baked_frame_killua_zoldyck_s106_sx100_sy100_ox0_oy0-95dae9c5.png",
+    "group": "ctv"
+  },
+  {
+    "id": "0acbd7ae7e035d6b",
+    "name": "Kitty Kuromi Strawberry Pink",
+    "src": "./assets/uplocket/frames/baked_frame_kitty_kuromi_strawberry_pink_s105_sx100_sy100_ox0_oy0-0acbd7ae.png",
+    "group": "ctv"
+  },
+  {
+    "id": "a50b41f03e8c680d",
+    "name": "Merry Christmas Santa Bells",
+    "src": "./assets/uplocket/frames/baked_frame_merry_christmas_santa_bells_s102_sx100_sy100_ox0_oy0-a50b41f0.png",
+    "group": "ctv"
+  },
+  {
+    "id": "0bf1fe25ef8644e5",
+    "name": "One Piece Straw Hat Crew",
+    "src": "./assets/uplocket/frames/baked_frame_one_piece_straw_hat_crew_s104_sx100_sy100_ox0_oy0-0bf1fe25.png",
+    "group": "ctv"
+  },
+  {
+    "id": "02ca460260f99585",
+    "name": "Pompompurin Joyful Yellow",
+    "src": "./assets/uplocket/frames/baked_frame_pompompurin_joyful_yellow_s103_sx100_sy100_ox0_oy0-02ca4602.png",
+    "group": "ctv"
+  },
+  {
+    "id": "e218506b27e6e3ba",
+    "name": "Pororo Penguin Friends",
+    "src": "./assets/uplocket/frames/baked_frame_pororo_penguin_friends_s103_sx100_sy100_ox0_oy0-e218506b.png",
+    "group": "ctv"
+  },
+  {
+    "id": "e2726b52d54d78f7",
+    "name": "Sanrio All Stars Wreath",
+    "src": "./assets/uplocket/frames/baked_frame_sanrio_all_stars_wreath_s104_sx100_sy100_ox0_oy0-e2726b52.png",
+    "group": "ctv"
+  },
+  {
+    "id": "65376ecde16812ac",
+    "name": "Sanrio Pastel Candy Ribbon",
+    "src": "./assets/uplocket/frames/baked_frame_sanrio_pastel_candy_ribbon_s107_sx100_sy100_ox0_oy0-65376ecd.png",
+    "group": "ctv"
+  },
+  {
+    "id": "eab9dbcaac4e011f",
+    "name": "Shin Chan Chocobi",
+    "src": "./assets/uplocket/frames/baked_frame_shin_chan_chocobi_s104_sx100_sy100_ox0_oy0-eab9dbca.png",
+    "group": "ctv"
+  },
+  {
+    "id": "ebfb39d8c59044a3",
+    "name": "Shin Chan Sunny Yellow",
+    "src": "./assets/uplocket/frames/baked_frame_shin_chan_sunny_yellow_s110_sx100_sy100_ox0_oy0-ebfb39d8.png",
+    "group": "ctv"
+  },
+  {
+    "id": "78e5de00d38c5c93",
+    "name": "Smurfs Mushroom Village",
+    "src": "./assets/uplocket/frames/baked_frame_smurfs_mushroom_village_s105_sx100_sy100_ox0_oy0-78e5de00.png",
+    "group": "ctv"
+  },
+  {
+    "id": "73c244fcdd713dcb",
+    "name": "Sweet Bunny Rabbit",
+    "src": "./assets/uplocket/frames/baked_frame_sweet_bunny_rabbit_s103_sx100_sy100_ox0_oy0-73c244fc.png",
+    "group": "ctv"
+  },
+  {
+    "id": "8b43ad6c22f8b018",
+    "name": "Usagi Carrot Crown",
+    "src": "./assets/uplocket/frames/baked_frame_usagi_carrot_crown_s104_sx100_sy100_ox0_oy0-8b43ad6c.png",
+    "group": "ctv"
+  },
+  {
+    "id": "038c5ebcc83b6bdc",
+    "name": "Vietnam Women Day 2010",
+    "src": "./assets/uplocket/frames/baked_frame_vietnam_women_day_2010_s104_sx100_sy100_ox0_oy0-038c5ebc.png",
+    "group": "ctv"
+  },
+  {
+    "id": "99fe94f8e77ef379",
+    "name": "Winter Bear Puppy Snow",
+    "src": "./assets/uplocket/frames/baked_frame_winter_bear_puppy_snow_s102_sx100_sy100_ox0_oy0-99fe94f8.png",
+    "group": "ctv"
+  },
+  {
+    "id": "40631a16966fb06f",
+    "name": "Baked Locketdio-Frame01",
+    "src": "./assets/uplocket/frames/baked_locketdio-frame01_s100_sx100_sy100_ox0_oy0-40631a16.png",
+    "group": "ctv"
+  },
+  {
+    "id": "e5ba08521c37ad6b",
+    "name": "Baked Locketdio-Halloween-2025-V1-1440X1440",
+    "src": "./assets/uplocket/frames/baked_locketdio-halloween-2025-v1-1440x1440_s100_sx100_sy100_ox0_oy0-e5ba0852.png",
+    "group": "ctv"
+  },
+  {
+    "id": "a97108a6fd5c3f1e",
+    "name": "Baked Locketdio-Thanksgiving-2025",
+    "src": "./assets/uplocket/frames/baked_locketdio-thanksgiving-2025_s100_sx100_sy100_ox0_oy0-a97108a6.png",
+    "group": "ctv"
+  }
+]

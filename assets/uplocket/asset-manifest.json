@@ -1,0 +1,722 @@
+[
+  {
+    "path": "assets/uplocket/index/appicons/icon-1.png",
+    "source": "https://uplocket.io.vn/assets/index/appicons/icon-1.png",
+    "sha256": "65cac307afd6d3584e5c0b0ebf18eab511071820991fb319244ed4a747074488"
+  },
+  {
+    "path": "assets/uplocket/index/appicons/icon-10.png",
+    "source": "https://uplocket.io.vn/assets/index/appicons/icon-10.png",
+    "sha256": "468a564f59bc5f26086dc1e082c28fe8eefeab0c9056d86c1ab80545f1e004b6"
+  },
+  {
+    "path": "assets/uplocket/index/appicons/icon-11.png",
+    "source": "https://uplocket.io.vn/assets/index/appicons/icon-11.png",
+    "sha256": "5add15541692940c0bab4c054c9e2f3741776f05006855499654e5f0cd69ec7e"
+  },
+  {
+    "path": "assets/uplocket/index/appicons/icon-12.png",
+    "source": "https://uplocket.io.vn/assets/index/appicons/icon-12.png",
+    "sha256": "dc2a0834d87d435dfc097ffe758fd56628592f110d39a474acadc6de864e08fb"
+  },
+  {
+    "path": "assets/uplocket/index/appicons/icon-2.png",
+    "source": "https://uplocket.io.vn/assets/index/appicons/icon-2.png",
+    "sha256": "341d9d7df436458f501e7020157e7d207c2e84656ae98c20da4ddd46ac8389ee"
+  },
+  {
+    "path": "assets/uplocket/index/appicons/icon-3.png",
+    "source": "https://uplocket.io.vn/assets/index/appicons/icon-3.png",
+    "sha256": "b2566226bbc3520cc1ef65025a71cb6daf134d7bc6226e7aae18686d668f696d"
+  },
+  {
+    "path": "assets/uplocket/index/appicons/icon-4.png",
+    "source": "https://uplocket.io.vn/assets/index/appicons/icon-4.png",
+    "sha256": "918e0730d3e75bd4e3f2b74db5cf40a6a635580e5636b4082dfecaf485011761"
+  },
+  {
+    "path": "assets/uplocket/index/appicons/icon-5.png",
+    "source": "https://uplocket.io.vn/assets/index/appicons/icon-5.png",
+    "sha256": "ecd29c090bf9632f70d142d6b7d551a3dcaa8b54e4d07a61525958eab99be9a2"
+  },
+  {
+    "path": "assets/uplocket/index/appicons/icon-6.png",
+    "source": "https://uplocket.io.vn/assets/index/appicons/icon-6.png",
+    "sha256": "224ea67b526a433754f2966bff0994f9328dbb10c32b7857b1f0ea6de0334392"
+  },
+  {
+    "path": "assets/uplocket/index/appicons/icon-7.png",
+    "source": "https://uplocket.io.vn/assets/index/appicons/icon-7.png",
+    "sha256": "332c62683d354f1fb32372c348c2f2edd893a23527eae878dbc4fbb95f906c39"
+  },
+  {
+    "path": "assets/uplocket/index/appicons/icon-8.png",
+    "source": "https://uplocket.io.vn/assets/index/appicons/icon-8.png",
+    "sha256": "9a5a648515b81349359839ff5503bbed09d4083ef5ffa88c44d95c0d749ca081"
+  },
+  {
+    "path": "assets/uplocket/index/appicons/icon-9.png",
+    "source": "https://uplocket.io.vn/assets/index/appicons/icon-9.png",
+    "sha256": "4d0355d940636f0bd9832e90269664962bef3b6c2d79efa8e7b16682498ac4de"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/ava.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/ava.webp",
+    "sha256": "bf8bbe823e46189b3f4805e5fc85f0b2fc2486c328a0f43da060b8dea2cd16b1"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/float-1.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/float-1.webp",
+    "sha256": "49fe7cdbef0a6702688b2315bf557a323adf24660737c11fb9bc619f60ee0bcf"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/float-2.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/float-2.webp",
+    "sha256": "4b6f27f6d20eeb8f56e7d5423212b23e3db9948c646fdbc406bd318db8dc511b"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/float-3.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/float-3.webp",
+    "sha256": "a588472270436268cd8cf5dd550ac2510b262467765e0bb1cf140b9d977322f3"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/float-4.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/float-4.webp",
+    "sha256": "82e2b063da9741b62f2a7230b8afd0f6ff12fddbd3bf0d0c0cfa95500556c180"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/karima.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/karima.webp",
+    "sha256": "e05289a94fea7bd633ceb07df886314c2380b715f11a960df361ab839fd36dbf"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/kyle.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/kyle.webp",
+    "sha256": "c46b07f683349c33209d687595e03b58cda042bf04e2275c1714be1f8a143604"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/laurel.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/laurel.webp",
+    "sha256": "3d3c77d52f01d0964c3f4afa76e84c1a0dfdac0ed0e690d1c521b87941141d9e"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/matt.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/matt.webp",
+    "sha256": "d1d6192e02f32098c3deb56db094d67e5ae22de77a38d2a02242f3ecc48ee50f"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/michid.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/michid.webp",
+    "sha256": "b85fe871d28938aa178a2975c0af491b87bc880ab217d75207368b103b7e4f42"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/mika.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/mika.webp",
+    "sha256": "1735712e0c571ed05f942c1279a67a913af46966ec42241b2a841665bd2cde09"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/preslee.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/preslee.webp",
+    "sha256": "12293284374281f95e21697e6ea84f1bd7650ef3f9653d175b0024bf7a279817"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/widget-1.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/widget-1.webp",
+    "sha256": "b6fe9a0a8a2351dca83d2a9ec559ce065340c0167e2ae438b69f324698cd9dae"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/widget-2.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/widget-2.webp",
+    "sha256": "3f807ac6dc2d865c31251d4c18536f792bcb395b27c21b6e4eec1f48a51cf0bf"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/widget-3.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/widget-3.webp",
+    "sha256": "d5e32c965c7beb424735fbbcb11af037ecf1c909451b1cc6a6c85bb040e82592"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/widget-4.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/widget-4.webp",
+    "sha256": "af72500c096aa20b21355600f5179e7259a2873238420016d3f0665b9581c719"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/widget-5.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/widget-5.webp",
+    "sha256": "73861af6fc35b941a1f4062674958cd6585a9720f72556bbd8d83ffaf67c7057"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/widget-6.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/widget-6.webp",
+    "sha256": "5bab018b07861cfb2b1fe126b852fed01ce3612b605a8fdc3364b364f21e10ca"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/widget-7.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/widget-7.webp",
+    "sha256": "1f77713a06f39b89191abaa6eba164255d93e3ef06ae55b00d498b2774e6db94"
+  },
+  {
+    "path": "assets/uplocket/index/bubbles/widget-8.webp",
+    "source": "https://uplocket.io.vn/assets/index/bubbles/widget-8.webp",
+    "sha256": "22a1ba033673a174b6cc4455a701b234bd3a459399e394c468cb994a045be710"
+  },
+  {
+    "path": "assets/uplocket/index/captions/austin-tx.webp",
+    "source": "https://uplocket.io.vn/assets/index/captions/austin-tx.webp",
+    "sha256": "ced0536c6d51dfda24a45e42a7dcdb024167387399da1f722fa20e61a9f66d3a"
+  },
+  {
+    "path": "assets/uplocket/index/captions/good-morning.webp",
+    "source": "https://uplocket.io.vn/assets/index/captions/good-morning.webp",
+    "sha256": "31d1d80134c35ac535ef4d7af55890db4447acac978c6e7318cf8698f356381c"
+  },
+  {
+    "path": "assets/uplocket/index/captions/hiiiiii.webp",
+    "source": "https://uplocket.io.vn/assets/index/captions/hiiiiii.webp",
+    "sha256": "8d733bba71294957346f041f9d532c3f422c5d984fc8aa4896d1a05d32262584"
+  },
+  {
+    "path": "assets/uplocket/index/captions/miss-you.webp",
+    "source": "https://uplocket.io.vn/assets/index/captions/miss-you.webp",
+    "sha256": "ac31bf3d61fab396097edeeabe09e0b729ea40e3719793665c735b84c81200b4"
+  },
+  {
+    "path": "assets/uplocket/index/captions/sunset-time.webp",
+    "source": "https://uplocket.io.vn/assets/index/captions/sunset-time.webp",
+    "sha256": "11d55010a7c7828de6ad09a3a3b490b1cd6455e45576e62eca9713a96a4882b4"
+  },
+  {
+    "path": "assets/uplocket/index/captions/weather-62f.webp",
+    "source": "https://uplocket.io.vn/assets/index/captions/weather-62f.webp",
+    "sha256": "6dc99d86900c32b2aa5a4fe002159616ac231909ecebb56751d1d8aa55163f28"
+  },
+  {
+    "path": "assets/uplocket/index/lock-wallpaper.webp",
+    "source": "https://uplocket.io.vn/assets/index/lock-wallpaper.webp",
+    "sha256": "4b3f2bea48ee1c8e11b9bdb4b2e3a1e7d14b7a1d941acccc306b3df8bd80b167"
+  },
+  {
+    "path": "assets/uplocket/index/qr-hero.svg",
+    "source": "https://uplocket.io.vn/assets/index/qr-hero.svg",
+    "sha256": "3d689e2f319701ee13eb8335c5068fd71fb77f901df8d7463654794172af539f"
+  },
+  {
+    "path": "assets/uplocket/index/qr-hover.webp",
+    "source": "https://uplocket.io.vn/assets/index/qr-hover.webp",
+    "sha256": "f199e132e8471fcf5feb47e80489173524521f9d87b851ff72dab05187fd1702"
+  },
+  {
+    "path": "assets/uplocket/index/shortcuts/career-1.webp",
+    "source": "https://uplocket.io.vn/assets/index/shortcuts/career-1.webp",
+    "sha256": "028f36d931d7f3ed532828d42651bacc3e224ae565172f50e5dbe000619b008b"
+  },
+  {
+    "path": "assets/uplocket/index/shortcuts/career-2.webp",
+    "source": "https://uplocket.io.vn/assets/index/shortcuts/career-2.webp",
+    "sha256": "fbfba287f6b7de81c5ce1a732c40e4d3699776c8cba612ae22d000c99bc98882"
+  },
+  {
+    "path": "assets/uplocket/index/shortcuts/help-1.webp",
+    "source": "https://uplocket.io.vn/assets/index/shortcuts/help-1.webp",
+    "sha256": "be9ca91ce667bf9eef7a6273adc7ecd7c4b3eed16eaebcf22e1bcbcfe1203d60"
+  },
+  {
+    "path": "assets/uplocket/index/shortcuts/help-2.webp",
+    "source": "https://uplocket.io.vn/assets/index/shortcuts/help-2.webp",
+    "sha256": "d72f7facc1d6eadcd39c26393de48927b063743e0aad21b50648aeb3644b8767"
+  },
+  {
+    "path": "assets/uplocket/index/shortcuts/parent-1.webp",
+    "source": "https://uplocket.io.vn/assets/index/shortcuts/parent-1.webp",
+    "sha256": "5bf318da1c280352e90cc12fdad225edfc7ab7bd7c803a665530fc0f4dbebbea"
+  },
+  {
+    "path": "assets/uplocket/index/shortcuts/parent-2.webp",
+    "source": "https://uplocket.io.vn/assets/index/shortcuts/parent-2.webp",
+    "sha256": "9bcf43a1c5e8133a0241869157d6bce5d306e8169f123fcc7221c24c7a3fb989"
+  },
+  {
+    "path": "assets/uplocket/index/shortcuts/partner-1.webp",
+    "source": "https://uplocket.io.vn/assets/index/shortcuts/partner-1.webp",
+    "sha256": "5169bceeb9b1694db1858cc6139c1d1021a88f225a658e9137f512c1f64a2a67"
+  },
+  {
+    "path": "assets/uplocket/index/shortcuts/partner-2.webp",
+    "source": "https://uplocket.io.vn/assets/index/shortcuts/partner-2.webp",
+    "sha256": "f1e3d05ff870b555d566997f23dc972d2e26d89f575a04fb984b567a6d9c652c"
+  },
+  {
+    "path": "assets/uplocket/index/shortcuts/partner-3.webp",
+    "source": "https://uplocket.io.vn/assets/index/shortcuts/partner-3.webp",
+    "sha256": "abf656b21607f8c620ca1c0dde997fca569c862455d1a4d02bd839d4943c6ab1"
+  },
+  {
+    "path": "assets/uplocket/index/shortcuts/partner-4.webp",
+    "source": "https://uplocket.io.vn/assets/index/shortcuts/partner-4.webp",
+    "sha256": "879a292e0fa4fa1c8be4513f1e92d59ee4600af57b3569f694e4481d6f442f93"
+  },
+  {
+    "path": "assets/uplocket/index/status-bar.svg",
+    "source": "https://uplocket.io.vn/assets/index/status-bar.svg",
+    "sha256": "ab923093977abf91adb505e1a1ca140dca338e0c8720f0b5904c55ea38e5d4ac"
+  },
+  {
+    "path": "assets/uplocket/index/stickers/bff.webp",
+    "source": "https://uplocket.io.vn/assets/index/stickers/bff.webp",
+    "sha256": "590aef5ea3cd9cc9bb3bb102b52d87afa4deb7f7efbb8817a082532baeb5964c"
+  },
+  {
+    "path": "assets/uplocket/index/stickers/gold-pill.webp",
+    "source": "https://uplocket.io.vn/assets/index/stickers/gold-pill.webp",
+    "sha256": "9a2956d148005dd6787699240d6ac8c7e4cc72ed7f670c68b794e07c9f3f7083"
+  },
+  {
+    "path": "assets/uplocket/index/stickers/heart-3d.webp",
+    "source": "https://uplocket.io.vn/assets/index/stickers/heart-3d.webp",
+    "sha256": "84bd67f2bdc2a7a1a2f870b4e6d87c92564b9d2f99c96659914b2f6dcfb85764"
+  },
+  {
+    "path": "assets/uplocket/index/stickers/heart-flat.webp",
+    "source": "https://uplocket.io.vn/assets/index/stickers/heart-flat.webp",
+    "sha256": "bb382bb1759cd06b9aa610f6d2ce27cdafa52faeaa955fb94ce1453aa9fef2c9"
+  },
+  {
+    "path": "assets/uplocket/index/stickers/hearts-duo.webp",
+    "source": "https://uplocket.io.vn/assets/index/stickers/hearts-duo.webp",
+    "sha256": "f7be79b544cf761c4111109ae3e3b47a3d9f48973b54dd1e23fe06f1b4fc1970"
+  },
+  {
+    "path": "assets/uplocket/index/stickers/i-heart-locket.webp",
+    "source": "https://uplocket.io.vn/assets/index/stickers/i-heart-locket.webp",
+    "sha256": "be4cd176472dfa7d2ab0f8a8258d75743fddf3e14fe97738888609880c41554a"
+  },
+  {
+    "path": "assets/uplocket/index/stickers/locket-red.webp",
+    "source": "https://uplocket.io.vn/assets/index/stickers/locket-red.webp",
+    "sha256": "4af18c523e876428e968f912e4125c9580979e2424e0cdb592a712dd26b93de0"
+  },
+  {
+    "path": "assets/uplocket/index/stickers/locket-tile.webp",
+    "source": "https://uplocket.io.vn/assets/index/stickers/locket-tile.webp",
+    "sha256": "0efe42cd5725db739e851d268aa7efeaa49941091d8bcd6e64567ba1e6a0bcf2"
+  },
+  {
+    "path": "assets/uplocket/index/stickers/megaphone.webp",
+    "source": "https://uplocket.io.vn/assets/index/stickers/megaphone.webp",
+    "sha256": "9b9a58dd0cca08a894975c0921af4fff0a5512b1e61e6c423df270d175a87f93"
+  },
+  {
+    "path": "assets/uplocket/logos/flat_yellow.webp",
+    "source": "https://uplocket.io.vn/assets/logos/flat_yellow.webp",
+    "sha256": "f20f0c4ee23bdf64c43048ac17ec0dbd9bcdaa235402f122da8b18584dbf30e0"
+  },
+  {
+    "path": "assets/uplocket/logos/gold_on_black.webp",
+    "source": "https://uplocket.io.vn/assets/logos/gold_on_black.webp",
+    "sha256": "442a4e71429497310c6561bb76666d3996d12da0978c15f8cb0edbe802f09db2"
+  },
+  {
+    "path": "assets/uplocket/logos/pastel_3d_gold.webp",
+    "source": "https://uplocket.io.vn/assets/logos/pastel_3d_gold.webp",
+    "sha256": "332d83dfecce5c8dee58629832ad5d0b28e99b0eecf67a70a210434790f57579"
+  },
+  {
+    "path": "assets/uplocket/lenis.min.js",
+    "source": "https://uplocket.io.vn/assets/js/lenis.min.js",
+    "sha256": "b2958f142f832f0d5e547cdef77e6fadfce16bea60982fc8bbf50395a2439df8"
+  },
+  {
+    "path": "assets/uplocket/fredoka-latin.woff2",
+    "source": "https://uplocket.io.vn/_next/static/media/fredoka-latin-wght-normal.2_8zey5e0wa7e.woff2",
+    "sha256": "99d6c78e043710d4f83ed90716779798b7b04eb690f73e0ad0e8f32d1f0e98c2"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_bear_bunny_boba_good_day-fd99ec66.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_bear_bunny_boba_good_day.png",
+    "sha256": "fd99ec66431578b7a46c23e46ffe067440624ee83174d01b83a035f3d4beec8d"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_celebration_balloons-d4797c54.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_celebration_balloons.png",
+    "sha256": "d4797c54edfa9cd01dcd834ca321973d47f542e74aacd285ccc9fc27768716d5"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_chiikawa_starlight_party-ecb6cdba.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_chiikawa_starlight_party.png",
+    "sha256": "ecb6cdba2ca8dad705c588c7a3d9106909becc3e731548e50564f8bbdb856e10"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_chiikawa_white_friends-a5f7a8a9.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_chiikawa_white_friends.png",
+    "sha256": "a5f7a8a9219c167866d3f8a8055668cdf991db767f48680ef2300db4a015201d"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_cinnamoroll_blue_ribbon-db068e66.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_cinnamoroll_blue_ribbon.png",
+    "sha256": "db068e6604da17190b44b1fca7367f5a0b565d5e52d47ef6e3acae6da3f58808"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_cinnamoroll_pastel_clouds-dde5fd53.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_cinnamoroll_pastel_clouds.png",
+    "sha256": "dde5fd53f16ed40949429daff5322200f6ac6733a91d9e18c7c03720268f1484"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_conan_detective-62c87f0f.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_conan_detective.png",
+    "sha256": "62c87f0f38b9bb915cd4fa2103489624a5583f8e5dd4676a4711c6006ff358a1"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_conan_kaito_kid_night-49fa41fe.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_conan_kaito_kid_night.png",
+    "sha256": "49fa41febf82dc4c0074f03f6ae853cb9520f0a4e0aea95032951f67970e6992"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_cr7_ronaldo-7a4c1ec6.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_cr7_ronaldo.png",
+    "sha256": "7a4c1ec6908b67048de0a67f968442cf7c9372b1a72c3a009d8f700fe4bc6e12"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_cute_teddy_bear-63da9023.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_cute_teddy_bear.png",
+    "sha256": "63da9023b4b1880eac68d9d42d0af4a576a96d2b78afc5fc7487643ac5cfe02f"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_demon_slayer_tanjiro_nezuko-3152c8b6.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_demon_slayer_tanjiro_nezuko.png",
+    "sha256": "3152c8b683674b38881cd48df2668cf8f82fb911a3dc2358d40dca9fd6882dc8"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_doraemon_golden_bell-f9586754.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_doraemon_golden_bell.png",
+    "sha256": "f95867547f376f4d866e9d3febf64663b7c462581ba1ba02b3660c9e4f3f6a80"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_doraemon_nobita_friends-7951cab4.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_doraemon_nobita_friends.png",
+    "sha256": "7951cab492620b626b1cb2203316731046f66bca07371bef73f794641b9ffbf0"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_easter_egg_sweets-92e1c799.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_easter_egg_sweets.png",
+    "sha256": "92e1c799517bd172341bfec5a7cf7b49488bb2388e8f1a504c1f0e14573678d1"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_galaxy_night_sky-c54f580d.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_galaxy_night_sky.png",
+    "sha256": "c54f580d80999d777ed5313eda419dd41daf16e543449f0fa3b129b8b7ce9eb6"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_gojo_satoru_limitless-d6b9b249.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_gojo_satoru_limitless.png",
+    "sha256": "d6b9b2494b63b80d3ca84654329762840f2bd3b1c8275f41ad6c671796b6651d"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_grizzy_and_the_lemmings-c84b8053.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_grizzy_and_the_lemmings.png",
+    "sha256": "c84b8053f5a681a976d1c10a2af24d058052258194c63c86b759524d67be726a"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_hachiware_blue_cat-79415c4b.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_hachiware_blue_cat.png",
+    "sha256": "79415c4b39fd4e15f317eaa54ae5bb4c1814cb0c1efd439fd6c4e86ded23d311"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_halloween_pumpkin_night-2779e38f.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_halloween_pumpkin_night.png",
+    "sha256": "2779e38f35b54e88721e599ddd1a5fa17ac2c7bc3f1206fbd44722b41d020842"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_inferno_flame-18b92f8a.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_inferno_flame.png",
+    "sha256": "18b92f8aeeb08531135d82ed64c93907d76af404c828f29104ae17f5cfc3c743"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_keroppi_green_lily-be61e088.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_keroppi_green_lily.png",
+    "sha256": "be61e088a7088a8185cd243993835eb87711e636e7f28e173716718a8d99d260"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_keroppi_lotus_pond-41cb0fdf.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_keroppi_lotus_pond.png",
+    "sha256": "41cb0fdfb450ba7892e8c51178dd1c26b9c9f8d44929fb7ebf6494b33fc0eba0"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_killua_zoldyck-758eed70.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_killua_zoldyck.png",
+    "sha256": "758eed70f7e3d3a175c01b82f9bcc1cb10137123b1fc2be835709d74910a9882"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_kitty_kuromi_strawberry_pink-42a2247c.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_kitty_kuromi_strawberry_pink.png",
+    "sha256": "42a2247c4cf545de6dcc7fe2f8faf44e958a8d1362a1ba4fe3ded1d397ff359a"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_kuromi_halloween_witch-91f0691b.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_kuromi_halloween_witch.png",
+    "sha256": "91f0691b53b8bf4cc83f0b0582341ee667c06da8d694a233b9d6a87f08bf43aa"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_kuromi_purple_star-f794876e.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_kuromi_purple_star.png",
+    "sha256": "f794876ee8fcb7897ecf1b9c42a0b274b0608306470631130b2379aee3454995"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_lotso_bear-dc5d1904.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_lotso_bear.png",
+    "sha256": "dc5d1904c6310f39f7fd17442efc8821dd0015af80ceebad537421fcc842d26a"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_love_yourself-852af070.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_love_yourself.png",
+    "sha256": "852af0703d27e9600fb841755c3d6c22ae60e75ed0612560647c09492ea0bbe6"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_manga_lightning_power-7f827d64.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_manga_lightning_power.png",
+    "sha256": "7f827d64de9c73c69431462eef622633ac539c0bdd06d29d2c2377627267acbb"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_merry_christmas_santa_bells-28c5985b.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_merry_christmas_santa_bells.png",
+    "sha256": "28c5985b72a48081498cf871eddd84acfc47ea078be967dcf3a59fa77c3842d1"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_one_piece_luffy_gear5-f8a8e180.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_one_piece_luffy_gear5.png",
+    "sha256": "f8a8e18022ddb6b25fc79250e83ef3a4cf0df3e87648ba430d5026a0702eaf81"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_one_piece_straw_hat_crew-a4aacd83.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_one_piece_straw_hat_crew.png",
+    "sha256": "a4aacd83da04a4fc1f9e3424d97feb3b8c3143d3d0702bd46f64e4d1784d3765"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_pastel_kitten-df6a11c4.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_pastel_kitten.png",
+    "sha256": "df6a11c4d4c960a7e3a8c5e120e42db2c5e2dde591189fd1397922bfd0b61fbc"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_pink_polka_dots-25c15d27.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_pink_polka_dots.png",
+    "sha256": "25c15d2734aa0f0dd7f024e2d5150c91add3dad586f8711e2618beae01a75109"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_pochacco_blue_sky-d6c39c15.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_pochacco_blue_sky.png",
+    "sha256": "d6c39c155f1d529457b95eb0b7ba5a9539f0aadf1ee73d636424dae055b00e9a"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_pompompurin_golden-b61463fc.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_pompompurin_golden.png",
+    "sha256": "b61463fc2b372f13926600ad6aa6b66c629394188801347ae90283465719fa2b"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_pompompurin_joyful_yellow-e3e76564.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_pompompurin_joyful_yellow.png",
+    "sha256": "e3e7656455b2f9f1aa710fd3b53d5052134214a7a8088b7c2bc4f0d1e0dfd393"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_pororo_penguin_friends-fb548ff9.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_pororo_penguin_friends.png",
+    "sha256": "fb548ff9bad444316b64fb779a0a586136463bac0691c447331e4ab6dc8aa43b"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_sanrio_all_stars_wreath-d9cf0729.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_sanrio_all_stars_wreath.png",
+    "sha256": "d9cf0729ce92bd76fad2da9599411175e119383cb85770e3c695a95e61cd9ebc"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_sanrio_pastel_candy_ribbon-148339af.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_sanrio_pastel_candy_ribbon.png",
+    "sha256": "148339afffa056bf6fb91f198e08967767b138f451dee1c14f73d3c922c5dde2"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_sao_kirito_asuna_duel-6a53c6f8.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_sao_kirito_asuna_duel.png",
+    "sha256": "6a53c6f83cd3657bbcb9720dc7a31d6ba6b088144e998087332bc46e0eec2530"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_sao_kirito_asuna_pastel-c2cf2df4.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_sao_kirito_asuna_pastel.png",
+    "sha256": "c2cf2df43418078c7a870d3abab3b03a9dc07700881b56da90fee3538a4cad8e"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_shin_chan_chocobi-b8737606.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_shin_chan_chocobi.png",
+    "sha256": "b8737606820cfae138a1de5fed66aaa295fe1ad6f77c4016f09596c47fea06c4"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_shin_chan_expressions-d09fb949.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_shin_chan_expressions.png",
+    "sha256": "d09fb94909814a35cbd9c518b357f14876cbf255d9be595d593221e49e96ba69"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_shin_chan_sunny_yellow-203ab9bf.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_shin_chan_sunny_yellow.png",
+    "sha256": "203ab9bff64bd2a94c81e471d47169167dfc325580b79ee4f6ea9e0c19be303b"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_smurfs_mushroom_village-4537e7c8.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_smurfs_mushroom_village.png",
+    "sha256": "4537e7c802faab5e93201f1b62bd3e31feb9f6414724d44a6836514cbce06518"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_sweet_bunny_rabbit-30fbd6b0.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_sweet_bunny_rabbit.png",
+    "sha256": "30fbd6b0e5ff60d6ea07e2804f7aef6c064e8dc7a9be14c193bc955c3e00224f"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_twilight_stars-70fff398.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_twilight_stars.png",
+    "sha256": "70fff39800c5002cce38bad6e467ca8c6f758d341aacb9febca7c425567e14b0"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_usagi_carrot_crown-827dff89.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_usagi_carrot_crown.png",
+    "sha256": "827dff8908696b017c0f07271197362c493afed9c2588e373316a035fe14338b"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_usagi_chiikawa_yaha-abec7fd2.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_usagi_chiikawa_yaha.png",
+    "sha256": "abec7fd2b2ca818d53bdae27a216fa1ef013dd57c06f115db8d7c2f0288ec980"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_vietnam_women_day_2010-57d2b73b.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_vietnam_women_day_2010.png",
+    "sha256": "57d2b73bb0ffa1af3ba084929b22aae569b7e8cc23a00ed059027005fe503e0d"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_winter_bear_puppy_snow-15c8d13b.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_winter_bear_puppy_snow.png",
+    "sha256": "15c8d13b1ea2ed33ef8b2d7542565997249961229414a441e313854ce250c8c4"
+  },
+  {
+    "path": "assets/uplocket/frames/frame_zenitsu_thunder_clap-e57ba417.png",
+    "source": "https://uplocket.io.vn/uploads/frames/frame_zenitsu_thunder_clap.png",
+    "sha256": "e57ba4172d67a081bc3dcb88fa6ad0902d62f21e9751ce68b336cd82414b5af7"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_bear_bunny_boba_good_day_s104_sx100_sy100_ox0_oy0-ca46c6eb.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_bear_bunny_boba_good_day_s104_sx100_sy100_ox0_oy0.png",
+    "sha256": "ca46c6eb3827b2db0f1fe26be54fa92960754c3199f08156d64f936f38ef8443"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_chiikawa_starlight_party_s105_sx100_sy100_ox0_oy0-fa72f504.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_chiikawa_starlight_party_s105_sx100_sy100_ox0_oy0.png",
+    "sha256": "fa72f504effd9e6a100cc497658fb562c70d374a3cce371b1952e049ef2cbe25"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_cinnamoroll_blue_ribbon_s104_sx100_sy100_ox0_oy0-8a065380.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_cinnamoroll_blue_ribbon_s104_sx100_sy100_ox0_oy0.png",
+    "sha256": "8a0653806efc1e5b58ebae35484e7f036321594025e9c6927c574546608ef241"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_conan_detective_s104_sx100_sy100_ox0_oy0-5576adbd.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_conan_detective_s104_sx100_sy100_ox0_oy0.png",
+    "sha256": "5576adbd8660869b03e22629d09b1896dbc55369e11d2fac9bd784bd1e554756"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_cute_teddy_bear_s101_sx100_sy100_ox0_oy0-5df35db6.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_cute_teddy_bear_s101_sx100_sy100_ox0_oy0.png",
+    "sha256": "5df35db69b51a1fa164ff87fd9686f2d5ef896cf5522f8b7e2f7b5487646c46b"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_doraemon_golden_bell_s106_sx100_sy100_ox0_oy0-46e2ed46.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_doraemon_golden_bell_s106_sx100_sy100_ox0_oy0.png",
+    "sha256": "46e2ed462793753bd3c781fb64a21e9e1305f947a435cc463189f6e1b462c12b"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_grizzy_and_the_lemmings_s101_sx100_sy100_ox0_oy0-78290bd3.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_grizzy_and_the_lemmings_s101_sx100_sy100_ox0_oy0.png",
+    "sha256": "78290bd393487ed243d268598209d21fb6caa47281259a0d779ebfcca2c94082"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_killua_zoldyck_s106_sx100_sy100_ox0_oy0-95dae9c5.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_killua_zoldyck_s106_sx100_sy100_ox0_oy0.png",
+    "sha256": "95dae9c538f7191596990222eaae3632a0b104bdffb5c524e0cd65ef211a19a8"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_kitty_kuromi_strawberry_pink_s105_sx100_sy100_ox0_oy0-0acbd7ae.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_kitty_kuromi_strawberry_pink_s105_sx100_sy100_ox0_oy0.png",
+    "sha256": "0acbd7ae7e035d6bd501ae7c7256de2077c02b198de90278a99bffc7802dbda9"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_merry_christmas_santa_bells_s102_sx100_sy100_ox0_oy0-a50b41f0.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_merry_christmas_santa_bells_s102_sx100_sy100_ox0_oy0.png",
+    "sha256": "a50b41f03e8c680dc268684ad0228b4423c9c0a7d51e8f74f592ad5b20548980"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_one_piece_straw_hat_crew_s104_sx100_sy100_ox0_oy0-0bf1fe25.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_one_piece_straw_hat_crew_s104_sx100_sy100_ox0_oy0.png",
+    "sha256": "0bf1fe25ef8644e5816fb92afc870cceb1bc8b6850508783dbed8736a153c36e"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_pompompurin_joyful_yellow_s103_sx100_sy100_ox0_oy0-02ca4602.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_pompompurin_joyful_yellow_s103_sx100_sy100_ox0_oy0.png",
+    "sha256": "02ca460260f9958591efbc77e3a3a1d792051e5b9a743d0ecc170a85f911e83c"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_pororo_penguin_friends_s103_sx100_sy100_ox0_oy0-e218506b.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_pororo_penguin_friends_s103_sx100_sy100_ox0_oy0.png",
+    "sha256": "e218506b27e6e3ba1f97b15d5fe040828ee6d7f398f0824cf0f944c7e8f585a0"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_sanrio_all_stars_wreath_s104_sx100_sy100_ox0_oy0-e2726b52.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_sanrio_all_stars_wreath_s104_sx100_sy100_ox0_oy0.png",
+    "sha256": "e2726b52d54d78f79a71cf5b45b69e2cbcdaf8fc84e4334a6893c236f43995d7"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_sanrio_pastel_candy_ribbon_s107_sx100_sy100_ox0_oy0-65376ecd.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_sanrio_pastel_candy_ribbon_s107_sx100_sy100_ox0_oy0.png",
+    "sha256": "65376ecde16812acc78fb3585ca7228ccf100ba0db3a8774e113722a210e8311"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_shin_chan_chocobi_s104_sx100_sy100_ox0_oy0-eab9dbca.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_shin_chan_chocobi_s104_sx100_sy100_ox0_oy0.png",
+    "sha256": "eab9dbcaac4e011f7d6658c65c877bd15aef35c9628ef486b4efc22a992bf094"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_shin_chan_sunny_yellow_s110_sx100_sy100_ox0_oy0-ebfb39d8.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_shin_chan_sunny_yellow_s110_sx100_sy100_ox0_oy0.png",
+    "sha256": "ebfb39d8c59044a3b94f0d2c35ceef0561bf7dbf5c470a61d701ec6d7030ce96"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_smurfs_mushroom_village_s105_sx100_sy100_ox0_oy0-78e5de00.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_smurfs_mushroom_village_s105_sx100_sy100_ox0_oy0.png",
+    "sha256": "78e5de00d38c5c93ab59bd221829ce18c428904cf1a40585be5ebf399a766bd4"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_sweet_bunny_rabbit_s103_sx100_sy100_ox0_oy0-73c244fc.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_sweet_bunny_rabbit_s103_sx100_sy100_ox0_oy0.png",
+    "sha256": "73c244fcdd713dcb7de6f1c0d120eac34825dbff0bd18bb19e22758d9e864e72"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_usagi_carrot_crown_s104_sx100_sy100_ox0_oy0-8b43ad6c.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_usagi_carrot_crown_s104_sx100_sy100_ox0_oy0.png",
+    "sha256": "8b43ad6c22f8b018938b2646f1ed0bb0155bec099469d04cff8e38fba4eabfd3"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_vietnam_women_day_2010_s104_sx100_sy100_ox0_oy0-038c5ebc.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_vietnam_women_day_2010_s104_sx100_sy100_ox0_oy0.png",
+    "sha256": "038c5ebcc83b6bdcf03e8862954233c300190039147b769cd1c4d2f1c25705ff"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_frame_winter_bear_puppy_snow_s102_sx100_sy100_ox0_oy0-99fe94f8.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_frame_winter_bear_puppy_snow_s102_sx100_sy100_ox0_oy0.png",
+    "sha256": "99fe94f8e77ef379467466052141333bc55cfa75de0b748536925893e8ef3a0e"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_locketdio-frame01_s100_sx100_sy100_ox0_oy0-40631a16.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_locketdio-frame01_s100_sx100_sy100_ox0_oy0.png",
+    "sha256": "40631a16966fb06fa9eef409a156849d8cbaf529f7d66892abc1c6355c03717c"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_locketdio-halloween-2025-v1-1440x1440_s100_sx100_sy100_ox0_oy0-e5ba0852.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_locketdio-halloween-2025-v1-1440x1440_s100_sx100_sy100_ox0_oy0.png",
+    "sha256": "e5ba08521c37ad6b16ffe2d1db6dcb54954ca3ab90a57f01bb1951c6cbc2f05f"
+  },
+  {
+    "path": "assets/uplocket/frames/baked_locketdio-thanksgiving-2025_s100_sx100_sy100_ox0_oy0-a97108a6.png",
+    "source": "https://uplocket.io.vn/uploads/frames/ctv/baked_locketdio-thanksgiving-2025_s100_sx100_sy100_ox0_oy0.png",
+    "sha256": "a97108a6fd5c3f1ec19d966919ec604e524c556c016ccae3fd59b285a5ebc760"
+  }
+]
