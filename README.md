@@ -4,6 +4,22 @@ Trang tải hồ sơ cấu hình với giao diện kem–vàng, bố cục thíc
 
 **Website:** https://AnhhPhuong06.github.io/LocketGold/
 
+**Tool quản lý lời mời:** https://AnhhPhuong06.github.io/LocketGold/tool.html
+
+## Tool quản lý lời mời Gold
+
+Mở `tool.html` qua website hoặc máy chủ xem thử cục bộ. Tool hỗ trợ lưu link mời và mẫu tin nhắn, thêm/sửa/xóa lời mời, hoàn tác xóa, tìm kiếm không dấu, lọc trạng thái và nhập/xuất JSON. Nhập JSON sẽ gộp các mã lời mời mới và giữ nguyên bản ghi đang có; không ghi đè bản ghi trùng.
+
+Dữ liệu nằm trong `localStorage` trên trình duyệt và tên miền bạn đang dùng. Không đồng bộ giữa GitHub Pages và Sites; dùng xuất/nhập JSON nếu muốn chuyển dữ liệu. Khi trình duyệt không cho lưu, trang sẽ báo đang dùng bộ nhớ tạm. Dữ liệu lưu hỏng được giữ nguyên đến khi người dùng tải bản gốc; tool không tự xóa bản lưu đó.
+
+Tool không đăng nhập Locket, không truy vấn trạng thái thuê bao, không gửi tin nhắn và không tự tạo tài khoản. Tất cả trạng thái thưởng do người dùng ghi nhận thủ công. Gold do Locket cấp theo [điều kiện chương trình chính thức](https://help.locket.com/en/articles/18178302-how-do-locket-gold-referrals-work-via-link). Link do người dùng nhập chỉ được kiểm tra định dạng HTTPS; tool không xác minh đây có phải lời mời hợp lệ hay không.
+
+Chạy kiểm thử xử lý dữ liệu bằng Node.js 18 trở lên:
+
+```sh
+node --test tests/referral-core.test.cjs
+```
+
 ## Nội dung
 
 - Khung iPhone minh họa; nhấn ảnh để đổi giữa hai khoảnh khắc.

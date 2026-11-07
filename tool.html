@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f2">
+  <title>Quản lý lời mời Gold · AnhhPhuongg</title>
+  <meta name="description" content="Lưu link mời Locket, soạn lời nhắn và tự theo dõi lời mời của bạn. Dữ liệu lưu trên trình duyệt, không cần đăng nhập.">
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <link rel="stylesheet" href="./assets/referral-tool.css">
+  <script src="./assets/referral-core.js" defer></script>
+  <script src="./assets/referral-tool.js" defer></script>
+</head>
+<body class="tool-page">
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V3H3v13h5"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="m15 4 5 5M4 20l5-1L21 7a2 2 0 0 0-5-5L4 14v6ZM13 20h8"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 16V4m-5 5 5-5 5 5M4 16v4h16v-4"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 4v3"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  </svg>
+  <a class="skip-link" href="#tool-main">Đến công cụ</a>
+  <header class="header"><div class="container nav-wrap">
+    <a href="./index.html" class="brand"><span class="brand-icon"><svg class="icon"><use href="#i-heart"/></svg></span><span>Locket<span class="brand-gold">Gold</span><span class="brand-by">by AnhhPhuongg</span></span></a>
+    <a class="back-link" href="./index.html">Về trang chính <span aria-hidden="true">↗</span></a>
+  </div></header>
+
+  <main class="container tool-main" id="tool-main">
+    <section class="tool-hero" aria-labelledby="tool-title">
+      <div><p class="eyebrow">GOLD REFERRALS / SỔ LỜI MỜI CỦA BẠN</p><h1 id="tool-title">Mời bạn bè.<br><span>Theo dõi thật gọn.</span></h1><p>Lưu link mời, chuẩn bị lời nhắn và ghi lại tiến độ.<br>Những lời mời nhỏ, ở cùng một chỗ.</p></div>
+      <div class="hero-aside"><span class="local-badge" id="storage-badge"><svg class="icon"><use href="#i-lock"/></svg>Chỉ lưu trên trình duyệt này</span><p>Trạng thái do bạn ghi nhận thủ công.<br>Gold do Locket cấp khi lời mời đủ điều kiện.</p><a href="https://help.locket.com/en/articles/18178302-how-do-locket-gold-referrals-work-via-link" target="_blank" rel="noopener noreferrer">Đọc điều kiện chính thức <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <div class="storage-warning" id="storage-warning" role="status" hidden><span id="storage-warning-text"></span><button type="button" id="rescue-storage" hidden>Tải dữ liệu gốc</button></div>
+    <noscript><p class="storage-warning">Hãy bật JavaScript trong trình duyệt để sử dụng công cụ lưu và theo dõi lời mời.</p></noscript>
+
+    <section class="tracker-stats" aria-label="Thống kê do bạn tự ghi nhận">
+      <div><span>Tổng lời mời</span><strong id="stat-total">0</strong></div><div><span>Chưa gửi</span><strong id="stat-planned">0</strong></div><div><span>Đang chờ</span><strong id="stat-sent">0</strong></div><div><span>Đã ghi nhận thưởng</span><strong id="stat-rewarded">0</strong></div>
+    </section>
+
+    <div class="tracker-grid">
+      <aside class="tracker-sidebar">
+        <section class="tracker-card link-card" aria-labelledby="link-title">
+          <div class="card-kicker">01 / LIÊN KẾT CỦA BẠN</div><h2 id="link-title">Một link. Dễ chia sẻ.</h2><p class="card-description">Lấy link từ banner mời bạn bè trong Cài đặt Locket, rồi lưu vào đây.</p>
+          <form id="invite-form">
+            <label for="invite-url">Link mời Locket</label><input id="invite-url" type="url" maxlength="2048" placeholder="Dán link HTTPS từ Locket" autocomplete="off" spellcheck="false">
+            <label for="invite-message">Nội dung lời mời</label><textarea id="invite-message" maxlength="2000" rows="5" required></textarea><p class="field-help">Dùng <code>{name}</code> cho tên bạn và <code>{link}</code> cho liên kết.</p>
+            <button class="button button-gold full-width" type="submit">Lưu link &amp; lời nhắn <svg class="icon"><use href="#i-arrow"/></svg></button>
+          </form>
+          <div class="copy-actions"><button type="button" id="copy-invite-url"><svg class="icon"><use href="#i-copy"/></svg>Sao chép link đã lưu</button><button type="button" id="copy-invite-message"><svg class="icon"><use href="#i-copy"/></svg>Sao chép lời mời</button></div>
+          <p class="saved-link-status" id="saved-link-status">Chưa lưu liên kết.</p><p class="subtle-note">Tool kiểm tra định dạng URL, không xác minh lời mời với Locket.</p>
+        </section>
+        <section class="tracker-card guide-card" aria-labelledby="guide-title"><h2 id="guide-title">Một chút hướng dẫn</h2><ol><li>Lưu link mời chính thức của bạn.</li><li>Thêm tên bạn muốn mời.</li><li>Sao chép lời nhắn rồi tự gửi.</li><li>Khi thấy thưởng trong Locket, cập nhật trạng thái tại đây.</li></ol><p>Mỗi lời mời hợp lệ có thể nhận 30 ngày Gold, tối đa 12 lượt theo chương trình hiện tại. Danh sách này không phải xác nhận quyền Gold của tài khoản.</p></section>
+      </aside>
+
+      <section class="tracker-card friends-card" aria-labelledby="friends-title">
+        <div class="friends-heading"><div><div class="card-kicker">02 / TỪNG LỜI MỜI NHỎ</div><h2 id="friends-title">Danh sách của bạn</h2></div><div class="backup-actions"><button class="small-button" type="button" id="export-data"><svg class="icon"><use href="#i-down"/></svg>Xuất JSON</button><button class="small-button" type="button" id="import-data"><svg class="icon"><use href="#i-up"/></svg>Nhập JSON</button><input type="file" id="import-file" accept=".json,application/json" hidden></div></div>
+        <p class="backup-help">Nhập để gộp dữ liệu, giữ nguyên bản ghi trùng. Xuất JSON để sao lưu hoặc chuyển sang trình duyệt khác.</p>
+
+        <form class="friend-form" id="friend-form">
+          <h3 id="friend-form-title">Thêm một người bạn</h3><input id="edit-friend-id" type="hidden">
+          <div class="friend-fields"><div class="name-field"><label for="friend-name">Tên bạn <span aria-hidden="true">*</span></label><input id="friend-name" maxlength="80" required placeholder="Bạn muốn mời ai?" autocomplete="off"></div><div><label for="friend-date">Ngày lời mời</label><input id="friend-date" type="date" required></div><div><label for="friend-status">Trạng thái</label><select id="friend-status"><option value="planned">Chưa gửi</option><option value="sent">Đang chờ</option><option value="rewarded">Đã ghi nhận thưởng</option><option value="ineligible">Không đủ điều kiện</option></select></div></div>
+          <label for="friend-note">Ghi chú <span class="optional">· tùy chọn</span></label><input id="friend-note" maxlength="300" placeholder="Ví dụ: hẹn gửi link vào cuối tuần" autocomplete="off">
+          <div class="form-actions"><button type="submit" class="button button-dark" id="save-friend"><svg class="icon"><use href="#i-plus"/></svg><span>Thêm vào danh sách</span></button><button type="button" class="cancel-edit" id="cancel-edit" hidden>Hủy chỉnh sửa</button></div>
+        </form>
+
+        <div class="list-toolbar"><div class="search-wrap"><svg class="icon"><use href="#i-search"/></svg><label class="visually-hidden" for="search-friends">Tìm theo tên hoặc ghi chú</label><input id="search-friends" type="search" placeholder="Tìm tên hoặc ghi chú…" autocomplete="off"></div><label class="visually-hidden" for="filter-status">Lọc trạng thái</label><select id="filter-status"><option value="all">Tất cả trạng thái</option><option value="planned">Chưa gửi</option><option value="sent">Đang chờ</option><option value="rewarded">Đã ghi nhận thưởng</option><option value="ineligible">Không đủ điều kiện</option></select></div>
+        <div class="list-caption" id="list-caption" aria-live="polite">0 lời mời</div><div class="friend-list" id="friend-list"></div>
+        <div class="empty-friends" id="empty-friends"><span class="empty-mark" aria-hidden="true">＋</span><h3>Khởi đầu từ một lời mời.</h3><p>Thêm tên một người bạn ở phía trên.<br>Danh sách của bạn sẽ hiện tại đây.</p></div>
+        <p class="list-footnote">Mọi trạng thái trên trang đều do bạn tự cập nhật. Công cụ không gửi tin nhắn hoặc tạo tài khoản thay bạn.</p>
+      </section>
+    </div>
+    <footer class="tool-footer"><span>Made by AnhhPhuongg</span><p>Dữ liệu riêng từng trình duyệt và từng tên miền. Xóa dữ liệu trang có thể làm mất danh sách; hãy xuất bản sao lưu.</p><a href="https://github.com/AnhhPhuong06/LocketGold" target="_blank" rel="noopener noreferrer">Xem mã nguồn ↗</a></footer>
+  </main>
+
+  <div class="clipboard-panel" id="clipboard-panel" hidden><label for="clipboard-text">Trình duyệt chưa cho phép sao chép. Bạn có thể chọn và sao chép nội dung bên dưới.</label><textarea id="clipboard-text" rows="4" readonly></textarea><button type="button" id="close-clipboard">Đóng</button></div>
+  <div class="tracker-toast" id="tracker-toast" role="status" aria-live="polite"><span id="toast-message"></span><button type="button" id="toast-undo" hidden>Hoàn tác</button></div>
+</body>
+</html>
