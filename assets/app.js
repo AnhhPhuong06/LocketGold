@@ -22,6 +22,19 @@
   });
   const desktop = window.matchMedia('(min-width: 681px)');
   if (desktop.addEventListener) desktop.addEventListener('change', closeMenu);
+  else if (desktop.addListener) desktop.addListener(closeMenu);
+
+  // Safari 14.0 supports grid gap but not flex gap. Measure actual flex layout.
+  const gapProbe = document.createElement('div');
+  gapProbe.style.cssText = 'display:flex;flex-direction:column;row-gap:1px;position:absolute;visibility:hidden;';
+  for (let i = 0; i < 2; i += 1) {
+    const child = document.createElement('div');
+    child.style.cssText = 'height:1px;flex-shrink:0;';
+    gapProbe.appendChild(child);
+  }
+  document.body.appendChild(gapProbe);
+  document.documentElement.classList.toggle('no-flex-gap', gapProbe.scrollHeight !== 3);
+  document.body.removeChild(gapProbe);
 
   const stepButtons = [...document.querySelectorAll('.step')];
   stepButtons.forEach(button => button.addEventListener('click', () => {

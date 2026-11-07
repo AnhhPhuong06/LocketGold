@@ -57,7 +57,7 @@
         </dict>
     </array>
     <key>PayloadDescription</key>
-    <string>Cấu hình DNS qua HTTPS của AnhhPhuongg. Bản thử tương thích mạng dùng địa chỉ máy chủ được phân giải từ tên miền.</string>
+    <string>Hồ sơ DNS qua HTTPS cho iOS 14 trở lên. Tìm địa chỉ máy chủ theo tên miền. Chưa bảo đảm kích hoạt Gold trên mọi thiết bị.</string>
     <key>PayloadDisplayName</key>
     <string>Locketgold của AnhhPhuongg</string>
     <key>PayloadIdentifier</key>

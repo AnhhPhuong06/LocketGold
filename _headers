@@ -4,5 +4,11 @@
   Cache-Control: no-store
   X-Content-Type-Options: nosniff
 
+/AnhhPhuongg-IPv4.mobileconfig
+  Content-Type: application/x-apple-aspen-config
+  Content-Disposition: attachment; filename="AnhhPhuongg-IPv4.mobileconfig"
+  Cache-Control: no-store
+  X-Content-Type-Options: nosniff
+
 /*
   X-Robots-Tag: noindex, nofollow
