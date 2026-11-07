@@ -53,8 +53,8 @@
   const accountCheck = document.getElementById('account-check');
   const result = document.getElementById('account-result');
   const plans = {
-    trial: { name: 'Gói dùng thử', duration: '3 ngày · theo web mẫu', price: 'Miễn phí' },
-    year: { name: 'Locket Gold 1 năm', duration: '1 năm · theo web mẫu', price: '15.000đ' },
+    trial: { name: 'Gói dùng thử', duration: '3 ngày', price: 'Miễn phí' },
+    year: { name: 'Locket Gold 1 năm', duration: '1 năm', price: '15.000đ' },
     lifetime: { name: 'Locket Gold trọn đời', duration: 'Theo điều kiện Uplocket', price: '25.000đ' }
   };
   let returnFocus = null;
@@ -66,6 +66,10 @@
     accountInput.readOnly = false;
   }
   function clearAccountError() { accountError.hidden = true; accountError.textContent = ''; accountInput.removeAttribute('aria-invalid'); }
+  function syncAccountCheck() {
+    try { window.LocketLink.parse(accountInput.value); accountCheck.disabled = false; }
+    catch (_) { accountCheck.disabled = true; }
+  }
   function closeAccountModal() {
     modal.hidden = true; document.body.classList.remove('modal-open');
     backgroundState.forEach(function (entry) {
@@ -84,7 +88,7 @@
       document.getElementById('account-plan-name').textContent = plan.name;
       document.getElementById('account-plan-duration').textContent = plan.duration;
       document.getElementById('account-plan-price').textContent = plan.price;
-      accountCheck.disabled = !accountInput.value.trim();
+      syncAccountCheck();
       modal.hidden = false; document.body.classList.add('modal-open');
       backgroundState = Array.from(document.body.children).filter(function (element) { return element !== modal && !['SCRIPT', 'SVG'].includes(element.tagName.toUpperCase()); }).map(function (element) {
         const entry = { element: element, inert: !!element.inert, hidden: element.getAttribute('aria-hidden') };
@@ -105,7 +109,12 @@
       else if (!event.shiftKey && (document.activeElement === last || !modal.contains(document.activeElement))) { event.preventDefault(); first.focus(); }
     }
   });
-  accountInput.addEventListener('input', function () { resetAccountResult(); clearAccountError(); accountCheck.disabled = !accountInput.value.trim(); });
+  accountInput.addEventListener('input', function () { resetAccountResult(); clearAccountError(); syncAccountCheck(); });
+  accountInput.addEventListener('blur', function () {
+    if (!accountInput.value.trim()) return;
+    try { window.LocketLink.parse(accountInput.value); }
+    catch (error) { accountError.textContent = error.message; accountError.hidden = false; accountInput.setAttribute('aria-invalid', 'true'); }
+  });
   form.addEventListener('submit', function (event) {
     event.preventDefault(); clearAccountError();
     try { account = window.LocketLink.parse(accountInput.value); }

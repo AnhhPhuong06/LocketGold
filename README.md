@@ -50,6 +50,7 @@ GitHub Pages dùng nhánh `main`, thư mục gốc `/`. Tệp `.nojekyll` giữ 
 
 - `index.html`: nội dung và các phần của trang.
 - `assets/landing.css`: giao diện trang chủ, kích thước màn hình và chuyển động.
+- `assets/checkout.css`: bảng giá và cửa sổ nhập link, tỷ lệ 420px trên máy tính, nền mờ, các trạng thái nút và bố cục điện thoại theo ảnh tham khảo. Chỉ giao diện và kiểm tra định dạng tại máy; không kết nối API cấp Gold.
 - `assets/landing.js`: menu, xem thử khung, đổi ảnh, chọn bước và sao chép link.
 - `assets/locket-link.js`: kiểm tra định dạng link trong cửa sổ chọn gói; kiểm thử bằng `node --test tests/locket-link.test.cjs`.
 - `assets/styles.css`: giao diện chung của tool lời mời; trang chủ dùng CSS riêng.
@@ -94,3 +95,4 @@ Nguồn: [định nghĩa payload do Apple công bố](https://github.com/apple/d
 - Ảnh chó: [Jesse Collins / Unsplash](https://unsplash.com/photos/XCHhSPhXsiI), dùng theo [Unsplash License](https://unsplash.com/license).
 - Ảnh biển: [Joel Vodell / Unsplash](https://unsplash.com/photos/8Ogfqvw15Rg), dùng theo Unsplash License.
 - Phông Manrope: [Google Fonts](https://fonts.google.com/specimen/Manrope), SIL Open Font License; bản giấy phép nằm tại `assets/Manrope-OFL.txt`.
+- Phông Nunito cho bảng giá và cửa sổ: [Google Fonts](https://fonts.google.com/specimen/Nunito), SIL Open Font License; bản giấy phép tại `assets/Nunito-OFL.txt`. Không phân phối phông SF Pro của Apple; dùng `ui-rounded` trên hệ thống hỗ trợ và Nunito dự phòng.
