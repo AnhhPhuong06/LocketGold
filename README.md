@@ -8,7 +8,7 @@ Trang tải hồ sơ cấu hình của AnhhPhuongg với giao diện kem–vàng
 
 ## Tra cứu tài khoản qua Uplocket
 
-Backend trong `backend/lookup-worker.mjs` gọi endpoint tra cứu công khai của Uplocket và chỉ trả các trường cần hiển thị. Không trả UID, token, mã kích hoạt, thông tin holder hoặc nguyên bản phản hồi. Cấu hình ở `assets/lookup-config.js`; bản tích hợp đang được chuẩn bị với API Sites riêng tư, nên production vẫn tắt tra cứu cho đến khi chủ website cho phép công khai API và kiểm tra trực tiếp thành công.
+Backend trong `backend/lookup-worker.mjs` gọi endpoint tra cứu công khai của Uplocket và chỉ trả các trường cần hiển thị. Không trả UID, token, mã kích hoạt, thông tin holder hoặc nguyên bản phản hồi. API đã được mở cho khách website theo yêu cầu ai cũng dùng được; cấu hình frontend nằm ở `assets/lookup-config.js`. Không có khóa backend hoặc token Sites trong mã trình duyệt.
 
 Khi bật, nút kiểm tra gửi username đến Uplocket và giao diện ghi rõ nguồn. Cờ `is_gold=true/false` hiển thị “Đã có Gold” hoặc “Chưa có Gold” **theo Uplocket**, không được mô tả là xác nhận thuê bao chính thức từ Locket. Nếu API lỗi hoặc không trả cờ boolean, trạng thái vẫn chưa xác định. Gói vừa chọn, gói trong dữ liệu Uplocket và hạn Uplocket trả về là các trường riêng. Tài khoản chưa có Gold có nút mở Uplocket để tiếp tục tại dịch vụ đó; website này không tự đặt đơn hoặc cấp gói.
 
@@ -30,7 +30,7 @@ node --test tests/referral-core.test.cjs
 
 ## Nội dung
 
-- Bảng giá tham khảo từ Uplocket: dùng thử miễn phí, 1 năm 20.000đ, trọn đời 30.000đ. Nút chọn mở cửa sổ nhập link, hiển thị gói đã chọn và kiểm tra định dạng HTTPS của link `locket.cam`. Thẻ kết quả có link cá nhân, gói vừa chọn, giá/thời hạn tham khảo, trạng thái Gold, ngày kích hoạt/hết hạn và phần mở rộng thông tin hồ sơ DNS. Các trường chưa có nguồn xác thực hiển thị “Chưa có dữ liệu” hoặc “Chưa xác minh”; thời hạn gói vừa chọn không được dùng để tự suy ra hạn Gold. Thẻ có ảnh công khai nếu username đã có trong danh mục cục bộ; tài khoản khác dùng chữ viết tắt. Không thu tiền, nhận đơn hoặc cấp Gold. Link nhập không được gửi qua mạng hoặc lưu bền vững; chỉ được mở ở trang cá nhân nếu người dùng bấm nút tương ứng. Giá và điều kiện cần xác nhận tại bên cung cấp; tên gói trọn đời không phải cam kết từ Locket.
+- Bảng giá tham khảo từ Uplocket: dùng thử miễn phí, 1 năm 20.000đ, trọn đời 30.000đ. Nút chọn mở cửa sổ nhập link, hiển thị gói đã chọn và kiểm tra định dạng HTTPS của link `locket.cam`. Thẻ kết quả có tên/ảnh từ dịch vụ tra cứu, gói vừa chọn, giá/thời hạn tham khảo, trạng thái/gói/hạn theo Uplocket và phần mở rộng thông tin hồ sơ DNS. Dữ liệu chưa được nguồn trả về vẫn hiển thị “Chưa có dữ liệu” hoặc “Chưa xác minh”; thời hạn gói vừa chọn không được dùng để tự suy ra hạn Gold. Ảnh công khai cục bộ được dùng dự phòng khi có; tài khoản không có ảnh dùng chữ viết tắt. Website không thu tiền, nhận đơn hoặc cấp Gold. Khi bấm kiểm tra, username được gửi đến Uplocket qua API trung gian; trình duyệt không lưu bền vững link nhập. Giá và điều kiện cần xác nhận tại bên cung cấp; tên gói trọn đời không phải cam kết từ Locket.
 - Điện thoại và ảnh nổi minh họa trên đầu trang; không phải ảnh chụp ứng dụng thực tế.
 - Xem thử ba màu khung và nhấn ảnh để đổi khoảnh khắc; không thay đổi ứng dụng Locket.
 - Đã tích hợp ảnh, sticker, app icon và logo đã tải từ Uplocket; điện thoại có thể đổi ảnh bằng nút và tự chuyển khi bật chuyển động. Có nút tạm dừng và hỗ trợ giảm chuyển động.

@@ -6,12 +6,10 @@ It provides CORS for the GitHub Pages origin and filters the provider response t
 UIDs, activation codes, tokens, holder records and order actions are never forwarded.
 
 The backend is deployed at `https://anhhphuongg-lookup-api.biggerdotterel.chatgpt.site`.
-It starts owner-private through Sites. Changing it to public requires the owner's explicit instruction;
-never put a Sites service token in the browser. Public deployment of the lookup route is needed before
-enabling it on the public GitHub Pages frontend.
+It was prepared owner-private through Sites, then opened to public visitors to support the owner's
+request that anyone can use the website. Never put a Sites service token in the browser.
 
-`assets/lookup-config.js` currently enables lookup only in local preview. After the owner authorizes
-public API access and that route passes a live lookup check, set `enabled: true` for production.
+`assets/lookup-config.js` enables the deployed public API in production and a same-origin API in local preview.
 The frontend submits only the username after the visitor clicks the lookup button and discloses Uplocket
 as the destination. An upstream failure keeps Gold status unknown. A false `is_gold` value offers a link
 to upgrade on Uplocket; this project does not grant subscriptions or create orders.
