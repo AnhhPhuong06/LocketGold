@@ -22,7 +22,7 @@ node --test tests/referral-core.test.cjs
 
 ## Nội dung
 
-- Bảng giá tham khảo từ Uplocket: dùng thử miễn phí, 1 năm 15.000đ, trọn đời 25.000đ. Nút chọn mở cửa sổ nhập link, hiển thị gói đã chọn và kiểm tra định dạng HTTPS của link `locket.cam`. Sau khi kiểm tra, người dùng có thể sao chép link, mở trang cá nhân hoặc tiếp tục tại Uplocket. Không xác minh tài khoản tồn tại, trạng thái thuê bao, thu tiền, nhận đơn hoặc cấp Gold trên trang này. Link nhập không được gửi qua mạng hoặc lưu bền vững; chỉ được mở ở trang cá nhân nếu người dùng bấm nút tương ứng. Giá và điều kiện cần xác nhận tại bên cung cấp; tên gói trọn đời không phải cam kết từ Locket.
+- Bảng giá tham khảo từ Uplocket: dùng thử miễn phí, 1 năm 20.000đ, trọn đời 30.000đ. Nút chọn mở cửa sổ nhập link, hiển thị gói đã chọn và kiểm tra định dạng HTTPS của link `locket.cam`. Sau khi kiểm tra, trang hiện thẻ tài khoản với username từ link, avatar mặc định, trạng thái chưa xác minh và nút tải hồ sơ DNS hiện có. Có thể đổi tài khoản hoặc mở link cá nhân. Trang không lấy tên, avatar hay trạng thái Gold thật từ Locket; không thu tiền, nhận đơn hoặc cấp Gold. Link nhập không được gửi qua mạng hoặc lưu bền vững; chỉ được mở ở trang cá nhân nếu người dùng bấm nút tương ứng. Giá và điều kiện cần xác nhận tại bên cung cấp; tên gói trọn đời không phải cam kết từ Locket.
 - Điện thoại và ảnh nổi minh họa trên đầu trang; không phải ảnh chụp ứng dụng thực tế.
 - Xem thử ba màu khung và nhấn ảnh để đổi khoảnh khắc; không thay đổi ứng dụng Locket.
 - Đã tích hợp ảnh, sticker, app icon và logo đã tải từ Uplocket; điện thoại có thể đổi ảnh bằng nút và tự chuyển khi bật chuyển động. Có nút tạm dừng và hỗ trợ giảm chuyển động.

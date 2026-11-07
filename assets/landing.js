@@ -55,27 +55,25 @@
   const accountEntry = document.getElementById('account-entry');
   const accountTitle = document.getElementById('account-title');
   const accountInstructions = document.getElementById('account-instructions');
-  const copyFallback = document.getElementById('account-copy-fallback');
-  const copyValue = document.getElementById('account-copy-value');
   const entryTitle = accountTitle.textContent;
   const entryInstructions = accountInstructions.textContent;
   const plans = {
     trial: { name: 'Gói dùng thử', duration: '3 ngày', price: 'Miễn phí' },
-    year: { name: 'Locket Gold 1 năm', duration: '1 năm', price: '15.000đ' },
-    lifetime: { name: 'Locket Gold trọn đời', duration: 'Theo điều kiện Uplocket', price: '25.000đ' }
+    year: { name: 'Locket Gold 1 năm', duration: '1 năm', price: '20.000đ' },
+    lifetime: { name: 'Locket Gold trọn đời', duration: 'Theo điều kiện Uplocket', price: '30.000đ' }
   };
   let returnFocus = null;
   let account = null;
   let backgroundState = [];
   function resetAccountResult() {
     account = null; result.hidden = true; accountCheck.hidden = false;
+    form.hidden = false;
     accountEntry.hidden = false;
-    document.getElementById('account-copy').hidden = true;
     modal.classList.remove('has-result');
     accountTitle.textContent = entryTitle;
     accountInstructions.textContent = entryInstructions;
-    copyFallback.hidden = true; copyValue.value = '';
-    document.getElementById('account-copy-status').textContent = '';
+    accountInstructions.hidden = false;
+    modal.setAttribute('aria-describedby', 'account-instructions account-disclaimer');
     accountInput.readOnly = false;
   }
   function clearAccountError() { accountError.hidden = true; accountError.textContent = ''; accountInput.removeAttribute('aria-invalid'); }
@@ -134,31 +132,16 @@
     catch (error) { accountError.textContent = error.message; accountError.hidden = false; accountInput.setAttribute('aria-invalid', 'true'); accountInput.focus(); return; }
     accountInput.value = account.url; accountInput.readOnly = true;
     document.getElementById('account-username').textContent = '@' + account.username;
+    document.getElementById('account-display-name').textContent = account.username;
+    document.getElementById('account-avatar').textContent = account.username.slice(0, 2).toUpperCase();
     document.getElementById('account-profile').href = account.url;
-    accountEntry.hidden = false;
-    document.getElementById('account-copy').hidden = false;
+    form.hidden = true;
     modal.classList.add('has-result');
-    accountTitle.textContent = entryTitle;
-    accountInstructions.textContent = entryInstructions;
+    accountTitle.textContent = 'Xác nhận tài khoản';
+    accountInstructions.hidden = true;
+    modal.setAttribute('aria-describedby', 'account-disclaimer');
     accountCheck.hidden = true; result.hidden = false;
-    document.getElementById('account-copy').focus();
-  });
-  document.getElementById('account-copy').addEventListener('click', async function () {
-    if (!account) return;
-    const copiedAccount = account;
-    const copiedUrl = account.url;
-    try {
-      if (!navigator.clipboard || !window.isSecureContext) throw new Error('Clipboard unavailable');
-      await navigator.clipboard.writeText(copiedUrl);
-      if (modal.hidden || account !== copiedAccount) return;
-      copyFallback.hidden = true;
-      document.getElementById('account-copy-status').textContent = 'Đã sao chép link Locket.';
-    } catch (_) {
-      if (modal.hidden || account !== copiedAccount) return;
-      copyValue.value = copiedUrl; copyFallback.hidden = false;
-      copyValue.focus(); copyValue.select();
-      document.getElementById('account-copy-status').textContent = 'Không sao chép tự động được.';
-    }
+    accountTitle.focus();
   });
   modal.querySelector('.account-edit').addEventListener('click', function () { resetAccountResult(); clearAccountError(); accountInput.focus(); accountInput.select(); });
   if (window.LocketProfileInfo) {
