@@ -13,6 +13,7 @@
   <link rel="preload" href="./assets/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./assets/landing.css">
   <script src="./assets/profile-info.js" defer></script>
+  <script src="./assets/locket-link.js" defer></script>
   <script src="./assets/landing.js" defer></script>
 </head>
 <body>
@@ -51,9 +52,9 @@
     <section class="section wrap pricing" id="pricing" aria-labelledby="pricing-title">
       <div class="section-heading"><span class="eyebrow">CÁC GÓI TRÊN WEB MẪU</span><h2 id="pricing-title">Chọn một chút Gold<br>cho riêng bạn.</h2><p>Ba lựa chọn tham khảo từ Uplocket.</p></div>
       <div class="price-grid">
-        <article class="price-card"><span class="price-kicker">LÀM QUEN TRƯỚC NHÉ</span><span class="price-symbol" aria-hidden="true">✦</span><h3>Dùng thử</h3><div class="price">Miễn phí</div><p>Tìm hiểu dịch vụ và điều kiện dùng thử trước khi chọn gói dài hơn.</p><div class="price-detail"><span>Thời hạn</span><strong>Xem tại Uplocket</strong></div><a class="button button-light" href="https://uplocket.io.vn/" target="_blank" rel="noopener noreferrer" aria-label="Xem gói dùng thử trên website Uplocket">Xem gói dùng thử <span aria-hidden="true">↗</span></a></article>
-        <article class="price-card price-featured"><span class="price-kicker">MỘT NĂM NHIỀU KHOẢNH KHẮC</span><span class="price-symbol" aria-hidden="true">♡</span><h3>Gói 1 năm</h3><div class="price">15.000<span>đ</span></div><p>Lựa chọn theo năm với mức giá hiển thị trên web mẫu.</p><div class="price-detail"><span>Thời hạn được giới thiệu</span><strong>1 năm</strong></div><a class="button button-dark" href="https://uplocket.io.vn/" target="_blank" rel="noopener noreferrer" aria-label="Xem gói 1 năm trên website Uplocket">Xem gói 1 năm <span aria-hidden="true">↗</span></a></article>
-        <article class="price-card"><span class="price-kicker">GIỮ LẠI NHỮNG ĐIỀU XINH</span><span class="price-symbol" aria-hidden="true">∞</span><h3>Gói trọn đời</h3><div class="price">25.000<span>đ</span></div><p>Tên gói theo Uplocket; đọc kỹ điều kiện và phạm vi bảo hành của bên cung cấp.</p><div class="price-detail"><span>Thời hạn được giới thiệu</span><strong>Trọn đời*</strong></div><a class="button button-light" href="https://uplocket.io.vn/" target="_blank" rel="noopener noreferrer" aria-label="Xem gói trọn đời trên website Uplocket">Xem gói trọn đời <span aria-hidden="true">↗</span></a></article>
+        <article class="price-card"><span class="price-kicker">LÀM QUEN TRƯỚC NHÉ</span><span class="price-symbol" aria-hidden="true">✦</span><h3>Dùng thử</h3><div class="price">Miễn phí</div><p>Tìm hiểu dịch vụ và điều kiện dùng thử trước khi chọn gói dài hơn.</p><div class="price-detail"><span>Thời hạn</span><strong>Xem tại Uplocket</strong></div><a class="button button-light" href="https://uplocket.io.vn/" target="_blank" rel="noopener noreferrer" data-plan="trial" aria-haspopup="dialog" aria-controls="account-modal">Xem gói dùng thử <span aria-hidden="true">↗</span></a></article>
+        <article class="price-card price-featured"><span class="price-kicker">MỘT NĂM NHIỀU KHOẢNH KHẮC</span><span class="price-symbol" aria-hidden="true">♡</span><h3>Gói 1 năm</h3><div class="price">15.000<span>đ</span></div><p>Lựa chọn theo năm với mức giá hiển thị trên web mẫu.</p><div class="price-detail"><span>Thời hạn được giới thiệu</span><strong>1 năm</strong></div><a class="button button-dark" href="https://uplocket.io.vn/" target="_blank" rel="noopener noreferrer" data-plan="year" aria-haspopup="dialog" aria-controls="account-modal">Xem gói 1 năm <span aria-hidden="true">↗</span></a></article>
+        <article class="price-card"><span class="price-kicker">GIỮ LẠI NHỮNG ĐIỀU XINH</span><span class="price-symbol" aria-hidden="true">∞</span><h3>Gói trọn đời</h3><div class="price">25.000<span>đ</span></div><p>Tên gói theo Uplocket; đọc kỹ điều kiện và phạm vi bảo hành của bên cung cấp.</p><div class="price-detail"><span>Thời hạn được giới thiệu</span><strong>Trọn đời*</strong></div><a class="button button-light" href="https://uplocket.io.vn/" target="_blank" rel="noopener noreferrer" data-plan="lifetime" aria-haspopup="dialog" aria-controls="account-modal">Xem gói trọn đời <span aria-hidden="true">↗</span></a></article>
       </div>
       <p class="pricing-note">Giá tham khảo theo <a href="https://uplocket.io.vn/" target="_blank" rel="noopener noreferrer">website Uplocket ↗</a>, có thể thay đổi. Các nút mở dịch vụ bên ngoài; AnhhPhuongg không thu tiền hoặc cấp Gold tại trang này. *“Trọn đời” là tên gói của bên cung cấp, không phải cam kết Gold vĩnh viễn từ Locket. Tải DNS hoặc chứng chỉ bên dưới không đồng nghĩa đã mua hay được kích hoạt một gói.</p>
     </section>
@@ -76,6 +77,23 @@
   </main>
   <footer class="footer wrap"><a class="brand" href="#top"><span class="logo"><svg><use href="#heart"/></svg></span><span>AnhhPhuongg<small>little moments, with love.</small></span></a><div><a href="#downloads">DNS &amp; chứng chỉ</a><a href="./tool.html">Tool lời mời</a><a href="https://github.com/AnhhPhuong06/LocketGold" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div><p>Dự án độc lập · Hồ sơ không bảo đảm kích hoạt Gold.</p></footer>
   <a class="mobile-download button button-dark" href="#downloads"><svg class="icon"><use href="#download"/></svg>DNS + Chứng chỉ <span>↗</span></a>
+  <div class="account-modal" id="account-modal" role="dialog" aria-modal="true" aria-labelledby="account-title" aria-describedby="account-instructions account-disclaimer" hidden>
+    <div class="account-panel" tabindex="-1">
+      <button class="account-close" type="button" aria-label="Đóng cửa sổ">×</button>
+      <span class="account-badge">Locket Gold · Chọn gói</span>
+      <h2 id="account-title">Dán link Locket của bạn</h2>
+      <p id="account-instructions">Mở app Locket → Trang cá nhân → Chia sẻ liên kết rồi dán vào đây.</p>
+      <form id="account-form" novalidate>
+        <label class="sr-only" for="account-link">Link trang cá nhân Locket</label>
+        <input id="account-link" type="url" inputmode="url" placeholder="https://locket.cam/ten_cua_ban" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="512" aria-describedby="account-error" required>
+        <p class="account-error" id="account-error" role="alert" hidden></p>
+        <div class="account-plan"><div><strong id="account-plan-name">Gói dùng thử</strong><small id="account-plan-duration">3 ngày · theo web mẫu</small></div><b id="account-plan-price">Miễn phí</b></div>
+        <button class="button account-check" type="submit" id="account-check" disabled>Kiểm tra link Locket</button>
+      </form>
+      <div class="account-result" id="account-result" role="status" hidden><strong>Định dạng link hợp lệ</strong><p id="account-username"></p><p>Chưa xác minh tài khoản tồn tại hoặc đã có Gold. Sao chép link để dán tại Uplocket khi tiếp tục.</p><button class="text-button" id="account-copy" type="button">Sao chép link Locket</button><p id="account-copy-status" aria-live="polite"></p><a id="account-profile" class="text-link" href="https://locket.cam/" target="_blank" rel="noopener noreferrer">Mở trang cá nhân ↗</a><a class="button button-dark account-continue" href="https://uplocket.io.vn/" target="_blank" rel="noopener noreferrer">Tiếp tục tại Uplocket ↗</a><button class="account-edit text-button" type="button">Sửa link</button></div>
+      <p class="account-disclaimer" id="account-disclaimer">Chỉ kiểm tra định dạng ngay trên trình duyệt, không lưu hoặc gửi link. Bước này chưa đặt mua hay kích hoạt Gold; giá và thời hạn do Uplocket xác nhận.</p>
+    </div>
+  </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

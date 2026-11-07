@@ -22,7 +22,7 @@ node --test tests/referral-core.test.cjs
 
 ## Nội dung
 
-- Bảng giá tham khảo từ Uplocket: dùng thử miễn phí, 1 năm 15.000đ, trọn đời 25.000đ. Nút chọn mở website Uplocket; không thu tiền, nhận đơn hoặc cấp Gold trên trang này. Giá và điều kiện cần được xác nhận tại bên cung cấp; tên gói trọn đời không phải cam kết từ Locket. Không dùng giá này như bảng giá dịch vụ do AnhhPhuongg vận hành.
+- Bảng giá tham khảo từ Uplocket: dùng thử miễn phí, 1 năm 15.000đ, trọn đời 25.000đ. Nút chọn mở cửa sổ nhập link, hiển thị gói đã chọn và kiểm tra định dạng HTTPS của link `locket.cam`. Sau khi kiểm tra, người dùng có thể sao chép link, mở trang cá nhân hoặc tiếp tục tại Uplocket. Không xác minh tài khoản tồn tại, trạng thái thuê bao, thu tiền, nhận đơn hoặc cấp Gold trên trang này. Link nhập không được gửi qua mạng hoặc lưu bền vững; chỉ được mở ở trang cá nhân nếu người dùng bấm nút tương ứng. Giá và điều kiện cần xác nhận tại bên cung cấp; tên gói trọn đời không phải cam kết từ Locket.
 - Điện thoại và ảnh nổi minh họa trên đầu trang; không phải ảnh chụp ứng dụng thực tế.
 - Xem thử ba màu khung và nhấn ảnh để đổi khoảnh khắc; không thay đổi ứng dụng Locket.
 - Hướng dẫn cài đặt với ba bước tương tác.
@@ -51,6 +51,7 @@ GitHub Pages dùng nhánh `main`, thư mục gốc `/`. Tệp `.nojekyll` giữ 
 - `index.html`: nội dung và các phần của trang.
 - `assets/landing.css`: giao diện trang chủ, kích thước màn hình và chuyển động.
 - `assets/landing.js`: menu, xem thử khung, đổi ảnh, chọn bước và sao chép link.
+- `assets/locket-link.js`: kiểm tra định dạng link trong cửa sổ chọn gói; kiểm thử bằng `node --test tests/locket-link.test.cjs`.
 - `assets/styles.css`: giao diện chung của tool lời mời; trang chủ dùng CSS riêng.
 - `assets/app.js`: mã trang chủ cũ, hiện không được tải.
 - `AnhhPhuongg.mobileconfig`: hồ sơ đang cung cấp để tải.
