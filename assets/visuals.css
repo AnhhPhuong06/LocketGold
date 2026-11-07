@@ -278,7 +278,11 @@ body{font-family:Nunito,Manrope,sans-serif}
 
 /* Reduced Motion Override */
 @media(prefers-reduced-motion:reduce){
-  .collage,.phone-widget>img.widget-photo,.motion-reveal{transition:none!important}
-  .floating-photo,.sticker,.hero-ticket,.hero-copy>*,#shortcuts,.price-card.price-featured .shine,.hero-scroll{animation:none!important}
+  body:not(.motion-enabled) .collage,body:not(.motion-enabled) .phone-widget>img.widget-photo,body:not(.motion-enabled) .motion-reveal{transition:none!important}
+  .floating-photo,.sticker,.hero-ticket,.hero-copy>*,#shortcuts,.price-card.price-featured .shine,.hero-scroll{animation-play-state:paused!important}
+  body.motion-enabled .floating-photo,body.motion-enabled .sticker,body.motion-enabled .hero-ticket,body.motion-enabled .hero-copy>*,body.motion-enabled #shortcuts,body.motion-enabled .price-card.price-featured .shine,body.motion-enabled .hero-scroll{animation-play-state:running!important}
+  body.motion-enabled .collage{transition:transform .52s cubic-bezier(.2,.75,.25,1)!important}
+  body.motion-enabled .phone-widget>img.widget-photo{transition:opacity .72s cubic-bezier(.2,.72,.25,1),scale 1.2s cubic-bezier(.2,.72,.25,1)!important}
+  body.motion-enabled .motion-reveal{transition:opacity .65s cubic-bezier(.2,.75,.25,1),translate .65s cubic-bezier(.2,.75,.25,1)!important}
   .motion-reveal{opacity:1;translate:0 0}
 }

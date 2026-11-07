@@ -399,6 +399,7 @@
   // --- 8. MOTION TOGGLE & ACCESSIBILITY ---
   function updateMotion() {
     document.body.classList.toggle('motion-paused', paused);
+    document.body.classList.toggle('motion-enabled', !paused);
     if (motionButton) {
       motionButton.setAttribute('aria-pressed', String(paused));
       motionButton.textContent = paused ? 'Bật chuyển động' : 'Tạm dừng chuyển động';
