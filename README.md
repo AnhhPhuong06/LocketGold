@@ -22,7 +22,7 @@ node --test tests/referral-core.test.cjs
 
 ## Nội dung
 
-- Bảng giá tham khảo từ Uplocket: dùng thử miễn phí, 1 năm 20.000đ, trọn đời 30.000đ. Nút chọn mở cửa sổ nhập link, hiển thị gói đã chọn và kiểm tra định dạng HTTPS của link `locket.cam`. Sau khi kiểm tra, trang hiện thẻ tài khoản với username từ link, avatar mặc định, trạng thái chưa xác minh và nút tải hồ sơ DNS hiện có. Có thể đổi tài khoản hoặc mở link cá nhân. Trang không lấy tên, avatar hay trạng thái Gold thật từ Locket; không thu tiền, nhận đơn hoặc cấp Gold. Link nhập không được gửi qua mạng hoặc lưu bền vững; chỉ được mở ở trang cá nhân nếu người dùng bấm nút tương ứng. Giá và điều kiện cần xác nhận tại bên cung cấp; tên gói trọn đời không phải cam kết từ Locket.
+- Bảng giá tham khảo từ Uplocket: dùng thử miễn phí, 1 năm 20.000đ, trọn đời 30.000đ. Nút chọn mở cửa sổ nhập link, hiển thị gói đã chọn và kiểm tra định dạng HTTPS của link `locket.cam`. Thẻ kết quả có link cá nhân, gói vừa chọn, giá/thời hạn tham khảo, trạng thái Gold, ngày kích hoạt/hết hạn và phần mở rộng thông tin hồ sơ DNS. Các trường chưa có nguồn xác thực hiển thị “Chưa có dữ liệu” hoặc “Chưa xác minh”; thời hạn gói vừa chọn không được dùng để tự suy ra hạn Gold. Thẻ có ảnh công khai nếu username đã có trong danh mục cục bộ; tài khoản khác dùng chữ viết tắt. Không thu tiền, nhận đơn hoặc cấp Gold. Link nhập không được gửi qua mạng hoặc lưu bền vững; chỉ được mở ở trang cá nhân nếu người dùng bấm nút tương ứng. Giá và điều kiện cần xác nhận tại bên cung cấp; tên gói trọn đời không phải cam kết từ Locket.
 - Điện thoại và ảnh nổi minh họa trên đầu trang; không phải ảnh chụp ứng dụng thực tế.
 - Xem thử ba màu khung và nhấn ảnh để đổi khoảnh khắc; không thay đổi ứng dụng Locket.
 - Đã tích hợp ảnh, sticker, app icon và logo đã tải từ Uplocket; điện thoại có thể đổi ảnh bằng nút và tự chuyển khi bật chuyển động. Có nút tạm dừng và hỗ trợ giảm chuyển động.
@@ -36,6 +36,8 @@ node --test tests/referral-core.test.cjs
 - Hỗ trợ bàn phím, thông báo sao chép cho trình đọc màn hình và chế độ giảm chuyển động.
 
 ## Chạy tại máy
+
+Ảnh công khai được lưu theo username trong `assets/public-profiles.json`; bản đầu có `anhhphuongg06`. Ngày lưu và trang nguồn được ghi trong danh mục, ảnh được phục vụ từ chính website. Đây là ảnh chụp dữ liệu công khai tại thời điểm nhập, không phải tra cứu trực tiếp mọi tài khoản. Có thể nhập hoặc làm mới một ảnh bằng `python scripts/import-public-profile.py USERNAME`; script chỉ đọc trang cá nhân công khai và tải ảnh từ CDN của Locket. Script không chạy mã của trang nguồn, không lấy tên hiển thị nếu trang không cung cấp và không kiểm tra Gold. Sau khi nhập ảnh mới, tăng phiên bản của `public-profiles.js` trong `index.html` và triển khai lại.
 
 Không cần cài thư viện hoặc chạy build. Trong thư mục dự án:
 

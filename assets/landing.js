@@ -64,6 +64,7 @@
   };
   let returnFocus = null;
   let account = null;
+  let selectedPlan = plans.trial;
   let backgroundState = [];
   function resetAccountResult() {
     account = null; result.hidden = true; accountCheck.hidden = false;
@@ -75,6 +76,45 @@
     accountInstructions.hidden = false;
     modal.setAttribute('aria-describedby', 'account-instructions account-disclaimer');
     accountInput.readOnly = false;
+    document.getElementById('account-file-details').open = false;
+  }
+  function showAccountDetails() {
+    const profiles = window.LocketPublicProfiles;
+    const profile = profiles && Object.prototype.hasOwnProperty.call(profiles, account.username) ? profiles[account.username] : null;
+    const currentAccount = account;
+    const avatar = document.getElementById('account-avatar');
+    const initials = account.username.slice(0, 2).toUpperCase();
+    avatar.textContent = initials;
+    document.getElementById('account-display-name').textContent = profile?.displayName || account.username;
+    document.getElementById('account-detail-name').textContent = profile?.displayName || 'Chưa có dữ liệu';
+    const source = document.getElementById('account-photo-source');
+    source.hidden = true; source.textContent = '';
+    if (profile && typeof profile.avatar === 'string' && profile.avatar.startsWith('./assets/public-profiles/')) {
+      const photo = document.createElement('img');
+      photo.alt = ''; photo.width = 38; photo.height = 38; photo.decoding = 'async';
+      photo.addEventListener('error', function () {
+        if (account !== currentAccount || !avatar.contains(photo)) return;
+        avatar.textContent = initials; source.hidden = true;
+      }, { once: true });
+      photo.src = profile.avatar;
+      avatar.replaceChildren(photo);
+      const checkedAt = new Date(profile.checkedAt);
+      const date = Number.isFinite(checkedAt.getTime()) ? new Intl.DateTimeFormat('vi-VN').format(checkedAt) : '';
+      source.textContent = 'Ảnh từ trang cá nhân công khai' + (date ? ' · lưu ngày ' + date : '');
+      source.hidden = false;
+    }
+    const profileLink = document.getElementById('account-detail-link');
+    profileLink.href = account.url; profileLink.textContent = account.url;
+    document.getElementById('account-detail-plan').textContent = selectedPlan.name;
+    document.getElementById('account-detail-price').textContent = selectedPlan.price;
+    document.getElementById('account-detail-duration').textContent = selectedPlan.duration;
+    const info = window.LocketProfileInfo;
+    const file = info?.profiles?.['AnhhPhuongg.mobileconfig'];
+    document.getElementById('account-dns-size').textContent = file && Number.isFinite(file.bytes) ? new Intl.NumberFormat('vi-VN', { maximumFractionDigits: 1 }).format(file.bytes / 1024) + ' KB' : 'Chưa có dữ liệu';
+    document.getElementById('account-dns-protocol').textContent = info?.dns?.protocol || 'Chưa có dữ liệu';
+    document.getElementById('account-dns-server').textContent = info?.dns?.serverUrl || 'Chưa có dữ liệu';
+    const certExpiry = new Date(info?.certificate?.notAfter || '');
+    document.getElementById('account-dns-certificate-expiry').textContent = Number.isFinite(certExpiry.getTime()) ? new Intl.DateTimeFormat('vi-VN').format(certExpiry) : 'Chưa có dữ liệu';
   }
   function clearAccountError() { accountError.hidden = true; accountError.textContent = ''; accountInput.removeAttribute('aria-invalid'); }
   function syncAccountCheck() {
@@ -94,6 +134,7 @@
     link.addEventListener('click', function (event) {
       if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || !window.LocketLink) return;
       const plan = plans[link.dataset.plan]; if (!plan) return;
+      selectedPlan = plan;
       event.preventDefault(); closeMenu(); returnFocus = link;
       resetAccountResult(); clearAccountError();
       document.getElementById('account-plan-name').textContent = plan.name;
@@ -114,7 +155,7 @@
     if (modal.hidden) return;
     if (event.key === 'Escape') { event.preventDefault(); closeAccountModal(); return; }
     if (event.key === 'Tab') {
-      const focusable = Array.from(modal.querySelectorAll('button:not(:disabled), a[href], input:not(:disabled), [tabindex="0"]')).filter(function (element) { return !element.closest('[hidden]'); });
+      const focusable = Array.from(modal.querySelectorAll('button:not(:disabled), a[href], input:not(:disabled), summary, [tabindex="0"]')).filter(function (element) { return !element.closest('[hidden]') && (!element.closest('details:not([open])') || element.tagName === 'SUMMARY'); });
       const first = focusable[0]; const last = focusable[focusable.length - 1];
       if (event.shiftKey && (document.activeElement === first || !modal.contains(document.activeElement))) { event.preventDefault(); last.focus(); }
       else if (!event.shiftKey && (document.activeElement === last || !modal.contains(document.activeElement))) { event.preventDefault(); first.focus(); }
@@ -132,8 +173,7 @@
     catch (error) { accountError.textContent = error.message; accountError.hidden = false; accountInput.setAttribute('aria-invalid', 'true'); accountInput.focus(); return; }
     accountInput.value = account.url; accountInput.readOnly = true;
     document.getElementById('account-username').textContent = '@' + account.username;
-    document.getElementById('account-display-name').textContent = account.username;
-    document.getElementById('account-avatar').textContent = account.username.slice(0, 2).toUpperCase();
+    showAccountDetails();
     document.getElementById('account-profile').href = account.url;
     form.hidden = true;
     modal.classList.add('has-result');
