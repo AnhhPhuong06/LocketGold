@@ -12,14 +12,15 @@
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="./assets/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./assets/landing.css?v=2">
-  <link rel="stylesheet" href="./assets/checkout.css?v=7">
+  <link rel="stylesheet" href="./assets/checkout.css?v=8">
   <link rel="stylesheet" href="./assets/visuals.css?v=3">
   <link rel="stylesheet" href="./assets/phone.css?v=1">
   <link rel="stylesheet" href="./assets/hero.css?v=3">
   <script src="./assets/profile-info.js" defer></script>
   <script src="./assets/locket-link.js" defer></script>
   <script src="./assets/public-profiles.js?v=1" defer></script>
-  <script src="./assets/landing.js?v=7" defer></script>
+  <script src="./assets/lookup-config.js?v=1" defer></script>
+  <script src="./assets/landing.js?v=8" defer></script>
   <script src="./assets/uplocket/lenis.min.js" defer></script>
   <script src="./assets/uplocket/frames.js" defer></script>
   <script src="./assets/visuals.js?v=3" defer></script>
@@ -94,6 +95,7 @@
       <span class="account-badge">Nâng cấp Locket Gold</span>
       <h2 id="account-title" tabindex="-1">Dán link Locket của bạn</h2>
       <p id="account-instructions">Mở app Locket &gt; Trang cá nhân &gt; Chia sẻ liên kết rồi dán vào đây.</p>
+      <p class="account-lookup-notice" id="account-lookup-notice" hidden>Khi kiểm tra, username được gửi đến Uplocket để tra cứu.</p>
       <form id="account-form" novalidate>
         <div id="account-entry">
         <label class="sr-only" for="account-link">Link trang cá nhân Locket</label>
@@ -114,11 +116,13 @@
             <div><dt>Gói vừa chọn</dt><dd id="account-detail-plan"></dd></div>
             <div><dt>Giá tham khảo</dt><dd id="account-detail-price"></dd></div>
             <div><dt>Thời hạn tham khảo</dt><dd id="account-detail-duration"></dd></div>
-            <div><dt>Trạng thái Gold</dt><dd class="account-data-unknown">Chưa xác minh</dd></div>
+            <div><dt>Gold theo Uplocket</dt><dd class="account-data-unknown" id="account-provider-gold">Chưa tra cứu</dd></div>
+            <div><dt>Gói tại Uplocket</dt><dd id="account-provider-package">Chưa có dữ liệu</dd></div>
             <div><dt>Ngày kích hoạt Gold</dt><dd class="account-data-unknown">Chưa có dữ liệu</dd></div>
-            <div><dt>Ngày hết hạn Gold</dt><dd class="account-data-unknown">Chưa có dữ liệu</dd></div>
+            <div><dt>Hạn theo Uplocket</dt><dd class="account-data-unknown" id="account-provider-expiry">Chưa có dữ liệu</dd></div>
           </dl>
-          <p class="account-confirm-note">Trạng thái tài khoản và Gold chưa xác minh. Hồ sơ DNS này không kích hoạt Gold.</p>
+          <p class="account-confirm-note" id="account-provider-note">Trạng thái tài khoản và Gold chưa xác minh. Hồ sơ DNS này không kích hoạt Gold.</p>
+          <button class="account-lookup-retry" id="account-lookup-retry" type="button" hidden>Thử tra cứu lại</button>
           <details class="account-file-details" id="account-file-details"><summary>Chi tiết hồ sơ DNS</summary><dl class="account-detail-list">
             <div><dt>Tệp tải xuống</dt><dd>AnhhPhuongg.mobileconfig</dd></div>
             <div><dt>Dung lượng</dt><dd id="account-dns-size">—</dd></div>
@@ -127,7 +131,8 @@
             <div><dt>Hạn chứng chỉ</dt><dd id="account-dns-certificate-expiry">—</dd></div>
           </dl></details>
         </div>
-        <a class="button account-download" href="./AnhhPhuongg.mobileconfig" download="AnhhPhuongg.mobileconfig">Tải lại hồ sơ DNS</a>
+        <a class="button account-download" id="account-primary-action" href="./AnhhPhuongg.mobileconfig" download="AnhhPhuongg.mobileconfig">Tải lại hồ sơ DNS</a>
+        <a class="account-secondary-download" id="account-secondary-download" href="./AnhhPhuongg.mobileconfig" download hidden>Tải hồ sơ DNS hiện có</a>
       </div>
       <p class="account-disclaimer sr-only" id="account-disclaimer">Chỉ kiểm tra định dạng ngay trên trình duyệt, không lưu hoặc gửi link. Bước này chưa đặt mua hay kích hoạt Gold; giá và thời hạn do Uplocket xác nhận.</p>
     </div>

@@ -69,3 +69,8 @@ html{scrollbar-gutter:stable}
 .account-file-details .account-detail-list dt,.account-file-details .account-detail-list dd{font-size:11px;line-height:16px}
 .account-file-details .account-detail-list>div{grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr)}
 @media(max-width:350px){.account-detail-list>div{gap:8px}.account-detail-list dt{font-size:11px}.account-detail-list dd{font-size:11.5px}.account-detail-list dd.account-data-unknown{font-size:10.5px}}
+.account-panel>p.account-lookup-notice{margin:-8px 0 14px;font-size:10px;line-height:15px;font-weight:700;color:#a28e64;text-align:center}
+.account-gold-status[data-status=active]{background:#dcfce7;color:#119245}
+.account-gold-status[data-status=inactive]{background:#f2eadb;color:#91754c}
+.account-lookup-retry{display:table;padding:7px 0;margin:4px 0 0;background:none;color:#99701b;font:800 11px/17px Nunito,sans-serif;text-decoration:underline;text-underline-offset:3px}
+.account-secondary-download{display:table;margin:10px auto 0;padding:4px 0;font-size:11px;font-weight:800;line-height:18px;color:#987b45;text-decoration:underline;text-underline-offset:3px}

@@ -6,6 +6,14 @@ Trang tải hồ sơ cấu hình của AnhhPhuongg với giao diện kem–vàng
 
 **Tool quản lý lời mời:** https://AnhhPhuong06.github.io/LocketGold/tool.html
 
+## Tra cứu tài khoản qua Uplocket
+
+Backend trong `backend/lookup-worker.mjs` gọi endpoint tra cứu công khai của Uplocket và chỉ trả các trường cần hiển thị. Không trả UID, token, mã kích hoạt, thông tin holder hoặc nguyên bản phản hồi. Cấu hình ở `assets/lookup-config.js`; bản tích hợp đang được chuẩn bị với API Sites riêng tư, nên production vẫn tắt tra cứu cho đến khi chủ website cho phép công khai API và kiểm tra trực tiếp thành công.
+
+Khi bật, nút kiểm tra gửi username đến Uplocket và giao diện ghi rõ nguồn. Cờ `is_gold=true/false` hiển thị “Đã có Gold” hoặc “Chưa có Gold” **theo Uplocket**, không được mô tả là xác nhận thuê bao chính thức từ Locket. Nếu API lỗi hoặc không trả cờ boolean, trạng thái vẫn chưa xác định. Gói vừa chọn, gói trong dữ liệu Uplocket và hạn Uplocket trả về là các trường riêng. Tài khoản chưa có Gold có nút mở Uplocket để tiếp tục tại dịch vụ đó; website này không tự đặt đơn hoặc cấp gói.
+
+Xem `backend/README.md` để chạy preview, kiểm thử và cấu hình triển khai.
+
 ## Tool quản lý lời mời Gold
 
 Mở `tool.html` qua website hoặc máy chủ xem thử cục bộ. Tool hỗ trợ lưu link mời và mẫu tin nhắn, thêm/sửa/xóa lời mời, hoàn tác xóa, tìm kiếm không dấu, lọc trạng thái và nhập/xuất JSON. Nhập JSON sẽ gộp các mã lời mời mới và giữ nguyên bản ghi đang có; không ghi đè bản ghi trùng.
