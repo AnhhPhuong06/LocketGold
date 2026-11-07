@@ -80,182 +80,150 @@
   }
   document.addEventListener('click', handleDesktopClick);
 
-  // --- 2. PHONE WIDGET AUTO-ROTATION WITH FLYING EMOJIS & APP SQUISH ---
-  const captions = ['good-morning', 'sunset-time', 'hiiiiii', 'austin-tx', 'miss-you', 'weather-62f'];
-  const widgetEmojiSets = [
-    ["☀️", "🤎", "😎"],
-    ["🌅", "🧡", "😍"],
-    ["✨", "💙", "😘"],
-    ["🥂", "💜", "😍"],
-    ["🌳", "💚", "👟"],
-    ["🌊", "🩵", "😂"],
-    ["🌼", "💛", "🥰"],
-    ["⛵", "🤍", "😎"]
-  ];
-  const widgetEmojiSpawns = [
-    { x: 12, d: 0, s: 20 },
-    { x: 68, d: 0.1, s: 24 },
-    { x: 32, d: 0.25, s: 18 },
-    { x: 84, d: 0.4, s: 22 },
-    { x: 20, d: 0.5, s: 23 },
-    { x: 55, d: 0.65, s: 19 },
-    { x: 76, d: 0.8, s: 20 },
-    { x: 42, d: 0.95, s: 25 }
-  ];
 
-  function triggerFlyingEmojis(setIndex) {
-    if (!widgetEmojisContainer || paused) return;
-    const emojiSet = widgetEmojiSets[setIndex % widgetEmojiSets.length];
-    widgetEmojiSpawns.forEach(function (sp, i) {
-      const emoji = emojiSet[i % emojiSet.length];
-      const span = document.createElement('span');
-      span.className = 'widget-fly-emoji';
-      span.textContent = emoji;
-      span.style.left = sp.x + '%';
-      span.style.fontSize = sp.s + 'px';
-      span.style.animationDelay = (0.7 + sp.d) + 's';
-      widgetEmojisContainer.appendChild(span);
-      setTimeout(function () { span.remove(); }, 2600);
+  // Independent photo, entrance, drift and scroll layers avoid transform conflicts.
+  const heroAnimations = [];
+  const avatar = document.getElementById('hero-widget-avatar');
+  const captions = ['good-morning', 'sunset-time', null, 'austin-tx', null, null, null, null];
+  const captionWidths = { 'good-morning': 68.8, 'sunset-time': 47.6, 'austin-tx': 56.24 };
+  const avatars = ['michid','ava','laurel','karima','matt','ava','mika','kyle'];
+  const reactions = [['☀️','🤎','😎'],['🌅','🧡','😍'],['✨','💙','😘'],['🥂','💜','😍'],['🌳','💚','👟'],['🌊','🩵','😂'],['🌼','💛','🥰'],['⛵','🤍','😎']];
+  const reactionPositions = [[12,0,24],[68,.1,28],[32,.25,22],[84,.4,26],[20,.5,27],[55,.65,22],[76,.8,24],[42,.95,30]];
+  let widgetRevealed = reduced.matches;
+  let photoTimer;
+  let disposed = false;
+  if (heroWidget) heroWidget.hidden = !widgetRevealed;
+
+  function animateElement(element, frames, options) {
+    if (!element || !element.animate || paused) return;
+    const animation = element.animate(frames, options);
+    heroAnimations.push(animation);
+    animation.finished.then(function () { animation.cancel(); }).catch(function () {});
+    return animation;
+  }
+  function triggerReactions(index) {
+    if (paused || !widgetEmojisContainer) return;
+    widgetEmojisContainer.textContent = '';
+    reactionPositions.forEach(function (position, i) {
+      const emoji = document.createElement('span');
+      emoji.className = 'widget-fly-emoji';
+      emoji.textContent = reactions[index][i % 3];
+      emoji.style.left = position[0] + '%';
+      emoji.style.animationDelay = (.9 + position[1]) + 's';
+      emoji.style.fontSize = position[2] + 'px';
+      emoji.addEventListener('animationend', function () { emoji.remove(); }, { once: true });
+      widgetEmojisContainer.appendChild(emoji);
     });
   }
-
-  function triggerAppSquish() {
-    if (paused || !phoneApps.length) return;
-    const delays = [0.05, 0.12, 0.22, 0.15, 0.22, 0.32, 0.2, 0.28, 0.38, 0.26, 0.34, 0.42];
-    phoneApps.forEach(function (app, idx) {
-      app.classList.remove('squish');
-      void app.offsetWidth;
-      app.style.animationDelay = (delays[idx % delays.length]) + 's';
-      app.classList.add('squish');
+  function revealWidget(animate) {
+    if (widgetRevealed || !heroWidget) return;
+    const slots = Array.from(document.querySelectorAll('.phone-app-slot'));
+    const before = slots.map(function (slot) { return slot.getBoundingClientRect(); });
+    heroWidget.hidden = false;
+    widgetRevealed = true;
+    if (!animate || paused) return;
+    slots.forEach(function (slot, i) {
+      const after = slot.getBoundingClientRect();
+      animateElement(slot, [
+        { transform: 'translate(' + (before[i].left-after.left) + 'px,' + (before[i].top-after.top) + 'px)' },
+        { transform: 'translate(0,0)' }
+      ], { duration: 650, easing: 'cubic-bezier(.2,.85,.25,1)' });
     });
+    animateElement(heroWidget, [
+      { scale: 1.5, translate: '0 -14px', opacity: 0 },
+      { scale: .97, translate: '0 1px', opacity: 1, offset: .7 },
+      { scale: 1, translate: '0 0', opacity: 1 }
+    ], { duration: 720, easing: 'cubic-bezier(.2,.8,.25,1)' });
+    triggerReactions(0);
   }
-
+  function syncPhotoDetails(index) {
+    if (avatar) avatar.src = './assets/uplocket/index/bubbles/' + avatars[index] + '.webp';
+    if (!heroCaption) return;
+    const caption = captions[index];
+    heroCaption.hidden = !caption;
+    if (caption) {
+      heroCaption.src = './assets/uplocket/index/captions/' + caption + '.webp';
+      heroCaption.style.width = captionWidths[caption] + '%';
+    }
+  }
   async function nextPhoto() {
+    if (!widgetRevealed) { revealWidget(!paused); return; }
     if (photoSwapInProgress || !visiblePhoto || !hiddenPhoto) return;
     photoSwapInProgress = true;
     const nextIndex = photoIndex % 8 + 1;
-    hiddenPhoto.src = './assets/uplocket/index/bubbles/widget-' + nextIndex + '.webp';
-    try { if (hiddenPhoto.decode) await hiddenPhoto.decode(); } catch (_) {}
-    hiddenPhoto.classList.add('is-active');
+    const incoming = hiddenPhoto;
+    incoming.src = './assets/uplocket/index/bubbles/widget-' + nextIndex + '.webp';
+    try { if (incoming.decode) await incoming.decode(); }
+    catch (_) { photoSwapInProgress = false; return; }
+    if (disposed) { photoSwapInProgress = false; return; }
+    incoming.classList.add('is-active');
     visiblePhoto.classList.remove('is-active');
-
-    // Update caption if available
-    if (heroCaption) {
-      const cap = captions[nextIndex % captions.length];
-      heroCaption.src = './assets/uplocket/index/captions/' + cap + '.webp';
-    }
-
-    // Trigger reactions
-    triggerFlyingEmojis(nextIndex - 1);
-    triggerAppSquish();
-
-    const previousPhoto = visiblePhoto;
-    visiblePhoto = hiddenPhoto;
-    hiddenPhoto = previousPhoto;
+    hiddenPhoto = visiblePhoto;
+    visiblePhoto = incoming;
     photoIndex = nextIndex;
+    syncPhotoDetails(nextIndex - 1);
+    triggerReactions(nextIndex - 1);
     photoSwapInProgress = false;
   }
   if (heroWidget) heroWidget.addEventListener('click', nextPhoto);
-
-  // --- 3. 3D PERSPECTIVE TILT ON COLLAGE ---
-  function resetCollageTilt() {
-    if (!collage) return;
-    collage.style.setProperty('--tilt-x', '0deg');
-    collage.style.setProperty('--tilt-y', '0deg');
-  }
-  function moveCollage(event) {
-    if (!collage || paused) return;
-    const rect = collage.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
-    collage.style.setProperty('--tilt-x', (x * 2.6).toFixed(2) + 'deg');
-    collage.style.setProperty('--tilt-y', (y * -2.2).toFixed(2) + 'deg');
-  }
-  if (collage && desktopPointer.matches && !reduced.matches) {
-    collage.addEventListener('pointermove', moveCollage, { passive: true });
-    collage.addEventListener('pointerleave', resetCollageTilt, { passive: true });
+  function queuePhoto(delay) {
+    photoTimer = setTimeout(function () {
+      if (disposed) return;
+      const rect = (widgetRevealed ? heroWidget : document.querySelector('.phone-scene'))?.getBoundingClientRect();
+      const visible = rect && rect.bottom > 0 && rect.top < window.innerHeight;
+      if (!paused && !document.hidden && visible) {
+        if (widgetRevealed) nextPhoto(); else revealWidget(true);
+        queuePhoto(3400);
+      } else queuePhoto(1000);
+    }, delay);
   }
 
-  // --- 4. HERO ENTRANCE EXPLOSION & SCROLL DISPERSION ---
-  const floatingElements = [
-    { selector: '.photo-one', l: 16, t: 20, dur: 0.75, delay: 0.18 },
-    { selector: '.photo-two', l: 94, t: 15, dur: 0.95, delay: 0.04 },
-    { selector: '.photo-three', l: 1, t: 76, dur: 0.70, delay: 0.12 },
-    { selector: '.photo-four', l: 79, t: 73, dur: 0.70, delay: 0.26 },
-    { selector: '.heart-sticker', l: 5, t: 9, dur: 0.80, delay: 0.10 },
-    { selector: '.bff', l: 2, t: 45, dur: 0.90, delay: 0.00 },
-    { selector: '.love-sticker', l: 74, t: 4, dur: 0.80, delay: 0.08 },
-    { selector: '.gold-sticker', l: 78, t: 35, dur: 0.75, delay: 0.20 },
-    { selector: '.sparkle', l: 23, t: 62, dur: 0.70, delay: 0.22 },
-    { selector: '.tiny-heart', l: 95, t: 55, dur: 0.80, delay: 0.06 },
-    { selector: '.name-sticker', l: 90, t: 83, dur: 0.75, delay: 0.28 },
-    { selector: '.hero-ticket', l: 52, t: 63, dur: 0.85, delay: 0.14 }
+  const bubbleSettings = [
+    ['.photo-one',24,29,.75,.18], ['.photo-two',94,25,.95,.04],
+    ['.photo-three',10,75,.7,.12], ['.photo-four',79,63,.7,.26],
+    ['.heart-sticker',13.5,22,.8,.1], ['.bff',11,43,.9,0],
+    ['.sparkle',28,54,.7,.22], ['.megaphone',23.5,75,.75,.16],
+    ['.love-sticker',74.5,19,.8,.08], ['.gold-sticker',72.5,35,.75,.2],
+    ['.tile-sticker',83,41,.85,.14], ['.tiny-heart',95.5,52,.8,.06],
+    ['.name-sticker',90,78,.75,.28]
   ];
-
-  if (!reduced.matches) {
-    // Initial explosion animation on load
-    floatingElements.forEach(function (item) {
-      const el = document.querySelector(item.selector);
-      if (!el || !el.animate) return;
-      const offsetX = (50 - item.l) * 0.75;
-      const offsetY = (50 - item.t) * 0.75;
-      el.animate([
-        { transform: `translate(${offsetX}vw, ${offsetY}vh) scale(0.15)`, opacity: 0 },
-        { transform: 'translate(0, 0) scale(1)', opacity: 1 }
-      ], {
-        duration: item.dur * 1000,
-        delay: item.delay * 1000,
-        easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
-        fill: 'both'
-      });
+  const bubbles = bubbleSettings.map(function (item) {
+    const element = document.querySelector(item[0]);
+    return { element: element, entrance: element?.querySelector('.float-entrance'), scroll: element?.querySelector('.float-scroll'), settings: item };
+  });
+  if (!paused) {
+    bubbles.forEach(function (bubble) {
+      const item = bubble.settings;
+      animateElement(bubble.entrance, [
+        { transform: 'translate(' + ((50-item[1])*.8) + 'vw,' + ((50-item[2])*.8) + 'vh) scale(.1)', opacity: 0 },
+        { transform: 'translate(0,0) scale(1)', opacity: 1 }
+      ], { duration: item[3]*1000, delay: item[4]*1000, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'both' });
     });
-
-    const phoneEl = document.querySelector('.phone');
-    if (phoneEl && phoneEl.animate) {
-      phoneEl.animate([
-        { transform: 'scale(0.45) rotate(-14deg)', opacity: 0 },
-        { transform: 'scale(1) rotate(-8deg)', opacity: 1 }
-      ], {
-        duration: 1000,
-        easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
-        fill: 'both'
-      });
-    }
-
-    // Scroll dispersion parallax: bubbles spread outward and fade on scroll
-    let ticking = false;
-    window.addEventListener('scroll', function () {
-      if (ticking || paused) return;
-      ticking = true;
-      requestAnimationFrame(function () {
-        const scrollY = window.scrollY;
-        const heroH = window.innerHeight * 0.8;
-        const progress = Math.min(1, Math.max(0, scrollY / heroH));
-
-        if (progress > 0 && progress < 1) {
-          const vw = window.innerWidth;
-          const vh = window.innerHeight;
-          floatingElements.forEach(function (item) {
-            const el = document.querySelector(item.selector);
-            if (!el) return;
-            const dispX = (progress * (item.l - 50) * 0.18 * vw) / 100;
-            const dispY = (progress * (item.t - 50) * 0.18 * vh) / 100;
-            const opacity = Math.max(0, 1 - progress * 1.25);
-            el.style.transform = `translate3d(${dispX.toFixed(1)}px, ${dispY.toFixed(1)}px, 0)`;
-            el.style.opacity = opacity.toFixed(2);
-          });
-        } else if (progress === 0) {
-          floatingElements.forEach(function (item) {
-            const el = document.querySelector(item.selector);
-            if (!el) return;
-            el.style.transform = '';
-            el.style.opacity = '';
-          });
-        }
-        ticking = false;
-      });
-    }, { passive: true });
+    animateElement(document.querySelector('.phone-scene'), [
+      { scale: .45, rotate: '-10deg', opacity: 0 },
+      { scale: 1, rotate: '0deg', opacity: 1 }
+    ], { duration: 1000, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'both' });
+    animateElement(document.querySelector('.hero-copy'), [{ opacity:0 },{ opacity:1 }], { duration:800, delay:450, fill:'both' });
+    animateElement(document.querySelector('.hero-qr'), [{ scale:.3, opacity:0 },{ scale:1, opacity:1 }], { duration:850, delay:450, easing:'cubic-bezier(.16,1,.3,1)', fill:'both' });
   }
+
+  let scrollFrame = 0;
+  function updateHeroScroll() {
+    scrollFrame = 0;
+    document.body.classList.toggle('hero-at-top', window.scrollY < 300);
+    const progress = paused ? 0 : Math.min(1, Math.max(0, window.scrollY / Math.max(1, window.innerHeight)));
+    bubbles.forEach(function (bubble) {
+      if (!bubble.scroll) return;
+      const item = bubble.settings;
+      const x = progress * (item[1]-50) * .15 * window.innerWidth / 100;
+      const y = progress * (item[2]-50) * .15 * window.innerHeight / 100;
+      bubble.scroll.style.transform = 'translate3d('+x.toFixed(2)+'px,'+y.toFixed(2)+'px,0)';
+      bubble.scroll.style.opacity = String(1-progress);
+    });
+  }
+  function requestHeroScroll() { if (!scrollFrame) scrollFrame = requestAnimationFrame(updateHeroScroll); }
+  window.addEventListener('scroll', requestHeroScroll, { passive: true });
+  window.addEventListener('resize', requestHeroScroll, { passive: true });
 
   // --- 5. NAVBAR GLIDING PILL WITH MOTION BLUR ---
   const navElement = document.getElementById('navigation');
@@ -329,73 +297,6 @@
     });
   }
 
-  // --- 7. LIVE RECENT UPGRADES TOAST NOTIFICATION ---
-  const upgradeToast = document.getElementById('upgrade-toast');
-  const toastAv = document.getElementById('upgrade-toast-av');
-  const toastName = document.getElementById('upgrade-toast-name');
-  const toastText = document.getElementById('upgrade-toast-text');
-  const toastTime = document.getElementById('upgrade-toast-time');
-  const toastClose = document.getElementById('upgrade-toast-close');
-
-  const simulatedUpgrades = [
-    { name: 'Thảo Linh', plan: 'Locket Gold 1 Năm', time: 'vừa xong', av: 'L' },
-    { name: 'Tuấn Anh', plan: 'VIP Trọn Đời', time: '1 phút trước', av: 'A' },
-    { name: 'Phương Uyên', plan: 'Locket Gold 1 Năm', time: 'vừa xong', av: 'U' },
-    { name: 'Hoàng Nam', plan: 'VIP Trọn Đời', time: '2 phút trước', av: 'N' },
-    { name: 'Minh Thư', plan: 'Gói dùng thử 3 ngày', time: 'vừa xong', av: 'T' }
-  ];
-
-  let upgradeIndex = 0;
-  let upgradeTimer;
-  let upgradeDismissed = false;
-
-  try {
-    if (sessionStorage.getItem('gold-toast-dismissed') === '1') {
-      upgradeDismissed = true;
-    }
-  } catch (_) {}
-
-  function showNextUpgrade() {
-    if (upgradeDismissed || !upgradeToast || paused || document.hidden) return;
-    const up = simulatedUpgrades[upgradeIndex % simulatedUpgrades.length];
-    upgradeIndex++;
-
-    toastAv.textContent = up.av;
-    toastName.textContent = up.name;
-    toastText.textContent = 'vừa nâng cấp ' + up.plan;
-    toastTime.textContent = up.time;
-
-    upgradeToast.hidden = false;
-    upgradeToast.classList.remove('is-hiding');
-
-    setTimeout(function () {
-      if (!upgradeToast.hidden) {
-        upgradeToast.classList.add('is-hiding');
-        setTimeout(function () {
-          upgradeToast.hidden = true;
-          upgradeToast.classList.remove('is-hiding');
-        }, 350);
-      }
-    }, 4500);
-  }
-
-  if (toastClose) {
-    toastClose.addEventListener('click', function () {
-      upgradeDismissed = true;
-      try { sessionStorage.setItem('gold-toast-dismissed', '1'); } catch (_) {}
-      upgradeToast.classList.add('is-hiding');
-      setTimeout(function () { upgradeToast.hidden = true; }, 350);
-      clearInterval(upgradeTimer);
-    });
-  }
-
-  if (!upgradeDismissed) {
-    setTimeout(function () {
-      showNextUpgrade();
-      upgradeTimer = setInterval(showNextUpgrade, 9500);
-    }, 4000);
-  }
-
   // --- 8. MOTION TOGGLE & ACCESSIBILITY ---
   function updateMotion() {
     document.body.classList.toggle('motion-paused', paused);
@@ -404,7 +305,12 @@
       motionButton.setAttribute('aria-pressed', String(paused));
       motionButton.textContent = paused ? 'Bật chuyển động' : 'Tạm dừng chuyển động';
     }
-    if (paused) resetCollageTilt();
+    heroAnimations.forEach(function (animation) {
+      if (animation.playState === 'finished' || animation.playState === 'idle') return;
+      if (paused) animation.pause(); else animation.play();
+    });
+    if (paused) revealWidget(false);
+    requestHeroScroll();
   }
   if (motionButton) {
     motionButton.hidden = false;
@@ -415,15 +321,13 @@
   }
   updateMotion();
 
-  // Widget auto-timer: every 3.8 seconds
-  const photoTimer = setInterval(function () {
-    if (!paused && !document.hidden) nextPhoto();
-  }, 3800);
+  queuePhoto(widgetRevealed ? 3400 : 1200);
   window.addEventListener('pagehide', function (event) {
-    if (!event.persisted) {
-      clearInterval(photoTimer);
-      clearInterval(upgradeTimer);
-    }
+    if (event.persisted) return;
+    disposed = true;
+    clearTimeout(photoTimer);
+    cancelAnimationFrame(scrollFrame);
+    heroAnimations.forEach(function (animation) { animation.cancel(); });
   });
 
   function motionPreferenceChanged(event) {

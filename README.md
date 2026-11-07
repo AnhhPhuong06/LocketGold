@@ -1,6 +1,6 @@
 # Locket Gold · by AnhhPhuongg
 
-Trang tải hồ sơ cấu hình của AnhhPhuongg với giao diện kem–vàng lấy cảm hứng từ Uplocket: điện thoại minh họa, ảnh và sticker nổi, ba thẻ tải xuống, xem thử khung viền và hướng dẫn cài đặt. Bố cục thích ứng trên điện thoại và máy tính.
+Trang tải hồ sơ cấu hình của AnhhPhuongg với giao diện kem–vàng lấy cảm hứng từ Uplocket: điện thoại minh họa, ảnh và sticker nổi, ba thẻ tải xuống, xem thử khung viền và hướng dẫn cài đặt. Phần đầu trang dùng tỉ lệ điện thoại 393/852, lớp nền mờ dần, avatar/caption theo ảnh và nhãn icon. Widget xuất hiện sau 1,2 giây và đổi ảnh mỗi 3,4 giây khi đang trong vùng nhìn; chuyển cảnh, trôi nhẹ và tản ảnh khi cuộn dùng các lớp riêng. Bố cục điện thoại chỉ giữ hai sticker; mã QR dẫn đến chính website AnhhPhuongg.
 
 **Website:** https://AnhhPhuong06.github.io/LocketGold/
 
@@ -32,7 +32,7 @@ node --test tests/referral-core.test.cjs
 - Câu hỏi thường gặp dùng `details` của trình duyệt.
 - Tải trực tiếp hồ sơ chính, hồ sơ IPv4 và chứng chỉ công khai `LocketGold-CA.cer`; sao chép link và nút tải cố định trên điện thoại.
 - Xem dấu vân tay SHA-256, thời hạn chứng chỉ, URL DNS và phạm vi tên miền từ `assets/profile-info.json`.
-- Phông chữ và ảnh lưu cục bộ; không có trình theo dõi hoặc thư viện JavaScript bên ngoài.
+- Phông chữ, ảnh và thư viện Lenis được phục vụ từ chính website; không có trình theo dõi.
 - Hỗ trợ bàn phím, thông báo sao chép cho trình đọc màn hình và chế độ giảm chuyển động.
 
 ## Chạy tại máy
