@@ -52,6 +52,13 @@
   const accountError = document.getElementById('account-error');
   const accountCheck = document.getElementById('account-check');
   const result = document.getElementById('account-result');
+  const accountEntry = document.getElementById('account-entry');
+  const accountTitle = document.getElementById('account-title');
+  const accountInstructions = document.getElementById('account-instructions');
+  const copyFallback = document.getElementById('account-copy-fallback');
+  const copyValue = document.getElementById('account-copy-value');
+  const entryTitle = accountTitle.textContent;
+  const entryInstructions = accountInstructions.textContent;
   const plans = {
     trial: { name: 'Gói dùng thử', duration: '3 ngày', price: 'Miễn phí' },
     year: { name: 'Locket Gold 1 năm', duration: '1 năm', price: '15.000đ' },
@@ -62,6 +69,11 @@
   let backgroundState = [];
   function resetAccountResult() {
     account = null; result.hidden = true; accountCheck.hidden = false;
+    accountEntry.hidden = false;
+    modal.classList.remove('has-result');
+    accountTitle.textContent = entryTitle;
+    accountInstructions.textContent = entryInstructions;
+    copyFallback.hidden = true; copyValue.value = '';
     document.getElementById('account-copy-status').textContent = '';
     accountInput.readOnly = false;
   }
@@ -122,18 +134,28 @@
     accountInput.value = account.url; accountInput.readOnly = true;
     document.getElementById('account-username').textContent = '@' + account.username;
     document.getElementById('account-profile').href = account.url;
+    accountEntry.hidden = true;
+    modal.classList.add('has-result');
+    accountTitle.textContent = 'Liên kết đã sẵn sàng';
+    accountInstructions.textContent = 'Sao chép link rồi tiếp tục tại Uplocket.';
     accountCheck.hidden = true; result.hidden = false;
     document.getElementById('account-copy').focus();
   });
   document.getElementById('account-copy').addEventListener('click', async function () {
     if (!account) return;
+    const copiedAccount = account;
+    const copiedUrl = account.url;
     try {
       if (!navigator.clipboard || !window.isSecureContext) throw new Error('Clipboard unavailable');
-      await navigator.clipboard.writeText(account.url);
-      document.getElementById('account-copy-status').textContent = 'Đã sao chép link. Bạn có thể dán vào Uplocket.';
+      await navigator.clipboard.writeText(copiedUrl);
+      if (modal.hidden || account !== copiedAccount) return;
+      copyFallback.hidden = true;
+      document.getElementById('account-copy-status').textContent = 'Đã sao chép link Locket.';
     } catch (_) {
-      accountInput.focus(); accountInput.select();
-      document.getElementById('account-copy-status').textContent = 'Không sao chép tự động được. Hãy sao chép link đã được chọn trong ô phía trên.';
+      if (modal.hidden || account !== copiedAccount) return;
+      copyValue.value = copiedUrl; copyFallback.hidden = false;
+      copyValue.focus(); copyValue.select();
+      document.getElementById('account-copy-status').textContent = 'Không sao chép tự động được.';
     }
   });
   modal.querySelector('.account-edit').addEventListener('click', function () { resetAccountResult(); clearAccountError(); accountInput.focus(); accountInput.select(); });
