@@ -118,12 +118,14 @@
       const photo = document.createElement('img');
       photo.alt = ''; photo.width = 38; photo.height = 38; photo.decoding = 'async';
       photo.referrerPolicy = 'no-referrer';
+      photo.addEventListener('load', function () {
+        if (account === currentAccount) avatar.replaceChildren(photo);
+      }, { once: true });
       photo.addEventListener('error', function () {
-        if (account !== currentAccount || !avatar.contains(photo)) return;
+        if (account !== currentAccount) return;
         avatar.textContent = initials; if (!lookupResult) source.hidden = true;
       }, { once: true });
       photo.src = avatarSource;
-      avatar.replaceChildren(photo);
       const checkedAt = new Date(profile.checkedAt);
       const date = Number.isFinite(checkedAt.getTime()) ? new Intl.DateTimeFormat('vi-VN').format(checkedAt) : '';
       source.textContent = 'Ảnh từ trang cá nhân công khai' + (date ? ' · lưu ngày ' + date : '');
