@@ -22,6 +22,7 @@ node --test tests/referral-core.test.cjs
 
 ## Nội dung
 
+- Bảng giá tham khảo từ Uplocket: dùng thử miễn phí, 1 năm 15.000đ, trọn đời 25.000đ. Nút chọn mở website Uplocket; không thu tiền, nhận đơn hoặc cấp Gold trên trang này. Giá và điều kiện cần được xác nhận tại bên cung cấp; tên gói trọn đời không phải cam kết từ Locket. Không dùng giá này như bảng giá dịch vụ do AnhhPhuongg vận hành.
 - Điện thoại và ảnh nổi minh họa trên đầu trang; không phải ảnh chụp ứng dụng thực tế.
 - Xem thử ba màu khung và nhấn ảnh để đổi khoảnh khắc; không thay đổi ứng dụng Locket.
 - Hướng dẫn cài đặt với ba bước tương tác.
