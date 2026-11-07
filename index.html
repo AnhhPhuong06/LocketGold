@@ -12,13 +12,13 @@
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="./assets/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./assets/landing.css?v=2">
-  <link rel="stylesheet" href="./assets/checkout.css?v=4">
+  <link rel="stylesheet" href="./assets/checkout.css?v=5">
   <link rel="stylesheet" href="./assets/visuals.css?v=3">
   <link rel="stylesheet" href="./assets/phone.css?v=1">
   <link rel="stylesheet" href="./assets/hero.css?v=3">
   <script src="./assets/profile-info.js" defer></script>
   <script src="./assets/locket-link.js" defer></script>
-  <script src="./assets/landing.js?v=4" defer></script>
+  <script src="./assets/landing.js?v=5" defer></script>
   <script src="./assets/uplocket/lenis.min.js" defer></script>
   <script src="./assets/uplocket/frames.js" defer></script>
   <script src="./assets/visuals.js?v=3" defer></script>
@@ -89,27 +89,26 @@
   <a class="mobile-download button button-dark" href="#downloads"><svg class="icon"><use href="#download"/></svg>DNS + Chứng chỉ <span>↗</span></a>
   <div class="account-modal" id="account-modal" role="dialog" aria-modal="true" aria-labelledby="account-title" aria-describedby="account-instructions account-disclaimer" hidden>
     <div class="account-panel" tabindex="-1">
-      <button class="account-close" type="button" aria-label="Đóng cửa sổ">×</button>
+      <button class="account-close" type="button" aria-label="Đóng cửa sổ"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
       <span class="account-badge">Nâng cấp Locket Gold</span>
       <h2 id="account-title">Dán link Locket của bạn</h2>
       <p id="account-instructions">Mở app Locket &gt; Trang cá nhân &gt; Chia sẻ liên kết rồi dán vào đây.</p>
       <form id="account-form" novalidate>
         <div id="account-entry">
         <label class="sr-only" for="account-link">Link trang cá nhân Locket</label>
-        <input id="account-link" type="url" inputmode="url" placeholder="https://locket.cam/ten_cua_ban" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="512" aria-describedby="account-error" required>
+        <div class="account-input-wrap"><input id="account-link" type="url" inputmode="url" placeholder="https://locket.cam/ten_cua_ban" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="512" aria-describedby="account-error" required><button id="account-copy" type="button" aria-label="Sao chép link Locket" title="Sao chép link Locket" hidden><svg class="icon" aria-hidden="true"><use href="#copy"/></svg></button></div>
         <p class="account-error" id="account-error" role="alert" hidden></p>
         </div>
         <div class="account-plan"><div><strong id="account-plan-name">Gói dùng thử</strong><small id="account-plan-duration">3 ngày · theo web mẫu</small></div><b id="account-plan-price">Miễn phí</b></div>
         <button class="button account-check" type="submit" id="account-check" disabled>Kiểm tra link Locket</button>
       </form>
       <div class="account-result" id="account-result" role="region" aria-label="Liên kết Locket" hidden>
-        <div class="account-link-card"><span class="account-link-icon" aria-hidden="true"><svg class="icon"><use href="#heart"/></svg></span><div class="account-link-details"><span>Đúng định dạng</span><strong id="account-username"></strong></div><button id="account-copy" type="button" aria-label="Sao chép link Locket"><svg class="icon" aria-hidden="true"><use href="#copy"/></svg><span>Sao chép</span></button></div>
+        <p class="account-valid-message" role="status"><span aria-hidden="true">✓</span> Link đúng định dạng <strong class="sr-only" id="account-username"></strong></p>
         <p class="account-result-note">Chưa xác minh tài khoản hoặc kích hoạt Gold.</p>
         <p id="account-copy-status" role="status" aria-live="polite"></p>
         <div id="account-copy-fallback" hidden><label for="account-copy-value">Nhấn giữ liên kết để sao chép:</label><input id="account-copy-value" type="url" readonly aria-label="Liên kết Locket để sao chép"></div>
-        <a id="account-profile" class="text-link account-profile-link" href="https://locket.cam/" target="_blank" rel="noopener noreferrer">Mở trang cá nhân ↗</a>
         <a class="button account-continue" href="https://uplocket.io.vn/" target="_blank" rel="noopener noreferrer">Tiếp tục tại Uplocket <span aria-hidden="true">↗</span></a>
-        <button class="account-edit text-button" type="button">← Sửa liên kết</button>
+        <div class="account-secondary"><button class="account-edit text-button" type="button">Sửa liên kết</button><a id="account-profile" class="text-link account-profile-link" href="https://locket.cam/" target="_blank" rel="noopener noreferrer">Mở trang cá nhân ↗</a></div>
       </div>
       <p class="account-disclaimer sr-only" id="account-disclaimer">Chỉ kiểm tra định dạng ngay trên trình duyệt, không lưu hoặc gửi link. Bước này chưa đặt mua hay kích hoạt Gold; giá và thời hạn do Uplocket xác nhận.</p>
     </div>

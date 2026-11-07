@@ -70,6 +70,7 @@
   function resetAccountResult() {
     account = null; result.hidden = true; accountCheck.hidden = false;
     accountEntry.hidden = false;
+    document.getElementById('account-copy').hidden = true;
     modal.classList.remove('has-result');
     accountTitle.textContent = entryTitle;
     accountInstructions.textContent = entryInstructions;
@@ -134,10 +135,11 @@
     accountInput.value = account.url; accountInput.readOnly = true;
     document.getElementById('account-username').textContent = '@' + account.username;
     document.getElementById('account-profile').href = account.url;
-    accountEntry.hidden = true;
+    accountEntry.hidden = false;
+    document.getElementById('account-copy').hidden = false;
     modal.classList.add('has-result');
-    accountTitle.textContent = 'Liên kết đã sẵn sàng';
-    accountInstructions.textContent = 'Sao chép link rồi tiếp tục tại Uplocket.';
+    accountTitle.textContent = entryTitle;
+    accountInstructions.textContent = entryInstructions;
     accountCheck.hidden = true; result.hidden = false;
     document.getElementById('account-copy').focus();
   });

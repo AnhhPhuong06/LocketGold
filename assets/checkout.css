@@ -6,39 +6,48 @@
 @media(max-width:760px){.pricing{padding-bottom:15px}.pricing h2{font-size:32px;letter-spacing:-1.2px}.pricing .section-heading{margin-bottom:38px}.price-grid{grid-template-columns:1fr;max-width:420px;margin:auto;gap:32px}.price-card,.price-card.price-featured{min-height:0;padding:30px 25px 24px}.price-symbol,.price-featured .price-symbol{left:25px;top:31px;width:42px;height:46px}.price-card h3{margin:4px 0 0 56px;font-size:19px}.price{font-size:43px;margin-top:24px}.price-card:first-child .price{font-size:31px;margin-top:26px}.price-card>p{min-height:0;font-size:12px}.price-features{font-size:13px;margin-bottom:25px}.price-detail{font-size:11px;margin-top:17px}.price-detail strong{font-size:12px}.price-card .button{font-size:14px}.pricing-note{text-align:left;font-size:10px;max-width:420px}}
 @media(max-width:480px){.account-modal{padding:16px}.account-panel{max-height:calc(100vh - 32px);border-radius:30px;padding:28px 22px 24px}.account-panel h2{font-size:21px}.account-panel>p#account-instructions{font-size:12px;line-height:18px}.account-panel input{font-size:16px}.account-panel input::placeholder{font-size:13px}.account-plan>b{font-size:19px}.account-badge{font-size:11px}.account-plan strong{font-size:13px}.account-check{font-size:15px}}
 
-/* Compact entry and result states share one centered dialog. */
+/* Dialog dimensions follow the reference; validation keeps the same layout. */
 html{scrollbar-gutter:stable}
-.account-modal{padding:24px;scroll-padding-block:24px}
-.account-panel{max-height:calc(100dvh - 48px);overscroll-behavior:contain;scrollbar-width:thin}
-.account-panel h2{font-weight:900}
-.account-result{padding:0;border:0;background:none;margin-top:14px}
-.has-result .account-plan{margin-top:0}
-.account-link-card{display:flex;align-items:center;gap:10px;min-width:0;min-height:68px;padding:12px;background:#fff7e0;border:1px solid #efdfb9;border-radius:18px;text-align:left}
-.account-link-icon{display:grid;place-items:center;flex:0 0 36px;width:36px;height:36px;background:#ffd363;color:#9a6800;border-radius:12px}
-.account-link-icon .icon{width:21px;height:21px;fill:currentColor;stroke:none}
-.account-link-details{flex:1;min-width:0}
-.account-link-details>span{display:block;font-size:10px;font-weight:800;color:#9d8b64;line-height:1.5}
-.account-result .account-link-details #account-username{display:block;margin:3px 0 0;font-size:14px;line-height:1.4;font-weight:900;color:#332819;overflow-wrap:anywhere}
-#account-copy{display:inline-flex;align-items:center;justify-content:center;gap:5px;flex:0 0 auto;min-height:36px;padding:8px 9px;border-radius:11px;background:#ffe8a2;font-size:11px;line-height:1.2;font-weight:900;color:#775000}
-#account-copy:hover{background:#ffdb76}
-#account-copy .icon{width:15px;height:15px}
-.account-result>p.account-result-note{margin:9px 2px 0;font-size:11px;line-height:1.5;color:#998664}
-.account-panel .account-result #account-copy-status{margin:8px 2px 0;font-size:11px;font-weight:800;line-height:1.5;color:#735519}
-.account-result .account-profile-link{display:table;margin:12px auto 0;font-size:12px;line-height:1.5;text-align:center}
-.account-result .account-continue{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:48px;margin-top:16px;border-radius:28px;background:#ffc52d;color:#493300;font-size:14px;font-weight:1000}
+.account-modal{padding:20px;background:#1a120059;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);scroll-padding-block:20px}
+.account-panel{width:420px;max-width:100%;max-height:calc(100dvh - 40px);padding:28px 24px 24px;border:0;border-radius:32px;background:#fffbf1;box-shadow:0 16px 50px #0000002e;overscroll-behavior:contain;scrollbar-width:thin}
+.account-close{top:16px;right:16px;width:32px;height:32px;color:#a59472}
+.account-close svg{width:16px;height:16px}
+.account-badge{min-height:28px;padding:5px 12px;background:#fff2ce;color:#b27b00;font-size:11.5px;font-weight:900}
+.account-panel h2{margin-top:10px;font-size:21px;line-height:25px;letter-spacing:-.42px;font-weight:900}
+.account-panel>p#account-instructions{margin:6px 0 18px;font-size:13px;line-height:18px;font-weight:800}
+.account-input-wrap{position:relative}
+.account-panel #account-link{height:46px;min-height:46px;border:1.5px solid transparent;border-radius:999px;background:#fff2d1;padding:0 14px;font-size:14.5px;font-weight:700;line-height:22px}
+.account-panel #account-link::placeholder{color:#938970;font-weight:800}
+.account-panel #account-link:focus-visible{border-color:#ffbf27;box-shadow:none}
+.account-panel #account-link[aria-invalid=true]{border-color:#b44e31;background:#fff0e6}
+.has-result #account-link{padding-right:50px}
+#account-copy{position:absolute;top:6px;right:6px;display:grid;place-items:center;width:34px;height:34px;min-height:34px;padding:8px;border-radius:50%;background:#ffe4a0;color:#9a6900}
+#account-copy:hover{background:#ffd266}
+#account-copy .icon{width:17px;height:17px}
+.account-plan,.has-result .account-plan{min-height:74px;margin-top:16px;padding:14px 16px;border-radius:18px;background:#fffdf7;border-color:#efdfb9}
+.account-plan strong{font-size:14.5px;line-height:20px;font-weight:900}
+.account-plan small{margin-top:2px;font-size:12px;line-height:18px;font-weight:700}
+.account-plan>b{font-size:19px;font-weight:900}
+.account-check{margin-top:18px;font-size:16px;font-weight:900}
+.account-result{padding:0;border:0;background:none;margin-top:12px}
+.account-result>p.account-valid-message{display:flex;align-items:center;gap:6px;margin:0;font-size:12px;line-height:18px;font-weight:900;color:#84611b}
+.account-valid-message>span{display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:#ffe4a0;font-size:10px}
+.account-result>p.account-result-note{margin:3px 0 0;font-size:11px;line-height:16px;color:#998664}
+.account-panel .account-result #account-copy-status{margin:8px 0 0;font-size:11px;font-weight:800;line-height:16px;color:#735519}
+.account-result .account-continue{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:48px;margin-top:16px;border-radius:999px;background:#ffc52d;color:#493300;font-size:14px;font-weight:900}
 .account-result .account-continue:hover{background:#ffb700;transform:none}
-.account-result .account-edit{display:table;min-height:32px;padding:6px 10px;margin:8px auto 0;font-size:12px;font-weight:800;line-height:1.5;color:#8c7956}
+.account-secondary{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px}
+.account-result .account-secondary .account-profile-link,.account-result .account-secondary .account-edit{display:inline-flex;align-items:center;min-height:30px;padding:4px 0;margin:0;font-size:11px;font-weight:800;line-height:18px;color:#8c7956}
 #account-copy-fallback{margin-top:10px}
-#account-copy-fallback label{display:block;margin:0 2px 6px;font-size:11px;line-height:1.5;color:#8c7956}
+#account-copy-fallback label{display:block;margin:0 0 6px;font-size:11px;line-height:16px;color:#8c7956}
 #account-copy-value{height:40px;min-height:40px;border-radius:12px;padding:9px 10px;font-size:12px;font-weight:700}
 @media(max-width:480px){
  .account-modal{padding:max(16px,env(safe-area-inset-top)) 16px max(16px,env(safe-area-inset-bottom));scroll-padding-block:16px}
- .account-panel{padding:28px 22px 20px;max-height:calc(100dvh - 32px - env(safe-area-inset-top) - env(safe-area-inset-bottom))}
- .account-panel h2{font-size:21px}
- #account-copy{padding:9px 7px}
- .account-link-card{gap:8px;padding:11px}
- .account-link-icon{width:32px;height:32px;flex-basis:32px;border-radius:10px}
- .account-result .account-link-details #account-username{font-size:13px}
+ .account-panel{padding:26px 22px 22px;max-height:calc(100dvh - 32px - env(safe-area-inset-top) - env(safe-area-inset-bottom))}
+ .account-panel h2{font-size:20px;line-height:24px}
+ .account-panel>p#account-instructions{font-size:12.5px;line-height:18px}
+ .account-panel #account-link{font-size:16px}
+ .account-panel #account-link::placeholder{font-size:13px}
 }
-@media(max-width:350px){#account-copy>span{display:none}#account-copy{width:34px;height:36px}.account-link-card{gap:7px}.account-panel{padding-inline:18px}}
+@media(max-width:350px){.account-panel{padding-inline:18px}.account-secondary{gap:8px}.account-result .account-secondary .account-profile-link,.account-result .account-secondary .account-edit{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.account-modal,.account-panel{animation:none!important}}
