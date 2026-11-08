@@ -167,19 +167,13 @@
     document.getElementById('account-provider-package').textContent = lookupResult?.package_name || 'Chưa có dữ liệu';
     const packageExpiry = new Date(lookupResult?.expires_at || '');
     document.getElementById('account-provider-expiry').textContent = Number.isFinite(packageExpiry.getTime()) ? new Intl.DateTimeFormat('vi-VN', { dateStyle: 'short', timeStyle: 'short', timeZone: 'Asia/Ho_Chi_Minh' }).format(packageExpiry) : 'Chưa có dữ liệu';
-    document.getElementById('account-provider-note').textContent = gold === true ? 'Theo Uplocket, tài khoản đã có Gold; chưa xác nhận thuê bao chính thức từ Locket. Hồ sơ tải là bản DNS chung.' : gold === false ? 'Uplocket chưa ghi nhận Gold cho tài khoản này. Tiếp tục tại Uplocket, sau đó quay lại kiểm tra trạng thái.' : lookupMessage || 'Uplocket chưa cung cấp đủ dữ liệu để xác định Gold. Bạn có thể kiểm tra lại hoặc mở Uplocket.';
+    document.getElementById('account-provider-note').textContent = gold === true ? 'Theo Uplocket, tài khoản đã có Gold; chưa xác nhận thuê bao chính thức từ Locket. Hồ sơ tải là bản DNS chung.' : gold === false ? 'Uplocket chưa ghi nhận Gold cho tài khoản này. Bạn có thể tải hồ sơ DNS chung ngay tại đây; hồ sơ không cấp hoặc kích hoạt gói Gold.' : lookupMessage || 'Chưa đủ dữ liệu để xác định Gold. Bạn vẫn có thể tải hồ sơ DNS chung tại đây; tải hồ sơ không thay đổi trạng thái Gold.';
     document.getElementById('account-lookup-retry').hidden = !lookupMessage;
     const primary = document.getElementById('account-primary-action');
-    document.getElementById('account-secondary-download').hidden = gold !== false;
-    if (gold !== true) {
-      primary.href = 'https://uplocket.io.vn/'; primary.removeAttribute('download');
-      primary.target = '_blank'; primary.rel = 'noopener noreferrer';
-      primary.textContent = gold === false ? 'Nâng cấp tại Uplocket ↗' : 'Kiểm tra tại Uplocket ↗';
-    } else {
-      primary.href = './AnhhPhuongg.mobileconfig'; primary.download = 'AnhhPhuongg.mobileconfig';
-      primary.removeAttribute('target'); primary.removeAttribute('rel');
-      primary.textContent = 'Tải lại hồ sơ DNS';
-    }
+    primary.href = './AnhhPhuongg.mobileconfig';
+    primary.download = 'AnhhPhuongg.mobileconfig';
+    primary.removeAttribute('target'); primary.removeAttribute('rel');
+    primary.textContent = gold === true ? 'Tải lại hồ sơ DNS' : 'Tải hồ sơ DNS hiện có';
     const info = window.LocketProfileInfo;
     const file = info?.profiles?.['AnhhPhuongg.mobileconfig'];
     document.getElementById('account-dns-size').textContent = file && Number.isFinite(file.bytes) ? new Intl.NumberFormat('vi-VN', { maximumFractionDigits: 1 }).format(file.bytes / 1024) + ' KB' : 'Chưa có dữ liệu';
@@ -304,7 +298,7 @@
       await navigator.clipboard.writeText(username);
       if (account !== currentAccount || modal.hidden || revision !== copyRevision) return;
       document.getElementById('account-copy-fallback').hidden = true;
-      document.getElementById('account-copy-status').textContent = 'Đã sao chép @' + username + '. Dán tại Uplocket để tiếp tục.';
+      document.getElementById('account-copy-status').textContent = 'Đã sao chép @' + username + '.';
     } catch (_) {
       if (account !== currentAccount || modal.hidden || revision !== copyRevision) return;
       document.getElementById('account-copy-fallback').hidden = false;

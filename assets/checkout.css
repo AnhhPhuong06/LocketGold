@@ -110,6 +110,7 @@ html{scrollbar-gutter:stable}
 @media(max-width:350px){.account-progress{gap:6px}.account-progress li{font-size:9px;gap:4px}.account-provider-summary dd{font-size:11px}.pricing-return{gap:8px}.pricing-return a{padding:10px 13px}}
 
 /* Repeat each package's advertised benefits as in the supplied reference. */
+.account-form-note{margin:12px 4px 0;font-size:11px;line-height:17px;color:#9b8864;text-align:center}
 .pricing .price-featured .price-kicker{top:9px}
 .pricing .price-features{font-size:14px;line-height:1.6;font-weight:900;margin:22px 0 26px}
 .pricing .price-features li{gap:10px;align-items:center}
