@@ -74,3 +74,37 @@ html{scrollbar-gutter:stable}
 .account-gold-status[data-status=inactive]{background:#f2eadb;color:#91754c}
 .account-lookup-retry{display:table;padding:7px 0;margin:4px 0 0;background:none;color:#99701b;font:800 11px/17px Nunito,sans-serif;text-decoration:underline;text-underline-offset:3px}
 .account-secondary-download{display:table;margin:10px auto 0;padding:4px 0;font-size:11px;font-weight:800;line-height:18px;color:#987b45;text-decoration:underline;text-underline-offset:3px}
+/* Account lookup, provider hand-off and installation form one dialog flow. */
+.pricing-return{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin:32px 0 0;font-size:12px;font-weight:800;color:#a28e64}
+.pricing-return a{padding:11px 17px;border-radius:999px;background:#fff2ce;color:#5e4820;font-weight:900;transition:background .2s}
+.pricing-return a:hover{background:#ffe5a0}
+.account-progress{display:flex;gap:8px;list-style:none;padding:0;margin:18px 0 16px;justify-content:center}
+.account-progress li{display:flex;gap:5px;align-items:center;white-space:nowrap;font-size:10px;line-height:18px;font-weight:800;color:#aa9c83}
+.account-progress li>span{display:grid;place-items:center;width:19px;height:19px;border-radius:50%;background:#f2ead9;color:#98896f}
+.account-progress li[aria-current=step]{color:#805600}
+.account-progress li[aria-current=step]>span{background:#ffbf22;color:#473000}
+.account-progress li.is-past>span{background:#ffe7a4;color:#846112}
+.account-provider-summary{display:grid;gap:7px;border-top:1px solid #efe5d2;padding-top:12px;margin:10px 0 0}
+.account-provider-summary>div{display:flex;justify-content:space-between;align-items:start;gap:14px}
+.account-provider-summary dt{font-size:11px;line-height:17px;font-weight:700;color:#a18f6d}
+.account-provider-summary dd{margin:0;max-width:65%;text-align:right;font-size:12px;line-height:17px;font-weight:900;overflow-wrap:anywhere}
+.account-followup{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;margin-top:12px}
+.account-followup button,.account-install-link,.account-install-back{background:none;color:#95743b;font:800 11px/18px Nunito,sans-serif;padding:6px 0;text-underline-offset:3px}
+.account-followup button:hover,.account-install-link:hover,.account-install-back:hover{text-decoration:underline;color:#5e451b}
+.account-install-link{display:block;margin:9px auto 0;font-size:12px}
+.account-copy-status{font-size:11px;line-height:17px;text-align:center;color:#85704c;margin:7px 0 0;overflow-wrap:anywhere}
+.account-copy-status:empty{display:none}
+.account-copy-fallback{margin-top:10px;text-align:left}
+.account-copy-fallback label{display:block;font-size:11px;line-height:17px;color:#85704c;margin-bottom:6px}
+.account-copy-fallback input{font-size:14px;height:40px;min-height:40px}
+.account-install-account{margin:12px 0 0;font-size:12px;font-weight:900;color:#a27b2a;overflow-wrap:anywhere}
+.account-install-note{font-size:11px;line-height:17px;text-align:left;padding:12px;border:1px solid #efdfb9;border-radius:14px;background:#fff5da;margin-top:12px;color:#826c43}
+.account-install-steps{list-style:none;padding:0;margin:20px 0;text-align:left;display:grid;gap:17px}
+.account-install-steps li{display:flex;gap:11px;align-items:start}
+.account-install-steps li>span{display:grid;place-items:center;flex:0 0 25px;height:25px;border-radius:9px;background:#fff0c4;color:#ad7900;font-size:12px;font-weight:900}
+.account-install-steps h3{font-size:13px;font-weight:900;line-height:20px}
+.account-install-steps p{font-size:11.5px;line-height:18px;color:#98825b;margin-top:4px}
+.account-install-download{display:flex;width:100%;background:#ffb000;color:#191000;border-radius:999px;font:900 14px/22px Nunito,sans-serif;min-height:48px}
+.account-install-back{display:block;margin:12px auto 0}
+.account-panel :is(button,a):focus-visible{outline:2px solid #a97000;outline-offset:3px}
+@media(max-width:350px){.account-progress{gap:6px}.account-progress li{font-size:9px;gap:4px}.account-provider-summary dd{font-size:11px}.pricing-return{gap:8px}.pricing-return a{padding:10px 13px}}

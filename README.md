@@ -12,6 +12,8 @@ Backend trong `backend/lookup-worker.mjs` gọi endpoint tra cứu công khai c�
 
 Khi bật, nút kiểm tra gửi username đến Uplocket và giao diện ghi rõ nguồn. Cờ `is_gold=true/false` hiển thị “Đã có Gold” hoặc “Chưa có Gold” **theo Uplocket**, không được mô tả là xác nhận thuê bao chính thức từ Locket. Nếu API lỗi hoặc không trả cờ boolean, trạng thái vẫn chưa xác định. Gói vừa chọn, gói trong dữ liệu Uplocket và hạn Uplocket trả về là các trường riêng. Tài khoản chưa có Gold có nút mở Uplocket để tiếp tục tại dịch vụ đó; website này không tự đặt đơn hoặc cấp gói.
 
+Cửa sổ có ba bước: nhập link → xác nhận tài khoản → hướng dẫn cài DNS. Thẻ xác nhận giữ tên, ảnh, trạng thái, gói và hạn ở phần chính; các chi tiết khác thu gọn. Nút “Cài lại DNS” tra cứu gói hiện có mà không chọn một gói mới. Người dùng có thể sao chép username (có phương án sao chép thủ công), mở Uplocket rồi quay lại kiểm tra trạng thái. Hướng dẫn cài nằm trong cùng cửa sổ và không đánh dấu thiết bị đã cài thành công chỉ vì tải tệp.
+
 Xem `backend/README.md` để chạy preview, kiểm thử và cấu hình triển khai.
 
 ## Tool quản lý lời mời Gold
@@ -63,7 +65,7 @@ GitHub Pages dùng nhánh `main`, thư mục gốc `/`. Tệp `.nojekyll` giữ 
 
 - `index.html`: nội dung và các phần của trang.
 - `assets/landing.css`: giao diện trang chủ, kích thước màn hình và chuyển động.
-- `assets/checkout.css`: bảng giá và cửa sổ nhập link, tỷ lệ 420px trên máy tính, nền mờ, các trạng thái nút và bố cục điện thoại theo ảnh tham khảo. Chỉ giao diện và kiểm tra định dạng tại máy; không kết nối API cấp Gold.
+- `assets/checkout.css`: bảng giá, thẻ tài khoản và luồng ba bước trong cửa sổ 420px; nền mờ, bố cục điện thoại và hướng dẫn cài DNS. API chỉ tra cứu, không cấp Gold.
 - `assets/visuals.css`, `assets/visuals.js`: bố trí tài nguyên gốc, chuyển động và thư viện khung.
 - `assets/uplocket/`: ảnh và khung, Lenis, phông Fredoka, danh mục và bản kê URL nguồn/SHA-256. Xem README và giấy phép trong thư mục này.
 - `scripts/import-uplocket-assets.py`: nhập lại tài nguyên từ bản tải cục bộ `D:\Locket_Gold\uplocket-public`; giữ nguyên tệp và loại khung trùng SHA-256.

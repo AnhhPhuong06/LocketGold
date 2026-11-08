@@ -55,6 +55,7 @@
   const accountEntry = document.getElementById('account-entry');
   const accountTitle = document.getElementById('account-title');
   const accountInstructions = document.getElementById('account-instructions');
+  const installPanel = document.getElementById('account-install');
   const entryTitle = accountTitle.textContent;
   const entryInstructions = accountInstructions.textContent;
   const lookupConfig = window.LocketLookupConfig || {};
@@ -66,7 +67,8 @@
   const plans = {
     trial: { name: 'Gói dùng thử', duration: '3 ngày', price: 'Miễn phí' },
     year: { name: 'Locket Gold 1 năm', duration: '1 năm', price: '20.000đ' },
-    lifetime: { name: 'Locket Gold trọn đời', duration: 'Theo điều kiện Uplocket', price: '30.000đ' }
+    lifetime: { name: 'Locket Gold trọn đời', duration: 'Theo điều kiện Uplocket', price: '30.000đ' },
+    restore: { name: 'Cài lại hồ sơ DNS', duration: 'Tra cứu gói hiện có tại Uplocket', price: 'Tra cứu' }
   };
   let returnFocus = null;
   let account = null;
@@ -75,16 +77,32 @@
   let lookupResult = null;
   let lookupMessage = '';
   let backgroundState = [];
+  let copyRevision = 0;
+  function setAccountStep(step) {
+    modal.querySelectorAll('.account-progress li').forEach(function (item, index) {
+      if (index + 1 === step) item.setAttribute('aria-current', 'step'); else item.removeAttribute('aria-current');
+      item.classList.toggle('is-past', index + 1 < step);
+    });
+    modal.querySelector('.account-panel').scrollTop = 0;
+  }
+  function resetCopy() {
+    copyRevision++;
+    document.getElementById('account-copy-status').textContent = '';
+    document.getElementById('account-copy-fallback').hidden = true;
+    document.getElementById('account-copy-value').value = '';
+  }
   function resetAccountResult() {
     if (lookupController) lookupController.abort();
     lookupController = null; lookupResult = null; lookupMessage = '';
     account = null; result.hidden = true; accountCheck.hidden = false;
+    installPanel.hidden = true; resetCopy(); setAccountStep(1);
+    document.getElementById('account-details').open = false;
     accountCheck.textContent = checkLabel;
     form.removeAttribute('aria-busy');
     form.hidden = false;
     accountEntry.hidden = false;
     modal.classList.remove('has-result');
-    accountTitle.textContent = entryTitle;
+    accountTitle.textContent = selectedPlan === plans.restore ? 'Tìm lại tài khoản Locket' : entryTitle;
     accountInstructions.textContent = entryInstructions;
     accountInstructions.hidden = false;
     document.getElementById('account-lookup-notice').hidden = !lookupEnabled;
@@ -133,7 +151,7 @@
     }
     if (lookupResult) {
       const checkedAt = new Date(lookupResult.checked_at);
-      source.textContent = 'Theo Uplocket' + (Number.isFinite(checkedAt.getTime()) ? ' · tra cứu ' + new Intl.DateTimeFormat('vi-VN', { dateStyle: 'short', timeStyle: 'short' }).format(checkedAt) : '');
+      source.textContent = 'Theo Uplocket' + (Number.isFinite(checkedAt.getTime()) ? ' · tra cứu ' + new Intl.DateTimeFormat('vi-VN', { dateStyle: 'short', timeStyle: 'short', timeZone: 'Asia/Ho_Chi_Minh' }).format(checkedAt) : '');
       source.hidden = false;
     }
     const profileLink = document.getElementById('account-detail-link');
@@ -148,15 +166,15 @@
     document.getElementById('account-provider-gold').textContent = gold === true ? 'Đã có Gold' : gold === false ? 'Chưa có Gold' : 'Chưa xác minh';
     document.getElementById('account-provider-package').textContent = lookupResult?.package_name || 'Chưa có dữ liệu';
     const packageExpiry = new Date(lookupResult?.expires_at || '');
-    document.getElementById('account-provider-expiry').textContent = Number.isFinite(packageExpiry.getTime()) ? new Intl.DateTimeFormat('vi-VN', { dateStyle: 'short', timeStyle: 'short' }).format(packageExpiry) : 'Chưa có dữ liệu';
-    document.getElementById('account-provider-note').textContent = lookupResult ? 'Kết quả do Uplocket cung cấp, không phải xác nhận thuê bao từ Locket. Hồ sơ DNS không tự kích hoạt Gold.' : lookupMessage || 'Trạng thái tài khoản và Gold chưa xác minh. Hồ sơ DNS này không kích hoạt Gold.';
+    document.getElementById('account-provider-expiry').textContent = Number.isFinite(packageExpiry.getTime()) ? new Intl.DateTimeFormat('vi-VN', { dateStyle: 'short', timeStyle: 'short', timeZone: 'Asia/Ho_Chi_Minh' }).format(packageExpiry) : 'Chưa có dữ liệu';
+    document.getElementById('account-provider-note').textContent = gold === true ? 'Theo Uplocket, tài khoản đã có Gold; chưa xác nhận thuê bao chính thức từ Locket. Hồ sơ tải là bản DNS chung.' : gold === false ? 'Uplocket chưa ghi nhận Gold cho tài khoản này. Tiếp tục tại Uplocket, sau đó quay lại kiểm tra trạng thái.' : lookupMessage || 'Uplocket chưa cung cấp đủ dữ liệu để xác định Gold. Bạn có thể kiểm tra lại hoặc mở Uplocket.';
     document.getElementById('account-lookup-retry').hidden = !lookupMessage;
     const primary = document.getElementById('account-primary-action');
     document.getElementById('account-secondary-download').hidden = gold !== false;
-    if (gold === false) {
+    if (gold !== true) {
       primary.href = 'https://uplocket.io.vn/'; primary.removeAttribute('download');
       primary.target = '_blank'; primary.rel = 'noopener noreferrer';
-      primary.textContent = 'Nâng cấp tại Uplocket ↗';
+      primary.textContent = gold === false ? 'Nâng cấp tại Uplocket ↗' : 'Kiểm tra tại Uplocket ↗';
     } else {
       primary.href = './AnhhPhuongg.mobileconfig'; primary.download = 'AnhhPhuongg.mobileconfig';
       primary.removeAttribute('target'); primary.removeAttribute('rel');
@@ -178,7 +196,7 @@
   function closeAccountModal() {
     if (lookupController) lookupController.abort();
     lookupController = null;
-    modal.hidden = true; document.body.classList.remove('modal-open');
+    modal.hidden = true; resetCopy(); document.body.classList.remove('modal-open');
     backgroundState.forEach(function (entry) {
       entry.element.inert = entry.inert;
       if (entry.hidden === null) entry.element.removeAttribute('aria-hidden'); else entry.element.setAttribute('aria-hidden', entry.hidden);
@@ -262,14 +280,48 @@
     form.hidden = true;
     modal.classList.add('has-result');
     accountTitle.textContent = 'Xác nhận tài khoản';
+    setAccountStep(2);
     accountInstructions.hidden = true;
     document.getElementById('account-lookup-notice').hidden = true;
     modal.setAttribute('aria-describedby', 'account-disclaimer');
     accountCheck.hidden = true; result.hidden = false;
     accountTitle.focus();
   });
-  document.getElementById('account-lookup-retry').addEventListener('click', function () {
+  function refreshAccount() {
+    if (!account || lookupController) return;
     resetAccountResult(); syncAccountCheck(); form.requestSubmit();
+  }
+  document.getElementById('account-lookup-retry').addEventListener('click', refreshAccount);
+  document.getElementById('account-refresh').addEventListener('click', refreshAccount);
+  document.getElementById('account-copy').addEventListener('click', async function () {
+    if (!account) return;
+    const currentAccount = account;
+    const revision = ++copyRevision;
+    const username = account.username;
+    document.getElementById('account-copy-status').textContent = '';
+    try {
+      if (!navigator.clipboard || !window.isSecureContext) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(username);
+      if (account !== currentAccount || modal.hidden || revision !== copyRevision) return;
+      document.getElementById('account-copy-fallback').hidden = true;
+      document.getElementById('account-copy-status').textContent = 'Đã sao chép @' + username + '. Dán tại Uplocket để tiếp tục.';
+    } catch (_) {
+      if (account !== currentAccount || modal.hidden || revision !== copyRevision) return;
+      document.getElementById('account-copy-fallback').hidden = false;
+      const input = document.getElementById('account-copy-value'); input.value = username; input.focus(); input.select();
+    }
+  });
+  document.getElementById('account-install-open').addEventListener('click', function () {
+    if (!account) return;
+    result.hidden = true; installPanel.hidden = false;
+    document.getElementById('account-install-account').textContent = '@' + account.username;
+    accountTitle.textContent = 'Cài đặt hồ sơ DNS';
+    setAccountStep(3); accountTitle.focus();
+  });
+  document.getElementById('account-install-back').addEventListener('click', function () {
+    installPanel.hidden = true; result.hidden = false;
+    accountTitle.textContent = 'Xác nhận tài khoản';
+    setAccountStep(2); document.getElementById('account-install-open').focus();
   });
   modal.querySelector('.account-edit').addEventListener('click', function () { resetAccountResult(); clearAccountError(); accountInput.focus(); accountInput.select(); });
   if (window.LocketProfileInfo) {
