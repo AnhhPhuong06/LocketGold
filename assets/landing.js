@@ -65,7 +65,7 @@
   document.getElementById('account-lookup-notice').hidden = !lookupEnabled;
   if (lookupEnabled) document.getElementById('account-disclaimer').textContent = 'Username được gửi đến Uplocket để tra cứu khi bạn nhấn kiểm tra. Chỉ các trường hiển thị công khai được trả về. Trạng thái từ Uplocket không phải xác nhận thuê bao chính thức từ Locket; không kích hoạt hoặc mua gói tại bước này.';
   const plans = {
-    trial: { name: 'Gói dùng thử', duration: '3 ngày', price: 'Miễn phí' },
+    trial: { name: 'Gói dùng thử', duration: '2 ngày · theo nội dung tham khảo', price: 'Miễn phí' },
     year: { name: 'Locket Gold 1 năm', duration: '1 năm', price: '20.000đ' },
     lifetime: { name: 'Locket Gold trọn đời', duration: 'Theo điều kiện Uplocket', price: '30.000đ' },
     restore: { name: 'Cài lại hồ sơ DNS', duration: 'Tra cứu gói hiện có tại Uplocket', price: 'Tra cứu' }
