@@ -14,7 +14,7 @@
       return { username: username[1], url: 'https://locket.cam/' + username[1] };
     }
     let url;
-    try { url = new URL(text); } catch (_) { throw new Error(error); }
+    try { url = new URL(text.startsWith('locket.cam/') ? 'https://' + text : text); } catch (_) { throw new Error(error); }
     if (url.protocol !== 'https:' || url.hostname !== 'locket.cam' || url.port || url.username || url.password) throw new Error(error);
     const match = /^\/([A-Za-z0-9_.-]{1,100})\/?$/.exec(url.pathname);
     if (!match || match[1] === '.' || match[1] === '..') throw new Error(error);

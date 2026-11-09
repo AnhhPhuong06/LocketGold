@@ -14,6 +14,7 @@ test('usernames and @usernames normalize to public profile links', () => {
     assert.deepEqual(parse(value), { username: 'anhhphuongg06', url: 'https://locket.cam/anhhphuongg06' });
   }
   assert.equal(parse('@nga.2007').username, 'nga.2007');
+  assert.deepEqual(parse('locket.cam/anhhphuongg06'), { username: 'anhhphuongg06', url: 'https://locket.cam/anhhphuongg06' });
 });
 
 test('rejects executable schemes, lookalike hosts, credentials and arbitrary routes', () => {
