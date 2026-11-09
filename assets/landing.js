@@ -55,6 +55,10 @@
       } catch (_) { status.textContent = 'Bạn có thể sao chép thủ công: 1032313945'; }
     });
   });
+  const paymentQR = document.getElementById('account-payment-qr');
+  const paymentQRError = document.getElementById('payment-qr-error');
+  paymentQR.addEventListener('error', function () { paymentQR.hidden = true; paymentQRError.hidden = false; });
+  paymentQR.addEventListener('load', function () { paymentQR.hidden = false; paymentQRError.hidden = true; });
   const memo = document.getElementById('payment-memo');
   memo.addEventListener('click', function () { memo.select(); });
   const modal = document.getElementById('account-modal');
@@ -108,6 +112,10 @@
     account = null; result.hidden = true; accountCheck.hidden = false;
     document.getElementById('account-payment').hidden = true;
     document.getElementById('payment-memo').value = '';
+    paymentQR.hidden = true;
+    paymentQR.removeAttribute('src');
+    document.getElementById('account-payment-qr-open').removeAttribute('href');
+    paymentQRError.hidden = true;
     modal.querySelectorAll('[data-bank-copy-status]').forEach(function (el) { el.textContent = ''; });
     installPanel.hidden = true; resetCopy(); setAccountStep(1);
     document.getElementById('account-details').open = false;
@@ -129,7 +137,15 @@
     const cached = profiles && Object.prototype.hasOwnProperty.call(profiles, account.username) ? profiles[account.username] : null;
     const profile = lookupResult ? { displayName: lookupResult.name, avatar: lookupResult.avatar || cached?.avatar, checkedAt: lookupResult.checked_at } : cached;
     document.getElementById('account-payment').hidden = selectedPlan !== plans.year;
-    document.getElementById('payment-memo').value = 'UPLOCKET ' + account.username;
+    document.getElementById('payment-memo').value = ('UPLOCKET ' + account.username).slice(0, 50);
+    if (selectedPlan === plans.year) {
+      const qr = new URL('https://img.vietqr.io/image/970436-1032313945-compact2.png');
+      qr.search = new URLSearchParams({ amount: '20000', addInfo: document.getElementById('payment-memo').value, accountName: 'TA ANH PHUONG' }).toString();
+      paymentQRError.hidden = true;
+      paymentQR.hidden = false;
+      paymentQR.src = qr.href;
+      document.getElementById('account-payment-qr-open').href = qr.href;
+    }
     const currentAccount = account;
     const avatar = document.getElementById('account-avatar');
     const initials = account.username.slice(0, 2).toUpperCase();
