@@ -402,11 +402,9 @@
   if (!Array.isArray(frames) || !frames.length) return;
   const gallery = document.getElementById('frame-gallery');
   const input = document.getElementById('frame-search');
-  const more = document.getElementById('frame-more');
   const preview = document.getElementById('preview-frame');
   const overlay = document.getElementById('preview-overlay');
   const download = document.getElementById('frame-download');
-  let limit = 8;
   let selectedId = '';
   function normalize(text) { return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
   function selectFrame(frame) {
@@ -420,7 +418,7 @@
   function renderFrames() {
     const query = normalize(input.value.trim());
     const filtered = frames.filter(function (frame) { return normalize(frame.name).includes(query); });
-    const visible = filtered.slice(0, limit);
+    const visible = filtered;
     const fragment = document.createDocumentFragment();
     visible.forEach(function (frame) {
       const button = document.createElement('button'); button.className = 'frame-choice'; button.type = 'button'; button.dataset.frameId = frame.id;
@@ -432,10 +430,8 @@
     gallery.textContent = ''; gallery.appendChild(fragment);
     document.getElementById('frame-count').textContent = 'Đang hiện ' + visible.length + '/' + filtered.length + ' khung · ' + frames.length + ' khung trong thư viện';
     document.getElementById('frame-empty').hidden = filtered.length !== 0;
-    more.hidden = filtered.length <= limit;
   }
-  input.addEventListener('input', function () { limit = 8; renderFrames(); });
-  more.addEventListener('click', function () { limit += 8; renderFrames(); if (more.hidden) gallery.lastElementChild.focus(); });
+  input.addEventListener('input', renderFrames);
   document.querySelectorAll('.theme-button').forEach(function (button) { button.addEventListener('click', function () {
     selectedId = ''; overlay.hidden = true; preview.classList.remove('has-art-frame'); download.hidden = true;
     document.getElementById('frame-selected-label').textContent = '';

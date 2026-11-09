@@ -42,7 +42,7 @@ node --test tests/referral-core.test.cjs
 - Điện thoại và ảnh nổi minh họa trên đầu trang; không phải ảnh chụp ứng dụng thực tế.
 - Xem thử ba màu khung và nhấn ảnh để đổi khoảnh khắc; không thay đổi ứng dụng Locket.
 - Đã tích hợp ảnh, sticker, app icon và logo đã tải từ Uplocket; điện thoại có thể đổi ảnh bằng nút và tự chuyển khi bật chuyển động. Có nút tạm dừng và hỗ trợ giảm chuyển động.
-- Thư viện 78 khung PNG cục bộ, không trùng nội dung: tìm theo tên, xem thêm từng nhóm 8 khung, xem thử trên ảnh minh họa và tải đúng tệp PNG đã chọn. Chọn khung không đổi ứng dụng Locket.
+- Thư viện 78 khung PNG cục bộ, không trùng nội dung: tìm theo tên, hiển thị toàn bộ khung, ảnh tải dần khi cuộn, xem thử trên ảnh minh họa và tải đúng tệp PNG đã chọn. Chọn khung không đổi ứng dụng Locket.
 - Cuộn mượt bằng bản Lenis độc lập đã tải; tạm dừng cuộn nền khi mở cửa sổ nhập link. Không chạy các chunk Next.js, beacon theo dõi hoặc API của website nguồn.
 - Hướng dẫn cài đặt với ba bước tương tác.
 - Câu hỏi thường gặp dùng `details` của trình duyệt.
