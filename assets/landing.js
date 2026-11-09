@@ -46,6 +46,17 @@
       const input = document.getElementById('profile-url'); input.value = url; input.focus(); input.select();
     }
   });
+  document.querySelectorAll('[data-copy-bank]').forEach(function (button) {
+    button.addEventListener('click', async function () {
+      const status = button.parentElement.querySelector('[data-bank-copy-status]');
+      try {
+        await navigator.clipboard.writeText('1032313945');
+        status.textContent = 'Đã sao chép số tài khoản 1032313945.';
+      } catch (_) { status.textContent = 'Bạn có thể sao chép thủ công: 1032313945'; }
+    });
+  });
+  const memo = document.getElementById('payment-memo');
+  memo.addEventListener('click', function () { memo.select(); });
   const modal = document.getElementById('account-modal');
   const form = document.getElementById('account-form');
   const accountInput = document.getElementById('account-link');
@@ -66,13 +77,13 @@
   if (lookupEnabled) document.getElementById('account-disclaimer').textContent = 'Username được gửi đến Uplocket để tra cứu khi bạn nhấn kiểm tra. Chỉ các trường hiển thị công khai được trả về. Trạng thái từ Uplocket không phải xác nhận thuê bao chính thức từ Locket; không kích hoạt hoặc mua gói tại bước này.';
   const plans = {
     trial: { name: 'Gói dùng thử', duration: '2 ngày · theo nội dung tham khảo', price: 'Miễn phí' },
-    year: { name: 'Locket Gold 1 năm', duration: '1 năm', price: '20.000đ' },
+    year: { name: 'UpLocket 1 năm', duration: '1 năm', price: '20.000đ' },
     lifetime: { name: 'Locket Gold trọn đời', duration: 'Theo điều kiện Uplocket', price: '30.000đ' },
     restore: { name: 'Cài lại hồ sơ DNS', duration: 'Tra cứu gói hiện có tại Uplocket', price: 'Tra cứu' }
   };
   let returnFocus = null;
   let account = null;
-  let selectedPlan = plans.trial;
+  let selectedPlan = plans.year;
   let lookupController = null;
   let lookupResult = null;
   let lookupMessage = '';
@@ -95,6 +106,9 @@
     if (lookupController) lookupController.abort();
     lookupController = null; lookupResult = null; lookupMessage = '';
     account = null; result.hidden = true; accountCheck.hidden = false;
+    document.getElementById('account-payment').hidden = true;
+    document.getElementById('payment-memo').value = '';
+    modal.querySelectorAll('[data-bank-copy-status]').forEach(function (el) { el.textContent = ''; });
     installPanel.hidden = true; resetCopy(); setAccountStep(1);
     document.getElementById('account-details').open = false;
     accountCheck.textContent = checkLabel;
@@ -114,6 +128,8 @@
     const profiles = window.LocketPublicProfiles;
     const cached = profiles && Object.prototype.hasOwnProperty.call(profiles, account.username) ? profiles[account.username] : null;
     const profile = lookupResult ? { displayName: lookupResult.name, avatar: lookupResult.avatar || cached?.avatar, checkedAt: lookupResult.checked_at } : cached;
+    document.getElementById('account-payment').hidden = selectedPlan !== plans.year;
+    document.getElementById('payment-memo').value = 'UPLOCKET ' + account.username;
     const currentAccount = account;
     const avatar = document.getElementById('account-avatar');
     const initials = account.username.slice(0, 2).toUpperCase();

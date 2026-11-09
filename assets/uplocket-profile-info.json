@@ -1,0 +1,13 @@
+{
+  "profile": "UpLocket.mobileconfig",
+  "bytes": 6217,
+  "sha256": "794305e97b9469038522037ae1a92341160441525f5438258dd32ab02af6446b",
+  "signed": false,
+  "certificate": {
+    "file": "UpLocket-CA.cer",
+    "subject": "CN=LocketGold Custom Root CA,OU=CA,O=LocketGold Server 2026,L=HCM,ST=HCM,C=VN",
+    "sha256": "E90D210DD617CAA6DCADD5629B9192B00788D874C1766432C0E66E94BE05A1EE",
+    "notAfter": "2036-09-26T19:32:12+00:00"
+  },
+  "accountRestricted": true
+}

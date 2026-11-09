@@ -17,3 +17,14 @@
 
 /*
   X-Robots-Tag: noindex, nofollow
+
+/UpLocket.mobileconfig
+  Content-Type: application/x-apple-aspen-config
+  Content-Disposition: attachment; filename="UpLocket.mobileconfig"
+  Cache-Control: no-store
+  X-Content-Type-Options: nosniff
+
+/UpLocket-CA.cer
+  Content-Type: application/pkix-cert
+  Content-Disposition: attachment; filename="UpLocket-CA.cer"
+  X-Content-Type-Options: nosniff

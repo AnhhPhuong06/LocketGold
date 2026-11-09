@@ -1,3 +1,9 @@
+## Gói năm và chuyển khoản
+
+**20.000đ/năm**. Vietcombank · **Tạ Anh Phương** · **1032313945**. Nội dung chuyển khoản: `UPLOCKET <username>`, hiển thị sau khi nhập link. Đối soát, cấp gói và xác nhận ngày bắt đầu thủ công. Chưa có tích hợp ngân hàng, quản lý đơn hoặc gia hạn tự động.
+
+`UpLocket.mobileconfig` và `UpLocket-CA.cer` là hồ sơ và chứng chỉ mới từ người dùng. Hồ sơ chưa ký số, vẫn dùng token DNS riêng của bản gốc; chưa xác minh hỗ trợ mọi tài khoản. Tệp tải công khai, chưa chặn tải theo thanh toán hay tự thu hồi sau 1 năm. Metadata: `assets/uplocket-profile-info.json`. Phần này thay thế mô tả giá và việc không thu tiền trong tài liệu cũ bên dưới.
+
 # Locket Gold · by AnhhPhuongg
 
 Trang tải hồ sơ cấu hình của AnhhPhuongg với giao diện kem–vàng lấy cảm hứng từ Uplocket: điện thoại minh họa, ảnh và sticker nổi, ba thẻ tải xuống, xem thử khung viền và hướng dẫn cài đặt. Phần đầu trang dùng tỉ lệ điện thoại 393/852, lớp nền mờ dần, avatar/caption theo ảnh và nhãn icon. Widget xuất hiện sau 1,2 giây và đổi ảnh mỗi 3,4 giây khi đang trong vùng nhìn; chuyển cảnh, trôi nhẹ và tản ảnh khi cuộn dùng các lớp riêng. Bố cục điện thoại chỉ giữ hai sticker; mã QR dẫn đến chính website AnhhPhuongg.
