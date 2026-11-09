@@ -92,14 +92,14 @@
     <div class="account-panel" tabindex="-1">
       <button class="account-close" type="button" aria-label="Đóng cửa sổ"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
       <span class="account-badge">Nâng cấp Locket Gold</span>
-      <ol class="account-progress" aria-label="Các bước thực hiện"><li aria-current="step"><span>1</span>Nhập link</li><li><span>2</span>Tài khoản</li><li><span>3</span>Cài DNS</li></ol>
-      <h2 id="account-title" tabindex="-1">Dán link Locket của bạn</h2>
-      <p id="account-instructions">Mở app Locket &gt; Trang cá nhân &gt; Chia sẻ liên kết rồi dán vào đây.</p>
+      <ol class="account-progress" aria-label="Các bước thực hiện"><li aria-current="step"><span>1</span>Tài khoản</li><li><span>2</span>Tài khoản</li><li><span>3</span>Cài DNS</li></ol>
+      <h2 id="account-title" tabindex="-1">Nhập tài khoản Locket của bạn</h2>
+      <p id="account-instructions">Nhập username, @username hoặc dán link trang cá nhân từ ứng dụng Locket.</p>
       <p class="account-lookup-notice" id="account-lookup-notice" hidden>Khi kiểm tra, username được gửi đến Uplocket để tra cứu.</p>
       <form id="account-form" novalidate>
         <div id="account-entry">
-        <label class="sr-only" for="account-link">Link trang cá nhân Locket</label>
-        <div class="account-input-wrap"><input id="account-link" type="url" inputmode="url" placeholder="https://locket.cam/ten_cua_ban" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="512" aria-describedby="account-error" required></div>
+        <label class="sr-only" for="account-link">Username hoặc link trang cá nhân Locket</label>
+        <div class="account-input-wrap"><input id="account-link" type="text" inputmode="text" placeholder="username, @username hoặc link Locket" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="512" aria-describedby="account-error" required></div>
         <p class="account-error" id="account-error" role="alert" hidden></p>
         </div>
         <p class="account-form-note">Gói năm 20.000đ, chuyển khoản Vietcombank và xác nhận thủ công. Tra cứu không đồng nghĩa đã thanh toán hoặc kích hoạt gói.</p>
